@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>zzczzczzc&#39;s home</title>
+        <meta name="author" content="zzczzczzc" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="/js/lib/home.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>LOADING</h2>
+                        <p>加载过慢请开启缓存 浏览器默认开启</p>
+                        <img src="/images/loading.gif" />
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZZCZZCZZC&#39;S HOME</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;相关</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZZCZZCZZC&#39;S HOME</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">相关</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>zzczzczzc&#39;s home</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div id="home-posts-wrap"  ref="homePostsWrap">
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2023/05/08/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A50/">
+        <h2 class="post-title">校园末日0</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%B0%8F%E8%AF%B4/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                交互式小说
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <blockquote>
+<p>参考Anime：校园默示录<br>你将扮演严煜博面对接下来的情况。</p>
+</blockquote>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/05/08/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A50/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/07/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9C%A8%E6%B5%B7%E5%A4%96%EF%BC%8C%E8%AE%BF%E9%97%AE%E6%85%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/">
+        <h2 class="post-title">服务器在海外，访问慢怎么办？</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>访问优化评分：0～10 分</p>
+<ol>
+<li>使用<a href="/2023/05/12/frp%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7">OpenFrp</a>的海外CN2节点 <font color='RED'>10分</font><br>神乎其技，快的飞起！<br>注：CN节点速度&gt;CDN代理，CDN代理了之后会变慢，但是不用CDN代理就无法使用https，也无法使用gitalk，所以要配置SSL。<br><a href="/2023/05/14/%E4%B8%8D%E4%BD%BF%E7%94%A8CDN%E4%BB%A3%E7%90%86%EF%BC%8C%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2SSL%E8%AF%81%E4%B9%A6">不使用CDN代理，本地部署SSL证书</a></li>
+<li>使用<a target="_blank" rel="noopener" href="https://cloudflare.com/">CloudFlare</a>的DNS代理功能（即CDN） <font color='RED'>2分</font><br>基本没优化，只是第一次缓存了之后让后面访问变快了。</li>
+</ol>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/07/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9C%A8%E6%B5%B7%E5%A4%96%EF%BC%8C%E8%AE%BF%E9%97%AE%E6%85%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/07/%E9%98%BF%E9%87%8C%E4%BA%91%E4%B9%B0%E7%9A%84%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%A4%87%E6%A1%88%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%A7%A3%E6%9E%90/">
+        <h2 class="post-title">阿里云买的域名不备案如何进行解析</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>Step1. 了解域名和域名解析，以及是否需要备案</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/07/%E9%98%BF%E9%87%8C%E4%BA%91%E4%B9%B0%E7%9A%84%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%A4%87%E6%A1%88%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%A7%A3%E6%9E%90/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/07/%E5%8A%A0%E9%80%9F%E5%99%A8/">
+        <h2 class="post-title">加速器</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E5%B7%A5%E5%85%B7/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                工具
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <ol>
+<li>闪电加速盒子<br>QQ群：442102046（闪电加速大集合）<br>QQ群文件夹中有软件下载。<br>上号器最新下单地址：<a target="_blank" rel="noopener" href="https://shimo.im/docs/XKq4MbnPrXso0ZkN">https://shimo.im/docs/XKq4MbnPrXso0ZkN</a><br>微信公众号里面迅游加速器1CNY&#x2F;5DAY</li>
+<li>月轮网游加速器 <font color='RED'>FREE</font><br>还行</li>
+</ol>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%8A%A0%E9%80%9F%E5%99%A8/" style="color: #ff7d73">加速器</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/07/%E5%8A%A0%E9%80%9F%E5%99%A8/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/07/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%B1%80%E5%9F%9F%E7%BD%91%E8%81%94%E6%9C%BA%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%B9%8B%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/">
+        <h2 class="post-title">我的世界局域网联机内网穿透之后无法进入</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>高版本Minecraft中如果双方有任意一方是离线模式，就无法相互进入，必须要第三方登录（auth），或者正版登录。</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #ffa2c4">我的世界</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/07/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%B1%80%E5%9F%9F%E7%BD%91%E8%81%94%E6%9C%BA%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%B9%8B%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
+    <div class="prev">
+        
+        <a class="page-num" href="/page/2/">
+            <i class="fa-solid fa-caret-left fa-fw"></i>
+        </a>
+        
+    </div>
+    <div class="page-index">
+        
+        <span>
+            
+            
+            
+            <a class="page-num" href="/">1</a>
+            
+            
+            
+            <a class="page-num" href="/page/2/">2</a>
+        </span>
+        
+        <span class="current">3</span>
+        
+        <span>
+            <a class="page-num" href="/page/4/">4</a>
+            
+            <a class="page-num" href="/page/5">5</a>
+            
+            
+        </span>
+        
+    </div>
+    <div class="next">
+        
+        <a class="page-num" href="/page/4/">
+            <i class="fa-solid fa-caret-right fa-fw"></i>
+        </a>
+        
+    </div>
+</div>
+
+    </div>
+    
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">zzczzczzc</div>
+        <div class="description">
+            <p>下面是友情链接 : D</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.cutcutfish.org/home">闻俊的博客</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2023 zzczzczzc&#39;s home
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zzczzczzc
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+    </body>
+</html>
