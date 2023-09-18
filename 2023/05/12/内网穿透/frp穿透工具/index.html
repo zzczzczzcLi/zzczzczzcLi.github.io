@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>阿里云买的域名不备案如何进行解析 | zzczzczzc&#39;s home</title>
+        <title>frp穿透工具 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -150,22 +150,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>阿里云买的域名不备案如何进行解析</h1>
+        <h1>frp穿透工具</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/7
+            2023/5/12
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E5%B7%A5%E5%85%B7/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                工具
             </a>
         </span>
         
@@ -177,7 +177,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #00a596">内网穿透</a>
+                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ffa2c4">内网穿透</a>
             </span>
             
         </span>
@@ -185,17 +185,19 @@
     </div>
     
     <div class="content" v-pre>
-        <p>Step1. 了解域名和域名解析，以及是否需要备案</p>
+        <p>MCBBS上会有很多内网穿透商人，下面所给的实在不行就去百度或者MCBBS上软件工具栏去找。<br>也可以问问聪明的ChatGPT。</p>
 <span id="more"></span>
-<p>域名和解析介绍看<font color='RED'>路由器实现内网穿透</font>部分。<br>域名备案只涉及两种情况，其余情况均不用备案：</p>
+<p>（均为免费套餐&amp;实际测试）</p>
 <ol>
-<li>域名指向了<font color='RED'>网站</font>，且服务器在国内。</li>
-<li>域名的指向国家信息产业部提交网站的相关信息。<br>此处的服务器必须是拥有公网IP的服务器，否则域名无法指向，情况也就不成立。<br>故基于frp穿透实现的内网服务器网站，若frps用海外节点则不用备案。<br>也可以得出结论我的世界开服套域名，不需要备案。</li>
+<li><p><a target="_blank" rel="noopener" href="https://console.openfrp.net/">OpenFrp</a> <font color='RED'>优质，免费实名认证</font><br>4隧道，12Mbps，每日签到随机流量1～4GiB，支持多种协议。<br>评价：免费的CN2节点，我测！</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.natfrp.com/user">SakuraFrp</a> <font color='RED'>优质，实名认证1元</font><br>2条隧道，10Mbps，每日签到随机流量1～4GiB，支持多种协议。<br>评价：经典永不过时。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://frp.starryfrp.com/console">StarryFrp</a> <font color='RED'>一般，实名认证2元</font><br>10条隧道，8Mbps，每日签到随机流量1～10GiB，支持多种协议。<br>评价：只有一个香港节点给普通用户使用，目前被打爆了。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://preview.locyanfrp.cn/dashboard">LocyanFrp</a> <font color='RED'>一般，免费实名认证</font><br>无限隧道，10Mbps，无限流量。<br>评价：公益frp容易影响到别人赚钱，经常被ddos攻击，所以很卡。</p>
+</li>
 </ol>
-<p>Step2. 修改DNS服务器<br>如果域名是在国内买的，但是没备案，国内的域名服务商不会提供DNS解析服务。<br>需要在域名控制台中把DNS服务器改写成国外的解析服务，例如CloudFlare。<br>并且国外的解析服务会同步提供SSL证书等等，直接绑定域名就行。</p>
-<p>然后在CloudFlare上进行修改就行。</p>
-<p>Step4. DNS修改是否立即生效<br>百度说阿里云修改DNS服务器需要24～48小时才能生效，只要你另选的DNS服务商（如CloudFlare）那边控制台显示你DNS已经生效，那就是生效了，基本上是实时生效。<br>在CloudFlare上添加的DNS记录生效时间取决于TTL缓存时间，如果选择1分钟，那么全世界在1分钟之后就会获得这条DNS记录。</p>
-<p><font color='RED'><b>！注意事项</b></font><br>域名指向的IP地址在国内并且用于搭建网站就必须备案，没备案的话不管是哪个frps都不会给你访问通过。<br>frp隧道必须选择国外节点。<br><font color='RED'><b>！海外节点访问慢</b></font><br><a href="/2023/05/07/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9C%A8%E6%B5%B7%E5%A4%96%EF%BC%8C%E8%AE%BF%E9%97%AE%E6%85%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F">服务器在海外，访问慢怎么办？</a></p>
 
     </div>
     

@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>frpc一直io:timeout | zzczzczzc&#39;s home</title>
+        <title>在Linux上搭建我的世界服务器 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -150,14 +150,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>frpc一直io:timeout</h1>
+        <h1>在Linux上搭建我的世界服务器</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/13
+            2023/5/10
         </span>
         
         <span class="category">
@@ -177,7 +177,12 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ffa2c4">内网穿透</a>
+                <a href="/tags/Linux/" style="color: #ffa2c4">Linux</a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #00a596">我的世界</a>
             </span>
             
         </span>
@@ -185,7 +190,67 @@
     </div>
     
     <div class="content" v-pre>
-        <p>按理来说手机热点应该是稳定的，连热点的时候网络波动很大的时候有可能是，<br>手机热点的名字太长了，或者前面用了#开头，热点名字简短一点最好，比如：青雀</p>
+        <blockquote>
+<p>常用命令<br>screen -S “Mine”：新建一个名为”Mine”的屏幕，并且进入。（相当于新开一个线程）<br>screen -r：进入屏幕。<br>ctrl a+d：退出屏幕，如果屏幕在运行会保持后台运行。<br>ctrl c&#x2F;stop：关闭服务器。<br>sh startmcs.sh：通过sh脚本启动服务器。</p>
+</blockquote>
+<p>搭建我的世界服务器只需要两样东西：</p>
+<ol>
+<li>服务器核心</li>
+<li>Java开发环境（注意jdk和jre的区别，我们只要jdk）</li>
+</ol>
+<p>首先我们获取Java开发环境，1.12.2版本只能用Java9及以下，这里我选择经典的Java8。</p>
+<span id="more"></span>
+
+<blockquote>
+<p>yum -y install java-1.8.0-openjdk</p>
+</blockquote>
+<p>新建一个文件夹，放服务端文件。</p>
+<blockquote>
+<p>mkdir mcs</p>
+</blockquote>
+<p>上传文件我这里选择的是直接用网页控制台传入，点左上角<font color='RED'>文件</font>，打开一个<font color='RED'>文件树</font>，可以直接把文件拖入新建的<font color='RED'>mcs</font>文件夹中。也可以右键<font color='RED'>mcs</font>文件夹，点击<font color='RED'>上传文件</font>，两者区别不大，速度都慢的要命。<br>要速度快可以用ftp或者qq互相传文件，不过mcserver就只有一点点大，不太需要。<br>如果服务器要到期了，右键文件夹<font color='RED'>下载文件</font>把整个文件夹下载下来就行了。</p>
+<p>接下来进入mcs文件夹</p>
+<blockquote>
+<p>cd mcs</p>
+</blockquote>
+<p>启动服务器（命令格式和意义自行百度）（启动前先放入服务端核心，此处为<font color='RED'>cat.jar</font>）</p>
+<blockquote>
+<p>java -Xms512m -Xmx1024m -jar cat.jar nogui</p>
+</blockquote>
+<p>启动完成之后关闭服务器（如果服务器启动失败也进行下一步）</p>
+<blockquote>
+<p>ctrl+c</p>
+</blockquote>
+<p>刷新一下左边文件树的mcs文件夹，可以发现里面多了很多东西。（双击文件树就能打开文件，闲的话也可以用open命令）<br>打开<font color='RED'>mcs</font>文件夹下的<font color='RED'>eula.txt</font>的文件，把里面的false改成true（mojang官方要求）。再打开<font color='RED'>server.properties</font>，把<font color='RED'>online-mode</font>改成false（正版验证关闭）。</p>
+<p>在阿里云服务器安全组上配置入方向25565端口，协议为TCP，源和下面设置一样。</p>
+<p>至此服务端全部配置完毕，剩下内容自行配置plugins和mods。<br>但是可以发现每次都输入那么依托启动命令太麻烦了，设置shell脚本（shell就是命令行解释器，相当于一个自动运行的terminal终端）</p>
+<p>在mcs文件夹下面新建一个文件，名字为startmcs.sh（都随意，后缀也随意，只是表明是一个shell脚本）<br>输入以下内容：</p>
+<blockquote>
+<p>#!&#x2F;bin&#x2F;bash<br>java -Xms512m -Xmx1024m -jar cat.jar nogui</p>
+</blockquote>
+<p>以后启动服务器只需要输入</p>
+<blockquote>
+<p>sh startmcs.sh</p>
+</blockquote>
+<p>客户端连入的时候直接用<font color='RED'>公网IP:开服的端口</font>即可。（注意不要输入中文的冒号）<br>如果要套域名直接使用A解析，由于不是建站，所以不需要备案，但是解析要换DNS服务器，可以使用CloudFlare。<br>如果开服用的就是25565端口，那么就可以直接用域名连接了。注意：我的世界不是网站，不要用CloudFlare代理安全流量，要用仅DNS。</p>
+<p>在不断开远程链接SSH（Secure Shell，安全外壳协议）的情况下，我们发现服务器已经可以进入了，但是一断开SSH，服务器就自动关闭了。还要再加一个screen防止断开。</p>
+<blockquote>
+<p>yum -y install screen</p>
+</blockquote>
+<p>设置好屏幕，防止退出后服务器自动关闭。（-S是设置会话标题）</p>
+<blockquote>
+<p>screen -S “Minecraft Server”</p>
+</blockquote>
+<p>在屏幕内进入mcs文件夹，运行脚本，启动完毕之后按下面组合键退出（如果没有运行内容屏幕会自动结束）。</p>
+<blockquote>
+<p>ctrl a+d</p>
+</blockquote>
+<p>以后如果要进入屏幕就输入</p>
+<blockquote>
+<p>screen -r</p>
+</blockquote>
+<p>如果有多个屏幕开着，会显示前面的id，在-r后面加入id。</p>
+<p>当然白嫖的阿里云服务器宽带是极其之小的，1Mb约100KB。<br>还有优化空间，不过宽带限制摆在那，用处不大。<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/mobile?id=15432685">我的世界服务器宽带优化教程</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_34489829/article/details/112269540">CSDN教程</a><br>若服务器出现卡顿也可以尝试把启动脚本的Xmx最大内存调最大，此处阿里云为2048m。</p>
 
     </div>
     

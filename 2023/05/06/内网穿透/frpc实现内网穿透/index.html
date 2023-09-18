@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>frp穿透工具 | zzczzczzc&#39;s home</title>
+        <title>frpc实现内网穿透 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -150,22 +150,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>frp穿透工具</h1>
+        <h1>frpc实现内网穿透</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/12
+            2023/5/6
         </span>
         
         <span class="category">
-            <a href="/categories/%E5%B7%A5%E5%85%B7/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                工具
+                教程
             </a>
         </span>
         
@@ -177,7 +177,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
+                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #00a596">内网穿透</a>
             </span>
             
         </span>
@@ -185,19 +185,17 @@
     </div>
     
     <div class="content" v-pre>
-        <p>MCBBS上会有很多内网穿透商人，下面所给的实在不行就去百度或者MCBBS上软件工具栏去找。<br>也可以问问聪明的ChatGPT。</p>
+        <p>#frps -&gt; frp-server<br>#frpc -&gt; frp-client<br>一般家用电脑都不会拥有公网IP，都只有内网，无法被互联网访问。<br>外网和内网之前存在一墙之隔。<br>因此我们把<font color='RED'>让内网能被外网访问</font>这一步骤称作：内网穿透</p>
 <span id="more"></span>
-<p>（均为免费套餐&amp;实际测试）</p>
+
+<p>frp是一种隧道工具，在墙上打一个隧道，实现内网和外网互通。<br>基本原理：访问公网IP，但是实际上会通过隧道进入内网。</p>
+<p>如果已经有了可以被公网访问的服务器（或者去买一个云服务器），可以用以下步骤实现内网穿透：</p>
 <ol>
-<li><p><a target="_blank" rel="noopener" href="https://console.openfrp.net/">OpenFrp</a> <font color='RED'>优质，免费实名认证</font><br>4隧道，12Mbps，每日签到随机流量1～4GiB，支持多种协议。<br>评价：免费的CN2节点，我测！</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.natfrp.com/user">SakuraFrp</a> <font color='RED'>优质，实名认证1元</font><br>2条隧道，10Mbps，每日签到随机流量1～4GiB，支持多种协议。<br>评价：经典永不过时。</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://frp.starryfrp.com/console">StarryFrp</a> <font color='RED'>一般，实名认证2元</font><br>10条隧道，8Mbps，每日签到随机流量1～10GiB，支持多种协议。<br>评价：只有一个香港节点给普通用户使用，目前被打爆了。</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://preview.locyanfrp.cn/dashboard">LocyanFrp</a> <font color='RED'>一般，免费实名认证</font><br>无限隧道，10Mbps，无限流量。<br>评价：公益frp容易影响到别人赚钱，经常被ddos攻击，所以很卡。</p>
-</li>
+<li>在存在公网IP的电脑上部署frps服务端</li>
+<li>在内网部署frpc，使用frps的配置，实现内网穿透。</li>
 </ol>
+<p>或者使用提供frp服务的服务商。<br><a href="/2023/05/12/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/frp%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7">frp穿透工具</a></p>
+<p>服务商可能会提供专用的frp工具，如果要用配置文件的话，就下载官方的frp。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/xuefu2008/article/details/129042972">在Linux上部署官方frp</a><br>使用官方frp，配置的时候可能会出现一些问题。<br><a href="/2023/05/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/frpc%E4%B8%80%E7%9B%B4io:timeout">frpc一直io:timeout</a></p>
 
     </div>
     
