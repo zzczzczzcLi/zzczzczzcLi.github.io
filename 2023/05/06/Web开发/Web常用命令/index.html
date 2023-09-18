@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Linux常用命令 | zzczzczzc&#39;s home</title>
+        <title>Web常用命令 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -150,7 +150,7 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Linux常用命令</h1>
+        <h1>Web常用命令</h1>
     </div>
     <div class="info">
         <span class="date">
@@ -177,7 +177,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
+                <a href="/tags/Web/" style="color: #00a596">Web</a>
             </span>
             
         </span>
@@ -185,30 +185,7 @@
     </div>
     
     <div class="content" v-pre>
-        <p>ls（list）：显示当前文件夹所有内容，文件夹名字为蓝色。<br>tab：如果你当前打的命令是唯一的，那么就会给你补全，例如输入fir+tab会补全成firefox。<br>open：打开某个文件，也可以是文件夹。（可以使用&lt;open Li*&gt;来打开所有前缀都是Li的文件）</p>
-<span id="more"></span>
-<ol>
-<li>这里需要注意的是，查询固定后缀时要带上文件格式，例如open *Li.md，如果不明确文件格式，就写成open *Li*</li>
-<li>同时open语句也可以用来打开URL，例如open <a target="_blank" rel="noopener" href="http://localhost/">http://localhost</a></li>
-</ol>
-<p>firefox：安装了火狐浏览器的话就可以使用这个命令，firefox baidu.com或者firefox localhost。<br>rm（remove）：删除某个内容，要带上后缀。<br>mv（move）：移动，文件-&gt;目的地，都是路径。<br>cd（change directory）：变动文件目录。</p>
-<ol>
-<li>cd &lt;文件夹&gt;，进入当前文件夹的下级文件夹。</li>
-<li>cd -，返回上一步操作。（只记忆一步）</li>
-<li>cd，返回桌面根目录。</li>
-<li>cd ..，返回上级目录。（..代表上级，.代表当前目录，例如&lt;open .&gt;是打开当前路径）</li>
-</ol>
-<p>clear：清除终端命令记录。<br>date：显示当前时间。<br>ctrl+c：终止并退出程序。（没有程序就不会退出）<br>ctrl+d：退出终端。<br>ctrl+alt+t：打开一个终端（终端的左上角的‘+’可以直接新建终端，并且是放在一起的）<br>find：寻找。</p>
-<ol>
-<li>find：会显示当前文件夹下的所有内容，和ls的区别是，ls会标记文件夹为蓝色</li>
-<li>find &lt;file name&gt;：显示当前文件夹内所有符合要求的文档（通配符在Linux中均可用），例如find *001*，只要文件名包含001都会被显示出来</li>
-</ol>
-<p>mkdir（make directoy）：新建文件夹<br>vim（visual editor improved）：新建文件，例如vim hello.md</p>
-<ol>
-<li>刚进入是命令行模式，:q是退出，:w是写入。（注意冒号要打出来）</li>
-<li>按i进入插入模式，正常写入。</li>
-<li>按esc退出到命令行模式。</li>
-</ol>
+        <p>Web中不区分大小写，br等价于BR。<br>&lt;br&gt;：换行（文本多次换行只算一次）（换行间隔比&lt;p&gt;&lt;&#x2F;p&gt;小）<br>&lt;font color&#x3D;’RED’&gt;&lt;&#x2F;font&gt;：把字体变成红色。<span id="more"></span><br>&lt;b&gt;&lt;&#x2F;b&gt;：加粗。（big）<br>&lt;p style&#x3D;’text-indent:2em;font-size: 10px’&gt;&lt;&#x2F;p&gt;：段落风格设置，paragraph 段落，indent 间隔，开头缩进两格，字体大小为10px。<br>&lt;center&gt;&lt;&#x2F;center&gt;：居中。<br>&lt;!–more–&gt;：好像是hexo的用法，截断文章，点阅读全文才能看到后面内容。<br>&lt;hr&gt;：画一条横线。align&#x3D;”center”对齐方式，noshade 实线，width&#x3D;”300” 宽度。例如&lt;hr align&#x3D;”center” noshade&gt;<br><br><font color='RED'>！返回学习文章：</font><a href="/2023/09/18/Web%E5%BC%80%E5%8F%91/Web%E5%BC%80%E5%8F%91%E7%AC%AC2%E7%AB%A0-%E5%B8%B8%E7%94%A8html%E6%A0%87%E7%AD%BE">Web开发第2章-常用html标签</a></p>
 
     </div>
     
