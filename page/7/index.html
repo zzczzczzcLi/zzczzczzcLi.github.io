@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Web常用命令 | zzczzczzc&#39;s home</title>
+        <title>zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -32,12 +32,7 @@
 
 
 
-<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css" />
-
-
-
-
+<script src="/js/lib/home.js"></script>
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -148,17 +143,31 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div class="article">
-    <div>
-        <h1>Web常用命令</h1>
-    </div>
-    <div class="info">
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/5/6
+                    <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg"></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>zzczzczzc&#39;s home</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
         </span>
+    </div>
+</div>
+<div id="home-posts-wrap"  ref="homePostsWrap">
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2023/05/06/Linux/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+        <h2 class="post-title">Linux常用命令</h2>
+    </a>
+    <div class="category-and-date">
         
         <span class="category">
             <a href="/categories/%E6%95%99%E7%A8%8B/">
@@ -169,35 +178,110 @@
             </a>
         </span>
         
-        
-        <span class="tags">
+        <span class="date">
             <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
+                <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
+            2023/5/6
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
             
-            <span class="tag">
-                
-                <a href="/tags/Web/" style="color: #03a9f4">Web</a>
-            </span>
+            <p>ls（list）：显示当前文件夹所有内容，文件夹名字为蓝色。<br>tab：如果你当前打的命令是唯一的，那么就会给你补全，例如输入fir+tab会补全成firefox。</p>
+<details><summary>open：打开某个文件，也可以是文件夹。（可以使用[open Li*]来打开所有前缀都是Li的文件）</summary><p>
+1. 这里需要注意的是，查询固定后缀时要带上文件格式，例如open *Li.md，如果不明确文件格式，就写成open *Li\*<br>
+2. 同时open语句也可以用来打开URL，例如open http://localhost</p>
+</details>
             
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Linux/" style="color: #ffa2c4">Linux</a>
         </span>
         
     </div>
-    
-    <div class="content" v-pre>
-        <p>Web中不区分大小写，br等价于BR，结束标签的斜杠只能在前面。<br>如果Markdown语法或者Web标签不生效，需要在上面和下面各空一行。（原因暂时未知）<br><br>&lt;br&gt;：换行（文本多次换行只算一次）（换行间隔比&lt;p&gt;&lt;&#x2F;p&gt;小，也可以用于段落内换行）（如果换行不生效考虑上下各空一行或者换用p）<br>&lt;font color&#x3D;’RED’&gt;&lt;&#x2F;font&gt;：把字体变成红色。<span id="more"></span><br>&lt;b&gt;&lt;&#x2F;b&gt;：加粗。（big）<br>&lt;p style&#x3D;’text-indent:2em;font-size: 10px’&gt;&lt;&#x2F;p&gt;：段落风格设置，paragraph 段落，indent 间隔，开头缩进两格，字体大小为10px。<br>&lt;center&gt;&lt;&#x2F;center&gt;：居中。<br>&lt;!–more–&gt;：好像是hexo的用法，截断文章，点阅读全文才能看到后面内容。<br>&lt;hr&gt;：画一条横线。内部属性看Web开发第3章。<br><br><font color='RED'>！返回学习文章：</font><a href="/2023/09/18/Web%E5%BC%80%E5%8F%91/Web%E5%BC%80%E5%8F%91%E7%AC%AC2%E7%AB%A0-%E5%B8%B8%E7%94%A8html%E6%A0%87%E7%AD%BE">Web开发第2章-常用html标签</a></p>
+    <a href="/2023/05/06/Linux/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
+    <div class="prev">
+        
+        <a class="page-num" href="/page/6/">
+            <i class="fa-solid fa-caret-left fa-fw"></i>
+        </a>
+        
+    </div>
+    <div class="page-index">
+        
+        <span>
+            
+            <a class="page-num" href="/">1</a>
+            <span class="page-omit">...</span>
+            
+            
+            
+            
+            <a class="page-num" href="/page/5">5</a>
+            
+            
+            <a class="page-num" href="/page/6/">6</a>
+        </span>
+        
+        <span class="current">7</span>
+        
+    </div>
+    <div class="next">
+        
+    </div>
+</div>
 
     </div>
     
-    
-    
-    <div id="comment">
-        <div id="gitalk-container"></div>
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">zzczzczzc</div>
+        <div class="description">
+            <p>下面是友情链接 : D</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://www.cutcutfish.org/home">闻俊的博客</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://lvettk.github.io/home">闻俊的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://1dyer.github.io">李登宇的博客（github）</a>
+            </div>
+            
+        </div>
+        
     </div>
-    
-    
-    
-    
+</div>
+
+    </div>
     
 </div>
 
@@ -230,26 +314,6 @@
             
         </div>
         <script src="/js/main.js"></script>
-        
-        
-
-<script>
-    const gitalk = new Gitalk({
-        clientID: "5093c0f78df8d980d0e8",
-        clientSecret: "3bc33bc8827c07c9e2907362f7e05a5f574db90b",
-        repo: "myblogtalk",
-        owner: "zzczzczzcLi",
-        admin: "zzczzczzcLi".split(","),
-        language: "zh-CN",
-        id: decodeURI(location.pathname),
-        
-    })
-    gitalk.render("gitalk-container");
-</script>
-
-
-
-
         
     </body>
 </html>

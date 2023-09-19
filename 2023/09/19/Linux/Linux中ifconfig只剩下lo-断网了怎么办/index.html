@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Web常用命令 | zzczzczzc&#39;s home</title>
+        <title>Linux中ifconfig只剩下lo/断网了怎么办 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -150,14 +150,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Web常用命令</h1>
+        <h1>Linux中ifconfig只剩下lo/断网了怎么办</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/6
+            2023/9/19
         </span>
         
         <span class="category">
@@ -177,7 +177,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Web/" style="color: #03a9f4">Web</a>
+                <a href="/tags/Linux/" style="color: #00a596">Linux</a>
             </span>
             
         </span>
@@ -185,7 +185,7 @@
     </div>
     
     <div class="content" v-pre>
-        <p>Web中不区分大小写，br等价于BR，结束标签的斜杠只能在前面。<br>如果Markdown语法或者Web标签不生效，需要在上面和下面各空一行。（原因暂时未知）<br><br>&lt;br&gt;：换行（文本多次换行只算一次）（换行间隔比&lt;p&gt;&lt;&#x2F;p&gt;小，也可以用于段落内换行）（如果换行不生效考虑上下各空一行或者换用p）<br>&lt;font color&#x3D;’RED’&gt;&lt;&#x2F;font&gt;：把字体变成红色。<span id="more"></span><br>&lt;b&gt;&lt;&#x2F;b&gt;：加粗。（big）<br>&lt;p style&#x3D;’text-indent:2em;font-size: 10px’&gt;&lt;&#x2F;p&gt;：段落风格设置，paragraph 段落，indent 间隔，开头缩进两格，字体大小为10px。<br>&lt;center&gt;&lt;&#x2F;center&gt;：居中。<br>&lt;!–more–&gt;：好像是hexo的用法，截断文章，点阅读全文才能看到后面内容。<br>&lt;hr&gt;：画一条横线。内部属性看Web开发第3章。<br><br><font color='RED'>！返回学习文章：</font><a href="/2023/09/18/Web%E5%BC%80%E5%8F%91/Web%E5%BC%80%E5%8F%91%E7%AC%AC2%E7%AB%A0-%E5%B8%B8%E7%94%A8html%E6%A0%87%E7%AD%BE">Web开发第2章-常用html标签</a></p>
+        <p>手贱不小心把Ubuntu右上角的网络图标关闭了，关了之后不管调NAT还是桥接都上不了网了，看了一眼<font color="RED">ifconfig</font>发现只剩下lo了，原本的<font color="RED">ens33</font>网卡不在了，但是使用<font color="RED">ifconfig -a</font>发现网卡还是在的，那事情就简单了。<br><font color="RED">sudo ifconfig ens33 up</font>启动网卡<br><font color="RED">sudo dhclient ens33</font>手动刷新网卡<br>再ifconfig就会发现有ens33也有ip地址了</p>
 
     </div>
     
