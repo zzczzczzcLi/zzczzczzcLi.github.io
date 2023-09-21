@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
         <title>算法设计与分析-Master定理 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
@@ -24,6 +25,11 @@
 />
 <script src="/js/lib/highlight.js"></script>
 
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
 
 
 <script src="/js/lib/preview.js"></script>
@@ -178,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" style="color: #00a596">算法设计与分析</a>
+                <a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" style="color: #ff7d73">算法设计与分析</a>
             </span>
             
         </span>
@@ -186,7 +192,25 @@
     </div>
     
     <div class="content" v-pre>
-        
+        <p>知乎：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/113406812">主定理(Master Theorem)</a><br>tip：对于$T(n)&#x3D;2T(3n&#x2F;2)$来说，其中$b&#x3D;2&#x2F;3$</p>
+<p>利用主定理求下列递归方程的时间复杂度：</p>
+<details><summary>$T(n)=5T(n/2)+\theta(n^2)$</summary><p>
+
+<p>$a&#x3D;5,b&#x3D;2,f(n)&#x3D;n^2$<br>$n^{log_b^a}&#x3D;n^{log_2^5}&gt;f(n)$<br>$\therefore T(n)&#x3D;\theta(n^{log_2^5})$</p>
+</p></details>
+
+<details><summary>$T(n)=2T(n/2)+n$</summary><p>
+
+<p>$a&#x3D;2,b&#x3D;2,f(n)&#x3D;n$<br>$n^{log_b^a}&#x3D;n&#x3D;f(n)$<br>$\therefore T(n)&#x3D;\theta(nlogn)$</p>
+</p></details>
+
+<details><summary>$T(n)=5T(n/2)+\theta(n^3)$</summary><p>
+
+<p>$a&#x3D;5,b&#x3D;2,f(n)&#x3D;n^3$<br>$n^{log_b^a}&#x3D;n^{log_2^5}&lt;f(n)$<br>$\therefore T(n)&#x3D;\theta(n^3)$</p>
+</p></details>
+
+
+
     </div>
     
     
