@@ -171,7 +171,192 @@
         
 
 <div class="post">
-    <a href="/2023/09/19/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85%E5%BC%80%E6%9C%8D%E6%8C%87%E5%AF%BC/">
+    <a href="/2023/09/20/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90-Master%E5%AE%9A%E7%90%86/">
+        <h2 class="post-title">算法设计与分析-Master定理</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/20
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>知乎：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/113406812">主定理(Master Theorem)</a><br>tip：对于$T(n)&#x3D;2T(3n&#x2F;2)$来说，其中$b&#x3D;2&#x2F;3$</p>
+<p>利用主定理求下列递归方程的时间复杂度：</p>
+<details><summary>$T(n)=5T(n/2)+\theta(n^2)$</summary><p>
+
+<p>$a&#x3D;5,b&#x3D;2,f(n)&#x3D;n^2$<br>$n^{log_b^a}&#x3D;n^{log_2^5}&gt;f(n)$<br>$\therefore T(n)&#x3D;\theta(n^{log_2^5})$</p>
+</p></details>
+
+<details><summary>$T(n)=2T(n/2)+n$</summary><p>
+
+<p>$a&#x3D;2,b&#x3D;2,f(n)&#x3D;n$<br>$n^{log_b^a}&#x3D;n&#x3D;f(n)$<br>$\therefore T(n)&#x3D;\theta(nlogn)$</p>
+</p></details>
+
+<details><summary>$T(n)=5T(n/2)+\theta(n^3)$</summary><p>
+
+<p>$a&#x3D;5,b&#x3D;2,f(n)&#x3D;n^3$<br>$n^{log_b^a}&#x3D;n^{log_2^5}&lt;f(n)$<br>$\therefore T(n)&#x3D;\theta(n^3)$</p>
+</p></details>
+
+
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" style="color: #00a596">算法设计与分析</a>
+        </span>
+        
+    </div>
+    <a href="/2023/09/20/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90-Master%E5%AE%9A%E7%90%86/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/09/20/Linux/LinuxClassNO-2/">
+        <h2 class="post-title">LinuxClassNO-2</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/20
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>mkdir：创建文件夹<br>rmdir：删除文件夹（若文件夹非空就无法删除）<br>rm：删除文件（remove）<br>touch：新建文件<br>ll：显示目录结构</p>
+<details><summary>mv：移动（move）</summary><p>
+mv qinbt /root 将文件qinbt移动到root目录下<br>
+mv qinbt Qinbt 如果当前目录没有Qinbt文件和文件夹，就会将qinbt重命名为Qinbt<br>
+文件夹也可以移动
+</p></details>
+
+<details><summary>cp：复制（copy）</summary><p>
+cp qinbt /root 将文件qinbt移动到root目录下<br>
+</p></details>
+
+<details><summary>Linux通配符</summary><p>
+* 任意多个字符，也可以0个。<br>
+? 任意1个字符（如有需要可以多扣几个?）
+</p></details>
+
+<details><summary>ls（list）进阶用法</summary><p>
+ls * 显示当前所有的文件夹，以及文件夹下的全部内容。（这就是一个通配符，也可以写成*json）<br>
+ls -a 显示当前文件夹和文件，包括隐藏文件<br>
+ls blog 显示文件夹blog下面的所有内容
+</p></details>
+
+<p><font color='RED'>！返回前一章：</font><a href="/2023/09/19/Linux/LinuxCLassNO-1/">LinuxCLassNO-1</a></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
+        </span>
+        
+    </div>
+    <a href="/2023/09/20/Linux/LinuxClassNO-2/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/09/19/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E6%95%B4%E5%90%88%E5%8C%85-%E6%9C%AB%E6%97%A5%E6%97%85%E9%80%94-%E9%A3%8E%E6%9A%B4%E5%B0%86%E8%87%B3/">
+        <h2 class="post-title">我的世界末日生存整合包推荐-末日旅途-风暴将至</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%B8%B8%E6%88%8F/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                游戏
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/19
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>官方宣传片：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ym4y167mj/">【MC末日旅途整合包】来经历一场令人绝望的辐射灾变之旅！风暴将至！</a><br>官方整合包：<a target="_blank" rel="noopener" href="https://share.weiyun.com/i0cewgLc">腾讯微云</a><br>风暴将至地图：<a target="_blank" rel="noopener" href="https://afdian.net/a/IronCurtain">爱发电2块付费订阅</a><br>服务端+客户端整合备份：<a target="_blank" rel="noopener" href="https://cowtransfer.com/i/storage">请支持原作者，此处为zzc留档查看</a></p>
+<p>此整合包mod较多，联机时互相发送的数据量大，导致免费SakuraFrp流量消耗量大的同时延迟很高。Tailscale联机效果也很差，稳定性高，但是延迟在500ms～1s之间。<br>ZeroTier好像延迟能小于100ms，过几天有空联机了就试试。</p>
+<p>综合测试结果：SakuraFrp&gt;Tailscale&gt;Zerotier&gt;RadminLan</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #ff7d73">我的世界</a>
+        </span>
+        
+    </div>
+    <a href="/2023/09/19/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E6%95%B4%E5%90%88%E5%8C%85-%E6%9C%AB%E6%97%A5%E6%97%85%E9%80%94-%E9%A3%8E%E6%9A%B4%E5%B0%86%E8%87%B3/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/09/19/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85%E5%BC%80%E6%9C%8D%E6%8C%87%E5%AF%BC/">
         <h2 class="post-title">未转变者开服指导</h2>
     </a>
     <div class="category-and-date">
@@ -214,13 +399,8 @@
             <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
         </span>
         
-        <span class="tag">
-            
-            <a href="/tags/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85/" style="color: #00a596">未转变者</a>
-        </span>
-        
     </div>
-    <a href="/2023/09/19/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85%E5%BC%80%E6%9C%8D%E6%8C%87%E5%AF%BC/" class="go-post">阅读全文</a>
+    <a href="/2023/09/19/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85%E5%BC%80%E6%9C%8D%E6%8C%87%E5%AF%BC/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -264,175 +444,11 @@
         
         <span class="tag">
             
-            <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
+            <a href="/tags/Linux/" style="color: #00bcd4">Linux</a>
         </span>
         
     </div>
     <a href="/2023/09/19/Linux/Linux%E4%B8%ADifconfig%E5%8F%AA%E5%89%A9%E4%B8%8Blo-%E6%96%AD%E7%BD%91%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/09/19/Linux/LinuxCLassNO-1/">
-        <h2 class="post-title">LinuxClassNO-1</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Linux分为内核版和发行版，所有发行版的Linux内核都是一样的，例如CentOS是发行版的一种。<br>终端的$是输入命令的提示符号。</p>
-<p><a href="/2023/05/06/Linux/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">常用命令：</a></p>
-<details><summary>cd：变更目录</summary><p>
-cd . 一个.代表当前目录<br>
-cd .. 返回上级目录<br>
-cd ~ 返回root<br>
-cd 返回root/home</p>
-</details>
-<details>
-<summary>ls（list）：显示当前目录内容</summary><p>
-ls -l 在ls的基础上显示细节<br>
-ls -a 显示所有文件,包括隐藏的<br>
-ls -l -a 上面两个结合</p>
-</details>
-pwd：显示当前目录<br>
-TAB（按键）：代码补全
-
-<p><font color='RED'>！跳转至下一章：</font><a href="/2023/09/20/Linux/LinuxClassNO-2">LinuxClassNO-2</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Linux/" style="color: #00a596">Linux</a>
-        </span>
-        
-    </div>
-    <a href="/2023/09/19/Linux/LinuxCLassNO-1/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/09/18/%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB/%E9%99%88%E5%86%AC%E5%B0%B1%E4%B8%9A%E6%8E%A8%E8%8D%90/">
-        <h2 class="post-title">陈冬就业推荐</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9D%82%E8%B0%88/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                杂谈
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/18
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <center>2023-09-18 15:40</center><br>
-进行了一次班会，班主任个人推荐我做点项目，面向岗位学点东西提升综合实力。对全班推荐了百度AI-飞浆Studio，深度学习方面的内容，说里面有些成熟的项目可以去学习一下，代码可以直接运行，也有详细的代码注释。
-<p><hr style="width:50%;border-top: solid;margin:auto;"></p>
-
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB/" style="color: #00bcd4">现实生活</a>
-        </span>
-        
-    </div>
-    <a href="/2023/09/18/%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB/%E9%99%88%E5%86%AC%E5%B0%B1%E4%B8%9A%E6%8E%A8%E8%8D%90/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/09/18/Linux/%E5%9C%A8Terminal%E4%B8%AD%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/">
-        <h2 class="post-title">在终端Terminal中复制粘贴</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/18
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>在Linux一类终端（Terminal）中Ctrl+C和Ctrl+V通常拥有其他作用，要实现复制粘贴要多按一个Shift。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
-        </span>
-        
-    </div>
-    <a href="/2023/09/18/Linux/%E5%9C%A8Terminal%E4%B8%AD%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" class="go-post">阅读全文</a>
 </div>
 
 

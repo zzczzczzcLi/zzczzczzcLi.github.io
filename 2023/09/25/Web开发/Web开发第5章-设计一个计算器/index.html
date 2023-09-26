@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>Markdown语法 | zzczzczzc&#39;s home</title>
+        <title>Web开发第5章-设计一个计算器 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,14 +157,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Markdown语法</h1>
+        <h1>Web开发第5章-设计一个计算器</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/6
+            2023/9/25
         </span>
         
         <span class="category">
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Markdown/" style="color: #ffa2c4">Markdown</a>
+                <a href="/tags/Web/" style="color: #ffa2c4">Web</a>
             </span>
             
         </span>
@@ -192,41 +192,107 @@
     </div>
     
     <div class="content" v-pre>
-        <p>想要让Markdown语句不生效，只需要在固定格式前面输入一个反斜杠：\<br>上面那个知识点对于Web也生效。<br>如果Markdown语法或者Web标签不生效，需要在上面和下面各空一行。（原因暂时未知）</p>
-<details><summary>引用/前言</summary><p>
-在文章开头打一个>，在结束的地方空一行。
-
-<blockquote>
-<p>效果如下</p></p>
-</blockquote>
-</details>
-<span id="more"></span>
-
-<details>
-<summary>删除线</summary><p>
-~~呃呃~~
-
-<p><del>呃呃</del></p>
-</p></details>
-
-<details>
-<summary>链接跳转语句</summary><p>
-[show name](go link)，左边就是你想显示的名字，右边就是具体跳转的链接。
-也可以指向本博客内部的另一篇文章，go link示例：<font color='RED'>/</font>posts/2023-05-08-my-post
-需要注意的是，上面标红的最前面的那个斜杠，不打这个就是从当前路径下开始，如果打了，就是从localhost开始。
-</p></details>
-
-<details><summary>折叠/展开</summary>
-
-<p><a target="_blank" rel="noopener" href="https://www.python100.com/html/76925.html">Markdown折叠大全</a><br>details中可以搭配&lt;p&gt;使用</p>
-</details>
-
-<details><summary>数学公式</summary><p>
-需要在主题配置文件中打开math属性解析。<br>
-
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/449053984?utm_id=0">Markdown基础语法与数学公式</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/cui_yonghua/article/details/119382580">数学符号和公式</a></p>
-</p></details>
-
+        <p>主要用到一行两列和两行一列类似的属性,最后一节课还提到了form表单，用于input。</p>
+<p>源码右下角可以拉开查看</p>
+<textarea>
+源码
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div style="text-align: center;">
+        <table border="1" width="200">
+            <tr style="border: 0px;">
+                <th colspan="4">···</th>
+            </tr>
+            <tr style="border:0px;height: 20px;">
+                <td colspan="4"></td>
+            </tr>
+            <tr style>
+                <td width="50">AC</td>
+                <td width="50">+/-</td>
+                <td width="50">%</td>
+                <td width="50">÷</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>×</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>+</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td></td>
+                <td>.</td>
+                <td>=</td>
+            </tr>
+        </table>
+        </div>
+    </body>
+</html>
+</textarea>
+<p>实现效果<br><!DOCTYPE html></p>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div style="text-align: center;">
+        <table border="1" width="200">
+            <tr style="border: 0px;">
+                <th colspan="4">···</th>
+            </tr>
+            <tr style="border:0px;height: 20px;">
+                <td colspan="4"></td>
+            </tr>
+            <tr style>
+                <td width="50">AC</td>
+                <td width="50">+/-</td>
+                <td width="50">%</td>
+                <td width="50">÷</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>×</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>-</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>+</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td></td>
+                <td>.</td>
+                <td>=</td>
+            </tr>
+        </table>
+        </div>
+    </body>
+</html>
 
     </div>
     
