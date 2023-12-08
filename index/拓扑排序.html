@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>Categories: 交互式小说 | zzczzczzc&#39;s home</title>
+        <title>拓扑排序 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -33,6 +33,13 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css" />
 
 
 
@@ -148,148 +155,53 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div id="archives">
-    
-    <div class="categories-tags">
-        
-        
-        <span>
-            <a href="/categories/ACM%E5%AD%A6%E4%B9%A0%E5%8A%A8%E6%80%81-%E9%95%BF%E6%9C%9F%E6%9B%B4%E6%96%B0/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                ACM学习动态-长期更新
-            </a>
+                    <div class="article">
+    <div>
+        <h1>拓扑排序</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/6
         </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E5%B7%A5%E5%85%B7/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                工具
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%95%99%E7%A8%8B/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%B8%B8%E6%88%8F/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E6%9D%82%E8%B0%88/" style="background: #03a9f4">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                杂谈
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/categories/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%B0%8F%E8%AF%B4/" style="background: linear-gradient(120deg, #9abbf7 0%, #ffbbf4 100%)">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                交互式小说
-            </a>
-        </span>
-        
-        
         
         
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/5/9</div>
-            <a href="/2023/05/09/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A52-1/">
-                <h3>校园末日2-1</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%B0%8F%E8%AF%B4/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        交互式小说
-                    </a>
-                </span>
-                
-                
-            </div>
-        </div>
+    <div class="content" v-pre>
+        <p>解决拓扑问题，例如：</p>
+<ol>
+<li>选了语文才能选数学，选了数学才能选英语，要选英语，最少要选几门课</li>
+<li>1是2的父亲，2是3的父亲，从辈份大的输出到辈份最小的一个序列。</li>
+</ol>
+<p>思路：入度为0的点必然辈份是最大的。<br>入度为0的点入队，取出队首更新相邻点入度减一。<br>相邻点如果入度为0,入队。</p>
+<pre><code class="C++">    for(int i=1;i&lt;=n;++i)
+        if(!indeg[i])q.push(i);
+
+    while(!q.empty())&#123;
+        int now=q.front();
+        cout&lt;&lt;now&lt;&lt;&quot; &quot;;//输出的就是拓扑序
+        q.pop();
+        for(auto i:e[now])&#123;
+            indeg[i]--;
+            if(!indeg[i])q.push(i);
+        &#125;
+    &#125;
+</code></pre>
+
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/5/9</div>
-            <a href="/2023/05/09/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A51-1/">
-                <h3>校园末日1-1</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%B0%8F%E8%AF%B4/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        交互式小说
-                    </a>
-                </span>
-                
-                
-            </div>
-        </div>
+    
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
     </div>
     
-    <div class="timeline">
-        <div class="timeline-tail"></div>
-        <div class="timeline-content">
-            <div class="item-time">2023/5/8</div>
-            <a href="/2023/05/08/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A50/">
-                <h3>校园末日0</h3>
-            </a>
-            <div class="info">
-                
-                <span class="category">
-                    <a href="/categories/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%B0%8F%E8%AF%B4/">
-                        <span class="icon">
-                            <i class="fa-solid fa-bookmark fa-fw"></i>
-                        </span>
-                        交互式小说
-                    </a>
-                </span>
-                
-                
-            </div>
-        </div>
-    </div>
+    
+    
+    
     
 </div>
 
@@ -322,6 +234,26 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "5093c0f78df8d980d0e8",
+        clientSecret: "3bc33bc8827c07c9e2907362f7e05a5f574db90b",
+        repo: "myblogtalk",
+        owner: "zzczzczzcLi",
+        admin: "zzczzczzcLi".split(","),
+        language: "zh-CN",
+        id: decodeURI(location.pathname),
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
+
+
+
+
         
     </body>
 </html>
