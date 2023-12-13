@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>LinuxClassNO-1 | zzczzczzc&#39;s home</title>
+        <title>实验四-Linux用户管理 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,59 +157,66 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>LinuxClassNO-1</h1>
+        <h1>实验四-Linux用户管理</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/19
+            2023/12/13
         </span>
         
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/Linux/" style="color: #00a596">Linux</a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p>Linux分为内核版和发行版，所有发行版的Linux内核都是一样的，例如CentOS是发行版的一种。<br>终端的$是输入命令的提示符号。</p>
-<p><a href="/2023/05/06/Linux/Linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">常用命令：</a></p>
-<details><summary>cd：变更目录</summary><p>
-cd . 一个.代表当前目录<br>
-cd .. 返回上级目录<br>
-cd ~ 返回root<br>
-cd 返回root/home</p>
-</details>
-<details>
-<summary>ls（list）：显示当前目录内容</summary><p>
-ls -l 在ls的基础上显示细节<br>
-ls -a 显示所有文件,包括隐藏的<br>
-ls -l -a 上面两个结合</p>
-</details>
-pwd：显示当前目录<br>
-TAB（按键）：代码补全
+        <pre><code class="DOCX文档，奶牛快传口令：pbkfrt">实验目的：
+1、掌握字符界面下用户账户的设置，包括命令useradd、usermod、userdel。
+2、掌握字符界面下组群账户的设置，包括命令groupadd、groupmod、groupdel。
+3、掌握文件权限等。
+4、掌握文件系统挂载,mount、umount命令使用
 
-<p><font color='RED'>！跳转至下一章：</font><a href="/2023/09/20/Linux/LinuxClassNO-2">LinuxClassNO-2</a></p>
+实验内容：
+1、使用命令创建用户账户zhangsan，并设置口令为123456。
+Useradd zhangsan
+Passwd zhangsan
+
+2、使用命令修改用户账户zhangsan的UID为700。
+usermod -u 700 zhangsan
+
+3、使用命令创建组群group1，并在创建时设置其GID为800。
+groupadd -g 800 group1
+
+4、使用命令修改组群group1的新组群名称为shangha。
+groupmod -n shangha group1
+
+5、使用挂载命令，访问光盘
+6、使用挂载命令，访问U盘
+
+7.以zhangsan用户创建文件aa.txt。
+touch aa.txt
+su zhangsan
+
+8.创建用户usr1,usr2,其中usr1和zhangsan隶属于同一组shangha
+usermod zhangsan -G shangha 
+useradd -G shangha usr1
+useradd usr2
+
+9.分别以usr1,usr2用户访问aa.txt。
+[usr1@localhost home]$ cat zhangsan/aa.txt
+cat: zhangsan/aa.txt: 权限不够
+[usr2@localhost home]$ cat zhangsan/aa.txt
+cat: zhangsan/aa.txt: 权限不够
+
+10.利用chmod修改文件aa.txt的访问权限，再以usr2访问该文件
+chmod 777 aa.txt 
+[zhangsan@localhost ~]$ chmod 777 aa.txt
+
+
+
+
+</code></pre>
 
     </div>
     

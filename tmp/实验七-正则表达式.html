@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>LinuxClassNO-2 | zzczzczzc&#39;s home</title>
+        <title>实验七-正则表达式 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,64 +157,85 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>LinuxClassNO-2</h1>
+        <h1>实验七-正则表达式</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/20
+            2023/12/13
         </span>
         
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/Linux/" style="color: #00bcd4">Linux</a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p>mkdir：创建文件夹<br>rmdir：删除文件夹（若文件夹非空就无法删除）<br>rm：删除文件（remove）<br>touch：新建文件<br>ll：显示目录结构</p>
-<details><summary>mv：移动（move）</summary><p>
-mv qinbt /root 将文件qinbt移动到root目录下<br>
-mv qinbt Qinbt 如果当前目录没有Qinbt文件和文件夹，就会将qinbt重命名为Qinbt<br>
-文件夹也可以移动
-</p></details>
+        <pre><code class="DOCX文档，奶牛快传口令：qthp2s">grep -e等价于egrep
+使用之后下面的转义字符就不需要使用，比如：
+grep -E &#39;go&#123;2,5&#125;g&#39; Regular.txt 或者 grep &#39;go\&#123;2,5\&#125;g&#39; Regular.txt 
 
-<details><summary>cp：复制（copy）</summary><p>
-cp qinbt /root 将文件qinbt移动到root目录下<br>
-</p></details>
+也就是
+egrep &#39;go&#123;2,5&#125;g&#39; Regular.txt
 
-<details><summary>Linux通配符</summary><p>
-* 任意多个字符，也可以0个。<br>
-? 任意1个字符（如有需要可以多扣几个?）
-</p></details>
+e表示使用正则表达式的 -extend 扩展版本
 
-<details><summary>ls（list）进阶用法</summary><p>
-ls * 显示当前所有的文件夹，以及文件夹下的全部内容。（这就是一个通配符，也可以写成*json）<br>
-ls -a 显示当前文件夹和文件，包括隐藏文件<br>
-ls blog 显示文件夹blog下面的所有内容
-</p></details>
+实验目的：
+1、掌握正则表达式符号和语法。
+2、掌握grep命令的用法。
 
-<p><font color='RED'>！返回前一章：</font><a href="/2023/09/19/Linux/LinuxCLassNO-1/">LinuxCLassNO-1</a></p>
+实验内容：
+1、查看以字符“a”开头的行。
+grep ^a Regular.txt
+
+2、查看以字符串“abc&quot;开头的行。
+grep ^abc Regular.txt 
+
+3、查看以字符串“33”结尾的行。
+grep &#39;33$&#39; Regular.txt 
+
+4、查看包含字符“1” 或者包含字符“2”包含字符“3”的行。
+grep &#39;[1-3]&#39; Regular.txt 
+
+5、查看包含字符test或taste的行。
+grep &#39;test\|taste&#39; Regular.txt 
+
+6、查找任意字符开头，然后第二个字符为3。
+grep &#39;^.3&#39; Regular.txt 
+
+7. 匹配字符“3”1次或者多次
+grep &#39;a\+&#39; Regular.txt 
+
+8. 匹配字符串“23&quot;，但是3被匹配的次数≥0
+grep &#39;233*&#39; Regular.txt 
+
+9. 搜索到有oo的行，但不想要oo前面有g
+grep &#39;[^g]oo&#39; Regular.t
+
+10. 搜寻包含特定字符串“the&quot; 的行
+grep &#39;the&#39; Regular.txt 
+
+11. )反向搜寻特定字符串&quot;the&quot;(即不包含“the&quot;)
+grep -v &#39;the&#39; Regular.txt 
+
+12. 取得任意大小写&quot;the&quot;的这个字符串
+grep -i &#39;the&#39; Regular.txt 
+
+13. 搜索oo前面不想有小写字符。
+grep &#39;[^a-z]oo&#39; Regular.txt 
+
+14.找出g?? d字符串，起头g结束d的四个字符串
+grep &#39;g..d&#39; Regular.txt 
+
+15. 找出含有数字的行。
+grep &#39;[0-9]&#39; Regular.txt 
+
+16. 找出g后含2~5个o然后以g结尾的字符串
+grep -E &#39;go&#123;2,5&#125;g&#39; Regular.txt 或者 grep &#39;go\&#123;2,5\&#125;g&#39; Regular.txt 
+
+
+
+</code></pre>
 
     </div>
     

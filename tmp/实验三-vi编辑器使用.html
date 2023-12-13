@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>frp穿透工具 | zzczzczzc&#39;s home</title>
+        <title>实验三-vi编辑器使用 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,60 +157,62 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>frp穿透工具</h1>
+        <h1>实验三-vi编辑器使用</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/12
+            2023/12/13
         </span>
         
-        <span class="category">
-            <a href="/categories/%E5%B7%A5%E5%85%B7/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                工具
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ffa2c4">内网穿透</a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p>MCBBS上会有很多内网穿透商人，下面所给的实在不行就去百度或者MCBBS上软件工具栏去找。<br>也可以问问聪明的ChatGPT。</p>
-<span id="more"></span>
-<p>（均为免费套餐&amp;实际测试）</p>
-<ol>
-<li><p><a target="_blank" rel="noopener" href="https://console.openfrp.net/">OpenFrp</a> <font color='RED'>优质，免费实名认证</font><br>4隧道，12Mbps，每日签到随机流量1～4GiB，支持多种协议。<br>评价：免费的CN2节点，我测！</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.natfrp.com/user">SakuraFrp</a> <font color='RED'>优质，实名认证1元</font><br>2条隧道，10Mbps，每日签到随机流量1～4GiB，支持多种协议。<br>评价：经典永不过时。</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://frp.starryfrp.com/console">StarryFrp</a> <font color='RED'>一般，实名认证2元</font><br>10条隧道，8Mbps，每日签到随机流量1～10GiB，支持多种协议。<br>评价：只有一个香港节点给普通用户使用，目前被打爆了。</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://preview.locyanfrp.cn/dashboard">LocyanFrp</a> <font color='RED'>一般，免费实名认证</font><br>无限隧道，10Mbps，无限流量。<br>评价：公益frp容易影响到别人赚钱，经常被ddos攻击，所以很卡。</p>
-</li>
-<li><p>Tailscale <font color='RED'>异地组网工具</font><br>延迟1～3s，但稳定性较高，保留意见。</p>
-</li>
-<li><p>Zerotier <font color='RED'>异地组网工具</font><br>延迟很高，稳定性不强，保留意见。</p>
-</li>
-<li><p>RadminLAN <font color='RED'>异地组网工具</font><br>延迟很高，稳定性不强，保留意见。</p>
-</li>
-</ol>
+        <pre><code class="DOCX文档，奶牛快传口令：ogcq94">实验目的：
+1、掌握vi编辑器的使用方法。
+2、掌握LINUX下文件显示和处理命令，如cat、more、less、head、tail、等。
+
+实验内容：
+1、使用vi编辑器创建文本文件/root/v，文件内容为hell，最后保存退出。
+vim /root/v
+
+2、把ls命令的帮助文档输出到aa.txt文件。
+ ls --help &gt;&gt; aa.txt 
+
+3、使用命令查看文件aa.txt后三行的内容。
+tail -n 3 aa.txt 或vim中:$-3,$p
+
+4、查看文件aa.txt的前3行内容。
+head -n 3 aa.txt 或 vim中：1,3p
+
+5、设置aa.txt文件的行号。
+cat -n aa.txt 
+
+6.把aa.txt另存为bb.txt
+Vim中 w bb.txt
+
+7. 把aa.txt中所有的空白行去掉
+vim中:g/^$/d
+
+8、删除aa.txt文件的第6-11行。
+vim中6,11d
+
+9、把操作7处理后的文件的第17-24行，拷贝到第66行的位置。
+17,24co66
+
+10、把操作8处理后的文件中第11-45行中的the替换成THE
+11,45s/the/THE/g 
+
+11.把第67-105行的内容剪切（移动）到第110行后
+vim中67,105m110
+
+
+
+
+</code></pre>
 
     </div>
     
