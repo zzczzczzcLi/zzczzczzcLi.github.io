@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>将域名不带端口解析到我的世界服务器上 | zzczzczzc&#39;s home</title>
+        <title>字典树 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,49 +157,88 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>将域名不带端口解析到我的世界服务器上</h1>
+        <h1>字典树</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/21
+            2024/2/26
         </span>
         
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #03a9f4">我的世界</a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p>CNAME：将域名指向另一个域名<br>连接这一个指向内网穿透的服务器上还要带上端口，除非你的端口是25565</p>
-<p>SRV：<a target="_blank" rel="noopener" href="https://www.mcio.cn/274.html">不带端口的解析</a><br>设置SRV解析前先确保你已经正确配置了CNAME</p>
-<p>特殊情况：如果电脑上配置了多个网络配置，比如有虚拟机的或者别的，服务器的配置文件<br>server-ip，后面最好空着，不然有可能连不上服务器（127.0.0.1指向了虚拟机而不是当前想转发的）<br>即，ip能ping通，防火墙也关了，但带上端口就不通了。</p>
+        <pre><code class="C++">思路：现在想象一个平行线，上面有a~z字母，每个占一格，从左到右排列
+每一个字母的下方接着排列a~z字母。
+存放的时候我们对着出现的字母依次往下放（点亮格子）
+如果是第一次出现顺便给他标号,如f[10][&#39;a&#39;]=11，标号为10的下一层的a儿子标号为11
+此处&#39;a&#39;可以映射为别的值，不然太占内存。
+（第一个平行线的父亲是一个虚拟源点，不然不好标号），可以默认虚拟源点的下标为0
+
+用途广泛，需要自行考虑是否用到
+
+下面用到的是查询某个字符串t 在一大堆字符串s中，有多少个s是t的前缀（大小写都有）
+
+本题思路：构造s的字典树，在每个独立的字符串最后一个字符上+1（此字符串出现一次）
+用t遍历s的字典树，取路上最大的值（即总共有多少个字符串可以为前缀）
+
+#include &lt;bits/stdc++.h&gt;
+//#define int long long
+#define per(i,j,k) for(int (i)=(j);(i)&lt;=(k);++(i))
+#define rep(i,j,k) for(int (i)=(j);(i)&gt;=(k);--(i))
+#define fr first
+#define se second
+#define endl &#39;\n&#39;
+using namespace std;
+const int N=3e6+5;
+
+int T,n,q,t[N][62],cnt[N],idx;
+string s;
+
+int num(char c)&#123;
+    if(c&gt;=&#39;0&#39; and c&lt;=&#39;9&#39;)return c-&#39;0&#39;;//0~9
+    else if(c&gt;=&#39;A&#39; and c&lt;=&#39;Z&#39;)return c-&#39;A&#39;+10;//10~35
+    else return c-&#39;a&#39;+36;//36~61
+&#125;
+
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;q;
+    per(i,1,n)&#123;
+        cin&gt;&gt;s;
+        int now=0,nxt;
+        per(j,0,s.length()-1)&#123;//构建字典树
+            nxt=num(s[j]);
+            if(!t[now][nxt])t[now][nxt]=++idx;
+            now=t[now][nxt];
+            cnt[now]++;
+        &#125;
+    &#125;
+    per(i,1,q)&#123;
+        cin&gt;&gt;s;
+        int now=0,j=0;
+        while(t[now][num(s[j])] and j&lt;s.length())now=t[now][num(s[j++])];
+        cout&lt;&lt;((j==s.length())?cnt[now]:0)&lt;&lt;endl;
+    &#125;
+&#125;
+
+void init()&#123;
+    per(i,0,idx)&#123;
+        cnt[i]=0;
+        per(j,0,61)t[i][j]=0;
+    &#125;
+    idx=0;
+&#125;
+signed main()&#123;
+    ios::sync_with_stdio(false),cin.tie(nullptr);
+    int t;
+    cin&gt;&gt;t;
+    while(t--)solve(),init();
+    return 0;
+&#125;
+</code></pre>
 
     </div>
     

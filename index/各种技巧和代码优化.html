@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>将域名不带端口解析到我的世界服务器上 | zzczzczzc&#39;s home</title>
+        <title>各种技巧和代码优化 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,49 +157,42 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>将域名不带端口解析到我的世界服务器上</h1>
+        <h1>各种技巧和代码优化</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/21
+            2024/2/16
         </span>
         
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #03a9f4">我的世界</a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p>CNAME：将域名指向另一个域名<br>连接这一个指向内网穿透的服务器上还要带上端口，除非你的端口是25565</p>
-<p>SRV：<a target="_blank" rel="noopener" href="https://www.mcio.cn/274.html">不带端口的解析</a><br>设置SRV解析前先确保你已经正确配置了CNAME</p>
-<p>特殊情况：如果电脑上配置了多个网络配置，比如有虚拟机的或者别的，服务器的配置文件<br>server-ip，后面最好空着，不然有可能连不上服务器（127.0.0.1指向了虚拟机而不是当前想转发的）<br>即，ip能ping通，防火墙也关了，但带上端口就不通了。</p>
+        <pre><code class="C++">快速调用map&lt;int,int&gt;f，等类似的容器
+常规版本 for(auto i:f)cout&lt;&lt;i.fr;
+更优版本 for(auto [x,y]:f)cout&lt;&lt;x;（这是C++17的用法，蓝桥杯是C++14的话就不能用）
+
+有些题目会给你一个字符串图形，让你输出，不需要一行一行复制 cout&lt;&lt;s&lt;&lt;endl去换行
+直接cout&lt;&lt;R(&quot;&quot;);在引号里面把图形复制进去输出即可（R，raw输出原始字符串）
+
+max和min可以调用多个参数，如max(&#123;a,b,c&#125;)
+
+树的叶子节点出度为1
+
+用return ,void()来附带语句
+如递归的时候return ans++,void()，逗号返回的是后面的值
+
+改变数学公式优化循环，已知a，b求c
+a+b+c=6,优化为c=6-a-b
+
+边为1的图只需要一次BFS就可以求出所有的最短路
+
+map&lt;int,int&gt;如果需要更多的内容
+可以用array，map&lt;arrary&lt;int,2&gt;,int&gt;比如这里需要两个，那就array2
+</code></pre>
 
     </div>
     

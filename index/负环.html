@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>将域名不带端口解析到我的世界服务器上 | zzczzczzc&#39;s home</title>
+        <title>负环（SPFA） | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,49 +157,93 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>将域名不带端口解析到我的世界服务器上</h1>
+        <h1>负环（SPFA）</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/21
+            2024/2/26
         </span>
         
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #03a9f4">我的世界</a>
-            </span>
-            
-        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p>CNAME：将域名指向另一个域名<br>连接这一个指向内网穿透的服务器上还要带上端口，除非你的端口是25565</p>
-<p>SRV：<a target="_blank" rel="noopener" href="https://www.mcio.cn/274.html">不带端口的解析</a><br>设置SRV解析前先确保你已经正确配置了CNAME</p>
-<p>特殊情况：如果电脑上配置了多个网络配置，比如有虚拟机的或者别的，服务器的配置文件<br>server-ip，后面最好空着，不然有可能连不上服务器（127.0.0.1指向了虚拟机而不是当前想转发的）<br>即，ip能ping通，防火墙也关了，但带上端口就不通了。</p>
+        <p>问图中是否有负环，一条回路，权值和为负数。</p>
+<p>思路：SPFA算法求最短路的时候，每个节点最多入队n-1次，如果多了，那就是存在负环。</p>
+<p>注释：是最短路算法，但是不建议拿来求最短路，复杂度一般都是N^2，仅适用负环问题</p>
+<pre><code class="C++">#include &lt;bits/stdc++.h&gt;
+//#define int long long
+#define per(i,j,k) for(int (i)=(j);(i)&lt;=(k);++(i))
+#define rep(i,j,k) for(int (i)=(j);(i)&gt;=(k);--(i))
+#define fr first
+#define se second
+#define endl &#39;\n&#39;
+using namespace std;
+const int MAX=INT_MAX&gt;&gt;1;
+const int N=2e3+5;
+
+int n,T,m,u,v,w,dist[N],cnt[N];
+queue&lt;int&gt;q;
+bitset&lt;N&gt;vis;
+vector&lt;pair&lt;int,int&gt;&gt;e[N];
+
+void spfa()&#123;
+    per(i,1,n)dist[i]=MAX;
+    dist[1]=0;//最短路起点为0
+
+    q.push(1);
+    while(!q.empty())&#123;
+        int now=q.front();
+        q.pop();
+        vis[now]=false;
+
+        for(auto i:e[now])&#123;
+            int nxt=i.second,tonxt=i.first;
+            if(dist[now]+tonxt&lt;dist[nxt])&#123;
+                dist[nxt]=dist[now]+tonxt;
+                if(!vis[nxt])&#123;
+                    vis[nxt]=true;
+                    q.push(nxt);
+                    if(++cnt[nxt]&gt;=n)&#123;//判断入队次数
+                        cout&lt;&lt;&quot;YES&quot;&lt;&lt;endl;//存在负环
+                        return;
+                    &#125;
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+    cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;
+&#125;
+
+void init()&#123;
+    per(i,1,n)e[i].clear();
+    vis.reset();
+    while(q.size())q.pop();
+    memset(cnt,0,sizeof cnt);
+&#125;
+
+void solve()&#123;
+    cin&gt;&gt;n&gt;&gt;m;
+    per(i,1,m)&#123;
+        cin&gt;&gt;u&gt;&gt;v&gt;&gt;w;
+        e[u].push_back(&#123;w,v&#125;);
+        if(w&gt;=0)e[v].push_back(&#123;w,u&#125;);
+    &#125;
+
+    spfa();
+&#125;
+
+signed main()&#123;
+    ios::sync_with_stdio(false),cin.tie(nullptr);
+    int t;
+    cin&gt;&gt;t;
+    while(t--)solve(),init();
+    return 0;
+&#125;
+</code></pre>
 
     </div>
     
