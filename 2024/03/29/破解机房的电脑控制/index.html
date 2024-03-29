@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>不使用CDN代理，本地部署SSL证书 | zzczzczzc&#39;s home</title>
+        <title>破解机房的电脑控制 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,14 +157,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>不使用CDN代理，本地部署SSL证书</h1>
+        <h1>破解机房的电脑控制</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/14
+            2024/3/29
         </span>
         
         <span class="category">
@@ -177,39 +177,22 @@
         </span>
         
         
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #03a9f4">内网穿透</a>
-            </span>
-            
-        </span>
-        
     </div>
     
     <div class="content" v-pre>
-        <p>CDN代理的时候会自动设置好通过CloudFlare流量的SSL配置，仅用DNS不会给你自动配置。</p>
-<p>按照以下步骤来配置SSL证书（基于frpc）：<br>涉及：Let’s Encrypt，Certbot。</p>
-<ol>
-<li>查看<a target="_blank" rel="noopener" href="https://letsencrypt.org/zh-cn/getting-started">Let’s Encrypt入门指南</a>。</li>
-<li>正常情况下选择<a target="_blank" rel="noopener" href="https://certbot.eff.org/">Certbot</a>，根据步骤安装Certbot。</li>
-<li>全部完成之后会获得<font color='RED'>fullchain.pem</font>和<font color='RED'>privkey.pem</font>两个文件的路径。</li>
-<li></li>
-</ol>
-<p>注：如果密钥还存在，Certbot就会自动更新TLS证书，如果没更新依旧用上述步骤。</p>
-<blockquote>
-<p>关于域名到期，但是SSL没到期，是否要取消SSL的问题。</p>
-</blockquote>
-<p>没必要，密钥只会出现一次，即第一次申请证书时出现在你电脑上的那份。<br>删除掉那个即可。实在想全部删掉可以按照以下步骤来：</p>
-<ol>
-<li>注销帐号，<font color='RED'>sudo certbot unregister</font></li>
-<li>打开终端输入<font color='RED'>cd &#x2F;etc</font>，删除文件夹<font color='RED'>letsencrypt</font>。</li>
-<li>卸载certbot，<font color='RED'>sudo snap remove certbot</font></li>
-</ol>
+        <p>直接用taskkill &#x2F;f &#x2F;im 强制杀掉进程，一般来说都是studentmain.exe，显示上方没有举手的那个框框<br>就行了，有些控制比较极端，教学楼的是student.exe，而且杀了还会自动打开。<br>那么，循环杀，不停的杀就行了，bat代码放在下面了。</p>
+<pre><code class="cmd">@echo off
+set var=0
+rem ************循环开始了
+:continue
+set /a var+=1
+echo 第%var%次循环
+taskkill /f /im student.exe
+if %var% lss 1000000000000000000000000000000000000000000000 goto continue
+rem ************循环结束了
+echo 循环执行完毕
+pause
+</code></pre>
 
     </div>
     
