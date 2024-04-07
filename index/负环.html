@@ -174,18 +174,10 @@
         <p>问图中是否有负环，一条回路，权值和为负数。</p>
 <p>思路：SPFA算法求最短路的时候，每个节点最多入队n-1次，如果多了，那就是存在负环。</p>
 <p>注释：是最短路算法，但是不建议拿来求最短路，复杂度一般都是N^2，仅适用负环问题</p>
-<pre><code class="C++">#include &lt;bits/stdc++.h&gt;
-//#define int long long
-#define per(i,j,k) for(int (i)=(j);(i)&lt;=(k);++(i))
-#define rep(i,j,k) for(int (i)=(j);(i)&gt;=(k);--(i))
-#define fr first
-#define se second
-#define endl &#39;\n&#39;
-using namespace std;
-const int MAX=INT_MAX&gt;&gt;1;
+<pre><code class="C++">const int MAX=INT_MAX&gt;&gt;1;
 const int N=2e3+5;
 
-int n,T,m,u,v,w,dist[N],cnt[N];
+int dist[N],cnt[N];
 queue&lt;int&gt;q;
 bitset&lt;N&gt;vis;
 vector&lt;pair&lt;int,int&gt;&gt;e[N];
@@ -216,32 +208,6 @@ void spfa()&#123;
         &#125;
     &#125;
     cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;
-&#125;
-
-void init()&#123;
-    per(i,1,n)e[i].clear();
-    vis.reset();
-    while(q.size())q.pop();
-    memset(cnt,0,sizeof cnt);
-&#125;
-
-void solve()&#123;
-    cin&gt;&gt;n&gt;&gt;m;
-    per(i,1,m)&#123;
-        cin&gt;&gt;u&gt;&gt;v&gt;&gt;w;
-        e[u].push_back(&#123;w,v&#125;);
-        if(w&gt;=0)e[v].push_back(&#123;w,u&#125;);
-    &#125;
-
-    spfa();
-&#125;
-
-signed main()&#123;
-    ios::sync_with_stdio(false),cin.tie(nullptr);
-    int t;
-    cin&gt;&gt;t;
-    while(t--)solve(),init();
-    return 0;
 &#125;
 </code></pre>
 

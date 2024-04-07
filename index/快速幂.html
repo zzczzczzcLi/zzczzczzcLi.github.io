@@ -171,20 +171,18 @@
     </div>
     
     <div class="content" v-pre>
-        <p>快速计算 $a^b$</p>
-<p>适用范围：如果 $b&gt;&#x3D;10^8$ 那么暴力模拟 $a×a$ 会被执行 $b$ 次，复杂度直接原地起飞。<br><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/solution/P1226">如果忘了，点我看思路</a></p>
+        <p>快速计算 $a^b$，$b$ 较大的时候</p>
 <pre><code class="C++">    //(a^b)%p
+    ans=1;
     while(b)&#123;
-        if(b%2)ans*=a;//初始化ans=1
-        b/=2;
+        if(b&amp;1)ans*=a;
+        b&gt;&gt;=1;
         a*=a;
+        
         ans%=p;
         a%=p;
     &#125;
     cout&lt;&lt;ans&lt;&lt;endl;
-    return 0;
-&#125;
-
 </code></pre>
 
     </div>

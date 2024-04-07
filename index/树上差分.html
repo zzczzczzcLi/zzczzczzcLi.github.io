@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>单调栈 | zzczzczzc&#39;s home</title>
+        <title>树上差分 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,85 +157,21 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>单调栈</h1>
+        <h1>树上差分</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/2/27
+            2024/4/2
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        <p>很可惜这个已经不配模板了，正常思考就能得出答案。</p>
-<pre><code class="C++">对于数组A，输出F，f[i]定义为i+1~n中第一个大于a[i]的下标
-
-因为范围比较大，不能是N^2，考虑扫一遍，利用已有数据得出答案。
-
-假设有数组1 4 2 3 5
-
-&#123;1&#125;，后面要加进来的只有两种可能
-1. 大于1,满足要求
-2. 小于等于1,不满足要求
-
-如果满足要求，显然直接变成&#123;4&#125;就可以了
-
-如果不满足要求，就会变成&#123;1,0&#125;
-
-如果进来1，会把0顶了，变成&#123;1,1&#125;
-
-如果进来2,全部顶了，变成&#123;2&#125;
-
-如果进来-1,就会变成&#123;1,0,-1&#125;
-
-显然已经考虑完毕了，变成模拟题了。
-
-#include &lt;bits/stdc++.h&gt;
-//#define int long long
-#define per(i,j,k) for(int (i)=(j);(i)&lt;=(k);++(i))
-#define rep(i,j,k) for(int (i)=(j);(i)&gt;=(k);--(i))
-#define fr first
-#define se second
-#define endl &#39;\n&#39;
-using namespace std;
-const int N=3e6+5;
-
-int n,a[N],f[N];
-
-stack&lt;int&gt;s;
-
-void solve()&#123;
-    cin&gt;&gt;n;
-    per(i,1,n)cin&gt;&gt;a[i];
-
-    s.push(1);
-    per(i,2,n)&#123;
-        if(a[i]&lt;=a[s.top()])s.push(i);
-        else&#123;
-            while(s.size() and a[i]&gt;a[s.top()])&#123;
-                f[s.top()]=i;
-                s.pop();
-            &#125;
-            s.push(i);
-        &#125;
-    &#125;
-
-    per(i,1,n)&#123;
-        cout&lt;&lt;f[i]&lt;&lt;&quot; &quot;;
-    &#125;
-&#125;
-
-signed main()&#123;
-    ios::sync_with_stdio(false),cin.tie(nullptr);
-    int t=1;
-    while(t--)solve();
-    return 0;
-&#125;
-</code></pre>
+        <p>在节点8上面+1,然后在递归<font color='RED'>后序遍历</font>让父节点获取差分数组的值即可<br>就可以让节点8到根节点的路径上的点，均获得差分值<br><a target="_blank" rel="noopener" href="https://imgse.com/i/pFHdj9s"><img src="https://s21.ax1x.com/2024/04/02/pFHdj9s.md.png" alt="pFHdj9s.md.png"></a></p>
 
     </div>
     

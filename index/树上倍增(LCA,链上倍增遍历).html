@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>Floyd | zzczzczzc&#39;s home</title>
+        <title>树上倍增(LCA,链上倍增遍历) | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,39 +157,63 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Floyd</h1>
+        <h1>树上倍增(LCA,链上倍增遍历)</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/6
+            2024/4/2
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        <p>全局多源最短路<br>适用范围：N&lt;&#x3D;5000。N&#x3D;5000时int e[N][N]约占100MB。</p>
-<p>细节：任意两点dis&#x3D;INF，其中自己到自己为dis&#x3D;0。</p>
-<pre><code class="C++">    //初始化INF
-    for(int i=1;i&lt;=n;++i)&#123;
-        for(int j=1;j&lt;=n;++j)&#123;
-            e[i][j]=INT_MAX&gt;&gt;2;
-        &#125;
-    &#125;
-    //初始化0
-    for(int i=1;i&lt;=n;++i)e[i][i]=0;
+        <p>有些情况可能不需要LCA访问，可能BFS走一次就行了。</p>
+<pre><code class="C++">
+void dfs(int now,int fa)&#123;
+    d[now]=d[fa]+1;//儿子节点的深度等于父节点的深度+1
+    f[now][0]=fa;
+    for(int i=1;i&lt;=lg[d[now]];++i)
+        f[now][i]=f[f[now][i-1]][i-1];
+    for(auto son:e[now])dfs(son,now);
+&#125;
 
-    //Floyd
-    for(int k=1;k&lt;=n;++k)&#123;
-        for(int i=1;i&lt;=n;++i)&#123;
-            for(int j=1;j&lt;=n;++j)&#123;
-                e[i][j]=min(e[i][j],e[i][k]+e[k][j]);
-            &#125;
+//n个节点
+//预处理log数组
+for(int i=1;i&lt;=n;++i)&#123;
+    lg[i]=log(i)/log(2)+1;
+&#125;
+
+//预处理每个节点的f[i][j],2^j级祖先
+d[root]=0
+dfs(root,root)
+
+//借助预处理来实现别的操作
+//1. LCA
+int lca(int x,int y)&#123;//节点x,y的最近公共祖先lca(x,y)
+    if(d[x]&lt;d[y])swap(x,y);
+    while(d[x]&gt;d[y])x=f[x][lg[d[x]-d[y]]-1];
+    if(x==y)return x;
+    for(int i=lg[d[x]];i&gt;=0;--i)
+        if(f[x][i]!=f[y][i])&#123;
+            x=f[x][i];
+            y=f[y][i];
         &#125;
+    return f[x][0];
+&#125;
+
+//2. 有序链上倍增遍历,借助这个语句实现，依旧是从最大开始跳
+int now=5;//假设某条件下找节点5的父亲
+int fa=now;
+for(int i=lg[d[x]];i&gt;=0;--i)&#123;
+    if(f[fa][i]&lt;=t)&#123;//某种条件
+        fa=f[fa][i];
     &#125;
+&#125;
+
 </code></pre>
 
     </div>

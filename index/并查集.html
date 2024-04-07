@@ -171,9 +171,7 @@
     </div>
     
     <div class="content" v-pre>
-        <p>合并集合，查询两点是否在同一个集合。</p>
-<p>适用范围：需要判断两点是否在同一个联通块中。</p>
-<pre><code class="C++">int find(int x)&#123;
+        <pre><code class="C++">int find(int x)&#123;
     if(f[x]==x)return x;
     else return f[x]=find(f[x]);//注意有return
 &#125;
