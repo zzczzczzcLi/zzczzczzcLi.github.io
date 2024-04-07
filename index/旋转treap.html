@@ -251,8 +251,8 @@ struct &#123;
 
   int queryrank(int k, int x) &#123;//queryrank(T.rt,x)  值x，在treap中的排名（从小到大）
     if (!k) return 0;        //多个x会输出最小的排名
-    if (val[k] == x)
-      return size_[l[k]] + 1;
+    if (val[k] == x)         //注：如果题目不保证值x在treap中存在，先 insert(x),再查询rank
+      return size_[l[k]] + 1;                                       //最后del(x)才行
     else if (x &gt; val[k]) &#123;
       return size_[l[k]] + w[k] + queryrank(r[k], x);
     &#125; else
@@ -270,7 +270,7 @@ struct &#123;
   &#125;
 
   void querypre(int k, int x) &#123;//值x的前驱，小于x且最大
-    if (!k) return;
+    if (!k) return;            //调用步骤: 1. T.ans=0	2. T.querypre 	3.cout&lt;&lt;T.val[T.ans]
     if (val[k] &lt; x)
       ans = k, querypre(r[k], x);
     else
