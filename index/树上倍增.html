@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>旋转treap | zzczzczzc&#39;s home</title>
+        <title>树上倍增 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,136 +157,63 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>旋转treap</h1>
+        <h1>树上倍增</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/4/7
+            2024/4/2
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        <pre><code class="C++">
-const int maxn=2e5+5;//treap中最多几个节点
+        <p>有些情况可能不需要LCA访问，可能BFS走一次就行了。</p>
+<pre><code class="C++">
+void dfs(int now,int fa)&#123;
+    d[now]=d[fa]+1;//儿子节点的深度等于父节点的深度+1
+    f[now][0]=fa;
+    for(int i=1;i&lt;=lg[d[now]];++i)
+        f[now][i]=f[f[now][i-1]][i-1];
+    for(auto son:e[now])dfs(son,now);
+&#125;
 
-struct &#123;
-  int l[maxn], r[maxn], val[maxn], rnd[maxn], size_[maxn], w[maxn];
-  int sz, ans, rt;
+//n个节点
+//预处理log数组
+for(int i=1;i&lt;=n;++i)&#123;
+    lg[i]=log(i)/log(2)+1;
+&#125;
 
-  void pushup(int x) &#123; size_[x] = size_[l[x]] + size_[r[x]] + w[x]; &#125;//必写
+//预处理每个节点的f[i][j],2^j级祖先
+d[root]=0
+dfs(root,root)
 
-  void lrotate(int &amp;k) &#123;//必写
-    int t = r[k];
-    r[k] = l[t];
-    l[t] = k;
-    size_[t] = size_[k];
-    pushup(k);
-    k = t;
-  &#125;
+//借助预处理来实现别的操作
+//1. LCA
+int lca(int x,int y)&#123;//节点x,y的最近公共祖先lca(x,y)
+    if(d[x]&lt;d[y])swap(x,y);
+    while(d[x]&gt;d[y])x=f[x][lg[d[x]-d[y]]-1];
+    if(x==y)return x;
+    for(int i=lg[d[x]];i&gt;=0;--i)
+        if(f[x][i]!=f[y][i])&#123;
+            x=f[x][i];
+            y=f[y][i];
+        &#125;
+    return f[x][0];
+&#125;
 
-  void rrotate(int &amp;k) &#123;//必写，下面功能为选写
-    int t = l[k];
-    l[k] = r[t];
-    r[t] = k;
-    size_[t] = size_[k];
-    pushup(k);
-    k = t;
-  &#125;
-
-  void insert(int &amp;k, int x) &#123;  // 插入, 调用时 T.insert(T.rt,x)  x为要插入的值
-    if (!k) &#123;                                      //T.rt为固定格式，下面的k都是T.rt
-      sz++;
-      k = sz;
-      size_[k] = 1;
-      w[k] = 1;
-      val[k] = x;
-      rnd[k] = rand();
-      return;
+//2. 有序链上倍增遍历,借助这个语句实现，依旧是从最大开始跳
+int now=5;//假设某条件下找节点5的父亲
+int fa=now;
+for(int i=lg[d[x]];i&gt;=0;--i)&#123;
+    if(f[fa][i]&lt;=t)&#123;//某种条件
+        fa=f[fa][i];
     &#125;
-    size_[k]++;
-    if (val[k] == x) &#123;
-      w[k]++;
-    &#125; else if (val[k] &lt; x) &#123;
-      insert(r[k], x);
-      if (rnd[r[k]] &lt; rnd[k]) lrotate(k);
-    &#125; else &#123;
-      insert(l[k], x);
-      if (rnd[l[k]] &lt; rnd[k]) rrotate(k);
-    &#125;
-  &#125;
+&#125;
 
-  bool del(int &amp;k, int x) &#123;  // 删除节点， T.del(T.rt,x)  要删除的值（多个相同只会删一个）
-    if (!k) return false;
-    if (val[k] == x) &#123;
-      if (w[k] &gt; 1) &#123;
-        w[k]--;
-        size_[k]--;
-        return true;
-      &#125;
-      if (l[k] == 0 || r[k] == 0) &#123;
-        k = l[k] + r[k];
-        return true;
-      &#125; else if (rnd[l[k]] &lt; rnd[r[k]]) &#123;
-        rrotate(k);
-        return del(k, x);
-      &#125; else &#123;
-        lrotate(k);
-        return del(k, x);
-      &#125;
-    &#125; else if (val[k] &lt; x) &#123;
-      bool succ = del(r[k], x);
-      if (succ) size_[k]--;
-      return succ;
-    &#125; else &#123;
-      bool succ = del(l[k], x);
-      if (succ) size_[k]--;
-      return succ;
-    &#125;
-  &#125;
-
-  int queryrank(int k, int x) &#123;//queryrank(T.rt,x)  值x，在treap中的排名（从小到大）
-    if (!k) return 0;        //多个x会输出最小的排名
-    if (val[k] == x)         //注：如果题目不保证值x在treap中存在，先 insert(x),再查询rank
-      return size_[l[k]] + 1;                                       //最后del(x)才行
-    else if (x &gt; val[k]) &#123;
-      return size_[l[k]] + w[k] + queryrank(r[k], x);
-    &#125; else
-      return queryrank(l[k], x);
-  &#125;
-
-  int querynum(int k, int x) &#123;//query(T.rt,x)  treap中从小到大排名为x的值是多少，即第x小的数
-    if (!k) return 0;                     //如果要转换为第x大就反向算一下排名
-    if (x &lt;= size_[l[k]])
-      return querynum(l[k], x);
-    else if (x &gt; size_[l[k]] + w[k])
-      return querynum(r[k], x - size_[l[k]] - w[k]);
-    else
-      return val[k];
-  &#125;
-
-  void querypre(int k, int x) &#123;//值x的前驱，小于x且最大
-    if (!k) return;            //调用步骤: 1. T.ans=0	2. T.querypre 	3.cout&lt;&lt;T.val[T.ans]
-    if (val[k] &lt; x)
-      ans = k, querypre(r[k], x);
-    else
-      querypre(l[k], x);
-  &#125;
-
-  void querysub(int k, int x) &#123;//值x的后继，大于x且最小
-    if (!k) return;
-    if (val[k] &gt; x)
-      ans = k, querysub(l[k], x);
-    else
-      querysub(r[k], x);
-  &#125;
-&#125; T;
-
-srand(time(nullptr)) //每个测试点都srand一次
 </code></pre>
 
     </div>

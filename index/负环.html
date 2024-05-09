@@ -174,19 +174,21 @@
         <p>问图中是否有负环，一条回路，权值和为负数。</p>
 <p>思路：SPFA算法求最短路的时候，每个节点最多入队n-1次，如果多了，那就是存在负环。</p>
 <p>注释：是最短路算法，但是不建议拿来求最短路，复杂度一般都是N^2，仅适用负环问题</p>
-<pre><code class="C++">const int MAX=INT_MAX&gt;&gt;1;
-const int N=2e3+5;
+<pre><code class="C++">最短路（负权）SPFA，或判负环（复杂度一般N^2）
+const int MAX=INT_MAX&gt;&gt;1;//考虑LONG_LONG_MAX
+const int N=2e3+5;//最多节点数量
 
+int n;//实际节点数量
 int dist[N],cnt[N];
 queue&lt;int&gt;q;
 bitset&lt;N&gt;vis;
-vector&lt;pair&lt;int,int&gt;&gt;e[N];
+vector&lt;pair&lt;int,int&gt;&gt;e[N];//e[i]=&#123;w,j&#125;,i节点到j节点距离w
 
-void spfa()&#123;
-    per(i,1,n)dist[i]=MAX;
-    dist[1]=0;//最短路起点为0
+void spfa(int s)&#123;//s点出发的最短路
+    for(int i=1;i&lt;=n;++i)dist[i]=MAX;
+    dist[s]=0;
 
-    q.push(1);
+    q.push(s);
     while(!q.empty())&#123;
         int now=q.front();
         q.pop();
@@ -199,6 +201,8 @@ void spfa()&#123;
                 if(!vis[nxt])&#123;
                     vis[nxt]=true;
                     q.push(nxt);
+                    //此处cnt数组和判断删掉就是正常的SPFA
+                    //还有下面的cout&lt;&lt;no;
                     if(++cnt[nxt]&gt;=n)&#123;//判断入队次数
                         cout&lt;&lt;&quot;YES&quot;&lt;&lt;endl;//存在负环
                         return;
@@ -206,9 +210,47 @@ void spfa()&#123;
                 &#125;
             &#125;
         &#125;
-    &#125;
+    &#125;&#125;
     cout&lt;&lt;&quot;NO&quot;&lt;&lt;endl;
-&#125;
+    
+最短路（正权）Dj
+const int N=1e5+5;//最多节点
+struct&#123;
+    int MAX=INT_MAX&gt;&gt;1;//最大值,是否需要改成long long自行观察
+    
+    int n;//dj实际节点
+    int dist[N];
+    bitset&lt;N&gt;vis;
+    vector&lt;pair&lt;int,int&gt;&gt;e[N];//e[i]=&#123;w,j&#125;,点i到j需要距离w
+    priority_queue&lt;pair&lt;int,int&gt;,vector&lt;pair&lt;int,int&gt;&gt;,greater&lt;pair&lt;int,int&gt;&gt;&gt;q;
+    
+    void dijkstra(int s)&#123;//从s点出发 dj
+        for(int i=1;i&lt;=n;++i)
+            dist[i]=MAX;
+        dist[s]=0;
+        
+        q.push(&#123;0,s&#125;);
+        while(!q.empty())&#123;
+        int now=q.top().second;
+        int nowDis=q.top().first;
+        q.pop();
+ 
+        if(vis[now])continue;
+        vis[now]=true;
+        for(auto i:e[now])&#123;
+            int toNextLength=i.first;
+            int nxt=i.second;
+ 
+            if(dist[nxt]&gt;dist[now]+toNextLength)&#123;
+                dist[nxt]=dist[now]+toNextLength;
+                if(!vis[nxt])&#123;
+                    q.push(&#123;dist[nxt],nxt&#125;);
+                &#125;
+            &#125;
+          &#125;
+        &#125;
+    &#125;
+&#125;dj;
 </code></pre>
 
     </div>

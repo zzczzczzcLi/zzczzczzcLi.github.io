@@ -172,14 +172,36 @@
     
     <div class="content" v-pre>
         <blockquote>
-<p>—–数据结构—–<br><a href="/index/%E6%97%8B%E8%BD%ACtreap">旋转treap(动态第k小问题，k可变。约等于 带随机访问的set)</a><br><a href="/index/%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E(LCA,%E9%93%BE%E4%B8%8A%E5%80%8D%E5%A2%9E%E9%81%8D%E5%8E%86)">树上倍增(LCA,链上倍增遍历)</a><br><a href="/index/%E5%B9%B6%E6%9F%A5%E9%9B%86">并查集</a></p>
+<p>—–数据结构—–<br><a href="/index/%E6%97%A0%E6%97%8Btreap">无旋treap(log级别翻转区间)</a><br><a href="/index/%E6%97%8B%E8%BD%ACtreap">旋转treap(带随机访问的set)</a><br><a href="/index/%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E">树上倍增(LCA,链上倍增遍历)</a><br><a href="/index/%E7%BA%BF%E6%AE%B5%E6%A0%91%E7%9A%84%E6%87%92%E6%A0%87%E8%AE%B0">线段树的懒标记(区间加减)</a><br><a href="/index/%E5%B9%B6%E6%9F%A5%E9%9B%86">并查集</a></p>
 </blockquote>
 <blockquote>
 <p>—–最短路—–<br><a href="/index/%E8%B4%9F%E7%8E%AF">负环</a></p>
 </blockquote>
 <blockquote>
-<p>—–算法—–<br><a href="/index/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86">树上差分</a><br><a href="/index/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F">拓扑排序</a><br><a href="/index/%E5%9F%83%E5%BC%8F%E7%AD%9B%E7%B4%A0%E6%95%B0">埃式筛素数</a><br><a href="/index/%E5%BF%AB%E9%80%9F%E5%B9%82">快速幂</a></p>
+<p>—–算法—–<br><a href="/index/%E6%A0%91%E4%B8%8A%E5%B7%AE%E5%88%86">树上差分</a><br><a href="/index/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F">拓扑排序</a><br><a href="/index/%E5%BF%AB%E9%80%9F%E5%B9%82">快速幂</a></p>
 </blockquote>
+<p>逆序对<br>const int N&#x3D;5e5+5;&#x2F;&#x2F;序列最多几个<br>struct{<br>    int q[N],tmp[N];&#x2F;&#x2F;q为需要求的序列</p>
+<pre><code>int merge_sort(int l,int r)&#123;
+if(l&gt;=r)return 0;
+int mid=(l+r)&gt;&gt;1;
+int res=merge_sort(l,mid)+merge_sort(mid+1,r);
+
+int k=0,i=l,j=mid+1;
+while(i&lt;=mid and j&lt;=r)&#123;
+    if(q[i]&lt;=q[j])tmp[k++]=q[i++];
+    else&#123;
+        tmp[k++]=q[j++];
+        res+=mid-i+1;
+    &#125;
+&#125;
+while(i&lt;=mid)tmp[k++]=q[i++];
+while(j&lt;=r)tmp[k++]=q[j++];
+for(int i=l,j=0;i&lt;=r;i++,j++)q[i]=tmp[j];
+return res;
+&#125;
+</code></pre>
+<p>}M;</p>
+<p>最小生成树<br>所有边排序，从最短的开始用，若u，v不在同一个并查集内，加入最小生成树，合并u，v。<br>合并之后达到n-1条边，则为最小生成树</p>
 <p><a href="/index/%E5%90%84%E7%A7%8D%E6%8A%80%E5%B7%A7%E5%92%8C%E4%BB%A3%E7%A0%81%E4%BC%98%E5%8C%96">各种技巧和代码优化（实用）</a><br><a href="/index/%E5%9F%BA%E7%A1%80%E4%BC%98%E5%8C%96%E6%A8%A1%E6%9D%BF">基础优化模板</a><br><a target="_blank" rel="noopener" href="https://z01prime.github.io/">张能祎神犇的博客</a><br><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/training/263381">张能祎神犇的模板（洛谷题目）</a><br><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/list?keyword=%E6%A8%A1%E6%9D%BF&type=AT%7CB%7CCF%7CP%7CSP%7CUVA&difficulty=3&page=1">洛谷各色模板</a><br><a target="_blank" rel="noopener" href="https://oi-wiki.org/basic/prefix-sum/">Oi-wiki各模块例题以及知识点</a></p>
 
     </div>
