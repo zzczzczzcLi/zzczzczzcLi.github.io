@@ -199,6 +199,57 @@
     <a href="/2024/05/09/wssb/" class="go-post">阅读全文</a>
 </div>
 
+<div class="post">
+    <a href="/2024/03/29/%E7%A0%B4%E8%A7%A3%E6%9C%BA%E6%88%BF%E7%9A%84%E7%94%B5%E8%84%91%E6%8E%A7%E5%88%B6/">
+        <h2 class="post-title">破解机房的电脑控制</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/3/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>tip:如果已经被控制了，先物理拔掉网线，再执行下面操作，然后把网线插回去<br>直接用taskkill &#x2F;f &#x2F;im 强制杀掉进程，一般来说都是studentmain.exe，显示上方没有举手的那个框框<br>就行了，有些控制比较极端，教学楼的是student.exe，而且杀了还会自动打开。<br>那么，循环杀，不停的杀就行了，bat代码放在下面了。</p>
+<pre><code class="cmd">@echo off
+set var=0
+rem ************循环开始了
+:continue
+set /a var+=1
+echo 第%var%次循环
+taskkill /f /im student.exe
+if %var% lss 1000000000000000000000000000000000000000000000 goto continue
+rem ************循环结束了
+echo 循环执行完毕
+pause
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2024/03/29/%E7%A0%B4%E8%A7%A3%E6%9C%BA%E6%88%BF%E7%9A%84%E7%94%B5%E8%84%91%E6%8E%A7%E5%88%B6/" class="go-post">阅读全文</a>
+</div>
+
 
         <div class="page-current">
     <div class="prev">

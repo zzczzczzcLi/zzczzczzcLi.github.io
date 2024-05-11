@@ -4,7 +4,7 @@
     <head>
         <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
         <meta charset="utf-8" />
-        <title>分类 | zzczzczzc&#39;s home</title>
+        <title>破解机房的电脑控制 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -33,6 +33,13 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css" />
 
 
 
@@ -148,13 +155,20 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div id="archives">
-    
-    <div class="categories-tags">
+                    <div class="article">
+    <div>
+        <h1>破解机房的电脑控制</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/3/29
+        </span>
         
-        
-        <span>
-            <a href="/categories/%E6%95%99%E7%A8%8B/" style="background: #ffa2c4">
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
@@ -164,6 +178,33 @@
         
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>tip:如果已经被控制了，先物理拔掉网线，再执行下面操作，然后把网线插回去<br>直接用taskkill &#x2F;f &#x2F;im 强制杀掉进程，一般来说都是studentmain.exe，显示上方没有举手的那个框框<br>就行了，有些控制比较极端，教学楼的是student.exe，而且杀了还会自动打开。<br>那么，循环杀，不停的杀就行了，bat代码放在下面了。</p>
+<pre><code class="cmd">@echo off
+set var=0
+rem ************循环开始了
+:continue
+set /a var+=1
+echo 第%var%次循环
+taskkill /f /im student.exe
+if %var% lss 1000000000000000000000000000000000000000000000 goto continue
+rem ************循环结束了
+echo 循环执行完毕
+pause
+</code></pre>
+
+    </div>
+    
+    
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
+    </div>
+    
+    
+    
+    
     
 </div>
 
@@ -196,6 +237,26 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "5093c0f78df8d980d0e8",
+        clientSecret: "3bc33bc8827c07c9e2907362f7e05a5f574db90b",
+        repo: "myblogtalk",
+        owner: "zzczzczzcLi",
+        admin: "zzczzczzcLi".split(","),
+        language: "zh-CN",
+        id: decodeURI(location.pathname),
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
+
+
+
+
         
     </body>
 </html>
