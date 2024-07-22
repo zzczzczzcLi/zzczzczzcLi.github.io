@@ -1,0 +1,888 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+        <meta charset="utf-8" />
+        <title>zzczzczzc&#39;s home</title>
+        <meta name="author" content="zzczzczzc" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="/js/lib/home.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>床</h2>
+                        <img src="/images/1.webp" />
+                        <p>一片伟大的净土</p>
+                                                    灵魂的归处，肉体的坟墓。
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZZCZZCZZC&#39;S HOME</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;相关</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZZCZZCZZC&#39;S HOME</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">相关</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg,/images/background1.jpg,/images/background2.jpg"></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>zzczzczzc&#39;s home</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div id="home-posts-wrap"  ref="homePostsWrap">
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E5%85%AB-Shell%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+        <h2 class="post-title">实验八-Shell程序设计</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <pre><code class="DOCX文档，奶牛快传口令：7a2ykb">
+let为定义变量
+脚本写好之后需要chmod 777 脚本文件，来赋予运行权限
+同时执行的时候需要加上地址，比如脚本文件a.sh
+执行为./a.sh
+
+实验目的：
+1、掌握shell中的变量定义和引用。
+2、掌握Shell中的算术运算符、文件运算符。
+3、掌握shell中的控制语句。
+4、掌握shell中的预定义变量和环境变量
+5、掌握shell程序的两种执行方式
+
+实验内容：
+1.统计/etc下文件和目录的数目。
+#! /bin/bash
+
+count1=$(find /etc -type f | wc -l)
+count2=$(find /etc -type d | wc -l)
+
+echo &quot;f:$count1&quot;
+echo &quot;d:$count2&quot;
+
+2.在用户目录下创建20个目录，目录名由用户指定部分+【1-20】组成
+
+#! /bin/bash
+
+read -p &quot;Input:&quot; my_name
+for((i=1;i&lt;=20;i++))
+do
+        mkdir -p &quot;$HOME/$&#123;my_name&#125;$&#123;i&#125;&quot;
+        echo &quot;$HOME/$&#123;my_name&#125;$&#123;i&#125; is created&quot;
+done
+
+3.输出九九乘法表
+#!/bin/bash
+
+for ((i=1;i&lt;=9;i++))
+do
+    for ((j=1;j&lt;=i;j++))
+    do
+        let c=i*j
+        echo -ne &quot;$&#123;i&#125;X$&#123;j&#125;=$c\t&quot;
+    done
+    echo
+done
+
+
+4.输出200以内能被7整除的所有数，并求其和
+#! /bin/bash
+
+let sum=0
+for ((i=1; i&lt;=200; i++))
+do
+        let c=i%7
+        if [ $&#123;c&#125; -eq 0 ]; then
+                echo -ne &quot;$&#123;i&#125; &quot;
+                let sum=sum+i
+        fi
+done
+echo &quot;sum=$&#123;sum&#125;&quot;
+
+5.从键盘输入3个数，求最大值
+#!/bin/bash
+
+read -p &quot;Input 3 numbers:&quot; a b c
+let &quot;tmp = (a &gt; b) ? a : b&quot;
+let &quot;max = (tmp &gt; c) ? tmp : c&quot;
+echo &quot;max=$&#123;max&#125;&quot;
+
+6.检测当前用户是否为超级用户，若是输出“root user”，否则输出“Normal User”
+#! /bin/bash
+
+if [ $UID -eq 0 ]; then
+        echo &quot;root user&quot;
+        else echo &quot;Normal user&quot;
+fi
+
+7.编写脚本测试当前机房整个网段172.17.69.0/24中，那些机器处于开机状态，那些处于关机状态
+
+来回ping ：（
+
+
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E5%85%AB-Shell%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E5%9B%9B-Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">
+        <h2 class="post-title">实验四-Linux用户管理</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <pre><code class="DOCX文档，奶牛快传口令：pbkfrt">实验目的：
+1、掌握字符界面下用户账户的设置，包括命令useradd、usermod、userdel。
+2、掌握字符界面下组群账户的设置，包括命令groupadd、groupmod、groupdel。
+3、掌握文件权限等。
+4、掌握文件系统挂载,mount、umount命令使用
+
+实验内容：
+1、使用命令创建用户账户zhangsan，并设置口令为123456。
+Useradd zhangsan
+Passwd zhangsan
+
+2、使用命令修改用户账户zhangsan的UID为700。
+usermod -u 700 zhangsan
+
+3、使用命令创建组群group1，并在创建时设置其GID为800。
+groupadd -g 800 group1
+
+4、使用命令修改组群group1的新组群名称为shangha。
+groupmod -n shangha group1
+
+5、使用挂载命令，访问光盘
+6、使用挂载命令，访问U盘
+
+7.以zhangsan用户创建文件aa.txt。
+touch aa.txt
+su zhangsan
+
+8.创建用户usr1,usr2,其中usr1和zhangsan隶属于同一组shangha
+usermod zhangsan -G shangha 
+useradd -G shangha usr1
+useradd usr2
+
+9.分别以usr1,usr2用户访问aa.txt。
+[usr1@localhost home]$ cat zhangsan/aa.txt
+cat: zhangsan/aa.txt: 权限不够
+[usr2@localhost home]$ cat zhangsan/aa.txt
+cat: zhangsan/aa.txt: 权限不够
+
+10.利用chmod修改文件aa.txt的访问权限，再以usr2访问该文件
+chmod 777 aa.txt 
+[zhangsan@localhost ~]$ chmod 777 aa.txt
+
+
+
+
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E5%9B%9B-Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E4%B8%83-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+        <h2 class="post-title">实验七-正则表达式</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <pre><code class="DOCX文档，奶牛快传口令：qthp2s">grep -e等价于egrep
+使用之后下面的转义字符就不需要使用，比如：
+grep -E &#39;go&#123;2,5&#125;g&#39; Regular.txt 或者 grep &#39;go\&#123;2,5\&#125;g&#39; Regular.txt 
+
+也就是
+egrep &#39;go&#123;2,5&#125;g&#39; Regular.txt
+
+e表示使用正则表达式的 -extend 扩展版本
+
+实验目的：
+1、掌握正则表达式符号和语法。
+2、掌握grep命令的用法。
+
+实验内容：
+1、查看以字符“a”开头的行。
+grep ^a Regular.txt
+
+2、查看以字符串“abc&quot;开头的行。
+grep ^abc Regular.txt 
+
+3、查看以字符串“33”结尾的行。
+grep &#39;33$&#39; Regular.txt 
+
+4、查看包含字符“1” 或者包含字符“2”包含字符“3”的行。
+grep &#39;[1-3]&#39; Regular.txt 
+
+5、查看包含字符test或taste的行。
+grep &#39;test\|taste&#39; Regular.txt 
+
+6、查找任意字符开头，然后第二个字符为3。
+grep &#39;^.3&#39; Regular.txt 
+
+7. 匹配字符“3”1次或者多次
+grep &#39;a\+&#39; Regular.txt 
+
+8. 匹配字符串“23&quot;，但是3被匹配的次数≥0
+grep &#39;233*&#39; Regular.txt 
+
+9. 搜索到有oo的行，但不想要oo前面有g
+grep &#39;[^g]oo&#39; Regular.t
+
+10. 搜寻包含特定字符串“the&quot; 的行
+grep &#39;the&#39; Regular.txt 
+
+11. )反向搜寻特定字符串&quot;the&quot;(即不包含“the&quot;)
+grep -v &#39;the&#39; Regular.txt 
+
+12. 取得任意大小写&quot;the&quot;的这个字符串
+grep -i &#39;the&#39; Regular.txt 
+
+13. 搜索oo前面不想有小写字符。
+grep &#39;[^a-z]oo&#39; Regular.txt 
+
+14.找出g?? d字符串，起头g结束d的四个字符串
+grep &#39;g..d&#39; Regular.txt 
+
+15. 找出含有数字的行。
+grep &#39;[0-9]&#39; Regular.txt 
+
+16. 找出g后含2~5个o然后以g结尾的字符串
+grep -E &#39;go&#123;2,5&#125;g&#39; Regular.txt 或者 grep &#39;go\&#123;2,5\&#125;g&#39; Regular.txt 
+
+
+
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E4%B8%83-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/12/11/2023ICPC%E6%9D%AD%E5%B7%9E%E7%AB%99%E9%93%9C%E7%89%8C%E9%A2%98/">
+        <h2 class="post-title">2023ICPC杭州站铜牌题</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/11
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>1月14号之后将本篇内容更新到CSDN中，如果我看到了。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134909554">https://blog.csdn.net/qq_17807067/article/details/134909554</a></p>
+<p>补题链接（英文题面）：<a target="_blank" rel="noopener" href="https://codeforces.com/contestInvitation/f9525e4ae38eefdd9062ae5f43d8c9fdee80ad6e">https://codeforces.com/contestInvitation/f9525e4ae38eefdd9062ae5f43d8c9fdee80ad6e</a></p>
+<pre><code class="C++">简单题：M，J
+
+J. Mysterious Tree
+
+题面大意：给你一棵树，这棵树只能是一个链或者是菊花，没有别的情况，菊花就是有一个点和其他点都有边，
+其他点和其他点直接都没边。判断这棵树是链还是环，询问次数为 n/2向上取整+3
+
+此题是交互题所以不可以使用cin.tie，define endl &#39;\n&#39;，具体来说是使用cin.tie就不可以使用&#39;\n&#39;换行
+原因：https://icpc.xidian.wiki/cce/cin-tie0
+
+基本上是cfl单杀的一道题，询问1-2,3-4,5-6,最多询问n/2次就能找到菊花中心，如果没找到这样的边，说明
+是链（奇数和偶数分开，需要特判两次，没找到一定是链），比赛的时候WA两次找出来的两个血汗特判。
+一开始cfl给了思路之后我和z01去做题了，个人原因没听清思路WA两次，应该是谁给思路谁来写题，加上
+中间一个敲代码的，保证给思路的要在线。
+
+这种特判要从代码角度去考虑是否完备，顺着代码去考虑某一行是否有问题，思路上很难看出来。
+
+找到这条边之后再去询问3次一定就能问出是链还是菊花，次数刚好。
+
+-------------------------------------------------------------------------------------
+
+M. V-Diagram
+
+题目大意：给你一个序列，必然是一个先降后增的序列（V图），找出一个平均值最大的连续子V图。
+
+这道题差不多是三个人一起想出来的，最后根据z01和cfl的思路点出如果某一边被选了，那么必然被全选，
+结束战斗。
+
+最终结果只能是V的左侧被全选 或者 V的右侧被全选 或者 全部选上，只有三种情况。
+因为平均值特性 3 3,选上平均值不变，如果递增 3 4 5 6，选上平均值必然增大，所以全选。
+
+造数据测试后，1发过，最稳的一题。
+
+-------------------------------------------------------------------------------------
+
+铜牌题：D，G
+
+D. Operator Precedence
+
+题目大意：(a1×a2)+(a3×a4)+···+(a2n−1×a2n)=a1×(a2+a3)×(a4+a5)×···×(a2n−2+a2n−1)×a2n
+
+满足上述式子，其中条件是等式值不为0,ai的取值也不为0
+
+比较可惜的是正式赛的时候没有做出来，赛后z01 3小时把这道题AC了
+
+正式赛找了3个小时规律没找出来，尝试化简式子也都失败了。
+打表代码写的有问题，某些n的取值找出来的不是第一个合法构造，导致规律找不出来。
+同时样例也具有误导性质，前面给的是平方的规律，后面是没规律。
+只能说这种Special Judge的样例看看就行，还是以自行思考为主。
+
+尝试解式子的时候因为直接设了a1和a2n为1（根据样例设的）所以左右式项数还是不统一，没法做。
+正确的是设a1或者a2n其中一个为1，因为右式是乘法，所以我们希望它不要乘的太大，另括号中的加法
+均为2,-1,2,-1的构造，直接求和为1抵消。然后代入左式解出a2n的合法取值。
+
+-------------------------------------------------------------------------------------
+
+G. Snake Move
+
+题目大意：给你一条蛇，可以WSAD走，也可以特殊操作执行自己缩短一个长度（不能把蛇头缩了）。
+问蛇到矩阵中的所有点最快只要几次操作。
+
+有思路但是题目读不太懂，这个最小操作是蛇一次就要移动完还是每次出发到达那个点的最小操作。
+如果是每次出发就可以采用bfs遍历一次所有点来求出答案，对于某个被蛇身挡住的点，标记一下被
+蛇身挡住的长度来当作答案，下次bfs答案来和他比较应该就可以了。（读不懂操作数也可以把bfs
+代码敲出来看看和样例比较一下）
+
+但是题目中最终输出的答案是连乘后对2^64取模，直接给long long爆了，不知道怎么解决所以最终还是
+没敲代码。
+
+
+
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/12/11/2023ICPC%E6%9D%AD%E5%B7%9E%E7%AB%99%E9%93%9C%E7%89%8C%E9%A2%98/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/11/17/ACM%E5%AD%A6%E4%B9%A0%E5%8A%A8%E6%80%81-%E6%96%AD%E6%9B%B4/">
+        <h2 class="post-title">ACM学习动态-断更</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/11/17
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>2024-07-22<br>感觉有点做无用功，如果有好用的模板我会放在&#x2F;index&#x2F;ACM模板里面，其他就不做维护了<br>毕竟学到脑子里面就行了，反正我也不复习。</p>
+<p>codeforces：1433（specialist）<br>atcoder：865（6kyu）<br>洛谷：1047（LESS div4）<br>牛客：1343（RANK 2902）<br>力扣：1550（TOP 35.23%）</p>
+<p><a target="_blank" rel="noopener" href="https://silverfoxxxy.github.io/rating-converter">分数转换网站cf和at分互换</a><br><a href="/index/%E8%93%9D%E6%A1%A5%E6%9D%AF%E5%A4%87%E8%B5%9B">蓝桥杯备赛</a><br><a target="_blank" rel="noopener" href="https://mivik.gitee.io/compress">代码压行</a></p>
+<details><summary>正在学习</summary><p>
+
+<p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/training/263381">张能祎神犇的模板</a><br><a target="_blank" rel="noopener" href="https://z01prime.github.io/">张能祎神犇的博客</a><br><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/list?keyword=%E6%A8%A1%E6%9D%BF&type=AT%7CB%7CCF%7CP%7CSP%7CUVA&difficulty=3&page=1">洛谷各色模板</a><br><a target="_blank" rel="noopener" href="https://oi-wiki.org/basic/prefix-sum/">Oi-wiki各模块例题以及知识点</a><br><a target="_blank" rel="noopener" href="https://codeforces.com/">Codeforce div&#x2F;vp gym-vp</a><br><a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc331/virtual">Atcoder abc&#x2F;vp arc&#x2F;vp</a><br><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/">洛谷月赛</a></p>
+<blockquote>
+<p>upd：2024-4-1<br>OI-WIKI 杂项 离散化<br>复习time</p>
+</blockquote>
+<p>UKE warning!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+<blockquote>
+<p>upd：2024-3-31<br>2024年度第五届全国大学生算法设计与编程挑战赛（春季赛）<br>AC：4&#x2F;10<br>Rank：502&#x2F;2177（一人组，二人组，三人组，合榜，前23.06%）<br>Reward：UKE,运气好铜<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/137177410">补题记录：4&#x2F;10</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-30<br>AtCoder Beginner Contest 347<br>AC：3&#x2F;7<br>Rank：3212&#x2F;13360（前24.05%）<br>Rating：865(+14)<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/137186126">补题记录：4&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-24<br>AtCoder Regular Contest 175<br>AC：1&#x2F;6<br>Rank：1233&#x2F;3780（前32.62%）<br>Rating：851（+47）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136998761">补题记录：2&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-23<br>UNIQUE VISION Programming Contest 2024 Spring(AtCoder Beginner Contest 346)<br>AC：5&#x2F;7<br>Rank：1984&#x2F;10531（前18.84%）<br>Rating：804（+73）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136976204">补题记录：5&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-22<br>牛客小白月赛89	<br>AC：3&#x2F;6<br>Rank：437&#x2F;2208（前19.80%）<br>Rating：1343（+121）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136952032">补题记录：3&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-19<br>Codeforces Round 935 (Div. 3)<br>AC：4&#x2F;8<br>Rank：2440&#x2F;7818（前31.22%）<br>Rating：1433（-17）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136853162">补题记录：5&#x2F;8</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-18<br>AtCoder Regular Contest 174<br>AC：1&#x2F;6<br>Rank：2105&#x2F;3900（前53.98%）<br>Rating：731（-7)<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136793560">补题记录：2&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-17<br>【LGR-179-Div.2】复旦勰码 3 月月赛 II &amp; ZHYOI Round 4<br>AC：2&#x2F;4<br>Rank：84&#x2F;1701（前4.94%）<br>Rating：1047（+207）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136787193">补题记录：2&#x2F;4</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-17<br>力扣第 126 场双周赛<br>AC：2&#x2F;4<br>Rank：1031&#x2F;3234（前31.89%)<br>Rating：1550（+61）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136773622">补题记录：2&#x2F;4</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-17<br>Monoxer Programming Contest 2024（AtCoder Beginner Contest 345）<br>AC：3&#x2F;7<br>Rank：3692&#x2F;9742（前37.90%）<br>Rating：738(+19)<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136773330">补题记录：3&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-15<br>牛客挑战赛73<br>AC：2&#x2F;6<br>Rank：316&#x2F;1104（前28.63%）<br>Rating：1222（+222）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136752445">补题记录：2&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-12<br>Codeforces Round 933 (Div. 3)<br>AC：5&#x2F;7<br>Rank：1236&#x2F;27781（前4.45%）<br>Rating：1450（+81）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136639408">补题记录：5&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-10<br>AtCoder Regular Contest 173<br>AC：0&#x2F;6<br>Rank：1323&#x2F;4400（前30.07%）<br>Rating：719（-41）</p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-10<br>【LGR-177-Div.3】洛谷基础赛 #8 &amp; Westlake OI #1<br>AC：1&#x2F;4<br>Rank：814&#x2F;1900（前42.85%）<br>Rating：840（+63）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136606015">补题记录：1&#x2F;4</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-10<br>力扣第 388 场周赛<br>AC:2&#x2F;4<br>Rank：2850&#x2F;4291（前66.42%）<br>Rating：1489<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136599969">补题记录：2&#x2F;4</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-10<br>【LGR-176-Div.2】[yLCPC2024] 洛谷 3 月月赛 I<br>AC：2&#x2F;7<br>Rank：273&#x2F;2005（前13.62%）<br>Rating：777（+468）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136588270">补题记录：4&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-9<br>Toyota Programming Contest 2024#3（AtCoder Beginner Contest 344）<br>AC：3&#x2F;7<br>Rank：4967&#x2F;11155（前44.53%）<br>Rating：760（-10）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136591948">补题记录：3&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-2<br>AtCoder Beginner Contest 343<br>AC：4&#x2F;7<br>Rank：3795&#x2F;11706（前32.42%）<br>Rating：770（+17）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136424518">补题记录：5&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-2-28<br>Codeforces Round 929 (Div. 3)<br>AC：4&#x2F;7<br>Rank：3938&#x2F;26561（前14.83%）<br>Rating：1369（+10）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136335165">补题记录：5&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-2-20<br>Codeforces Round 928 (Div. 4)<br>AC：5&#x2F;7<br>Rank：820&#x2F;14636（前5.7%）<br>Rating：1355（+120）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136181241">补题记录：5&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-2-19<br>AtCoder Regular Contest 172<br>AC：1&#x2F;6<br>Rank：1364&#x2F;3681（前37.03%）<br>Rating：753（+68）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136159786">补题记录：1&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-2-18<br>Toyota Programming Contest 2024#2（AtCoder Beginner Contest 341）<br>AC：4&#x2F;7<br>Rank：3476&#x2F;13120（前26.50%）<br>Rating：685（+37）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136144145">补题记录：3&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-2-14<br>Codeforces Round 925 (Div. 3)<br>AC：4&#x2F;7<br>Rank：5634&#x2F;24858（前22.67%）<br>Rating：1235（+27）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136110918">补题记录：5&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-2-11<br>Codeforces Round 924 (Div. 2)<br>AC：2&#x2F;6<br>Rank：5003&#x2F;13067（前38.29%）<br>Rating：1197（+21）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136097405">补题记录：2&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-2-10<br>KAJIMA CORPORATION CONTEST 2024（AtCoder Beginner Contest 340）<br>AC：3&#x2F;7<br>Rank：3562&#x2F;10617（前33.48%）<br>Rating：648（+31）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136092994">补题记录：4&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-2-5<br>AtCoder Regular Contest 171<br>AC：1&#x2F;6<br>Rank：1964&#x2F;4844（前40.55%）<br>Rating：617（+61）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136035118">补题记录：2&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-2-3<br>Japan Registry Services (JPRS) Programming Contest 2024 (AtCoder Beginner Contest 339)<br>AC：3&#x2F;7<br>Rank：3098&#x2F;10799（前28.69%）<br>Rating：556（+125）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/136017592">补题记录：3&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-1-31<br>Codeforces Round 922 (Div. 2)<br>AC：2&#x2F;7<br>Rank：13613&#x2F;20643（前65.95%）<br>Rating：1176（-24）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/135944492">补题记录：2&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-1-28<br>Codeforces Round 921 (Div. 2)<br>AC：1&#x2F;6<br>Rank：11495&#x2F;18710（前61.44%）<br>Rating：1200（+19）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/135890810">补题记录：3&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2024-1-22<br>AtCoder Regular Contest 170<br>AC：1&#x2F;6<br>Rank：1587&#x2F;2058（前77.12%）<br>Rating：431（+219）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/135736855">补题记录：2&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-12-16<br>Toyota Programming Contest 2023#8（AtCoder Beginner Contest 333）<br>AC：5&#x2F;7<br>Rank：2437&#x2F;12304（前19.81%）<br>Rating：212（+177）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/135038693">补题记录：5&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-12-14<br>OI-wiki搜索：洛谷搜索题单<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/135006921">CSDN记录</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-12-11<br>AtCoder Beginner Contest 332<br>AC：3&#x2F;7<br>Rank：4033&#x2F;7452（前54.12%）<br>Rating：35（+35）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134946315">补题记录：4&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-12-10<br>2023ICPC杭州站<br>AC：2&#x2F;13<br>Rank：379&#x2F;435（前87.13%，铁牌）<br><a href="/index/2023ICPC%E6%9D%AD%E5%B7%9E%E7%AB%99%E9%93%9C%E7%89%8C%E9%A2%98">补题记录：2&#x2F;13</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-12-6<br>Codeforces Round 913 (Div. 3)<br>AC：2&#x2F;7<br>Rank：6388&#x2F;19176（前33.32%）<br>Rating：1177（+93）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134820744">补题记录：3&#x2F;7</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-12-5<br>AtCoder Beginner Contest 331<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134797013?spm=1001.2014.3001.5502">CSDN记录</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-12-1<br>OI-wiki构造<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134736865?spm=1001.2014.3001.5502">CSDN记录</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-11-24<br>Educational Codeforces Round 158 [Rated for Div. 2]<br>AC：3&#x2F;6<br>Rank：2184&#x2F;12126（前18.02%）<br>Rating：1084（+313）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134628944?spm=1001.2014.3001.5502">补题记录：3&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-11-23<br>OI-wiki二分<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134588446?spm=1001.2014.3001.5502">CSDN记录</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-11-22<br>OI-wiki差分,模板优化(参考张能祎神犇)<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134564425?spm=1001.2014.3001.5502">CSDN记录</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-11-21<br>OI-wiki树上前缀和<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134528908?spm=1001.2014.3001.5502">CSDN记录</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-11-19<br>Codeforces Round #910 (Div. 2)<br>AC：1&#x2F;6<br>Rank：3985&#x2F;8026（前49.66%）<br>Rating：771（+305）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_74120503/article/details/134615364">补题记录：1&#x2F;6</a></p>
+</blockquote>
+<blockquote>
+<p>upd：2023-11-18<br>Codeforces Round #909 (Div. 3)<br>AC：3&#x2F;7<br>Rank：5434&#x2F;18717（前29.04%）<br>Rating：466（+466）<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134485169?spm=1001.2014.3001.5502">补题记录：4&#x2F;7</a></p>
+</blockquote>
+</p></details>
+
+<details><summary>赛前必看</summary><p>
+
+<blockquote>
+<p>upd：2024-4-1 关于离散化<br>如果离散化之后用到的不是点，而是点和点之间的关系，线段。<br>那么可能会有 1-2覆盖3 2-3覆盖2 3-4覆盖1，可以发现中间的2-3,被左右两边抵消看不到了。<br>此时离散化需要将点x，右边的x+1,也进行离散化。<br>注意使用set和map离散化时候，x+1会出现重复的情况，注意判断，if(!f[x])f[x]&#x3D;cnt++;</p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-19<br>字符串拼接<br>string s<br>s&#x3D;”0”+s;<br>而不是<br>s&#x3D;’0’+s<br>注意区别。</p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-17<br>答案从不等式出来的话，一定要谨慎思考。<br>如果凑形式，答案&gt;&#x3D;x，x不是答案的值，即  答案&gt;&#x3D;3，<br>若答案是4,也是满足等式的，不能使用3作为答案。</p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-9<br>via z01Prime<br>每一段的最大值，最大值里面的最大值尽可能小，二分答案。（最大最小）</p>
+</blockquote>
+<blockquote>
+<p>upd：2024-3-8<br>二维不确定的数组如int a[n+1][m+1]，随着程序运行确定的这种，不可被函数和lambda以及function<br>函数调用，只能直接写循环。<br>如果代码复杂度符合预期，提交却TLE，那么多关注代码的下标是否越界。</p>
+</blockquote>
+<blockquote>
+<p>upd：2023-12-10<br>2023ICPC杭州站<br>1.cin.tie和ios,’\n’在交互题中不可用，千万注意。<br>2.题目谁给的点子谁就必须是主体手之一，A给的点子，不能B和C来做，必须是A和B或者A和C<br>3.XCPC也许会给中文题面，需要提前注意。<br>4.题目造数据也许细节造不出来，需要思维跟随代码跑一遍，看看是否有缺漏的情况。</p>
+</blockquote>
+<blockquote>
+<p>upd：2023-12-9<br>XCPCtip<br>1.前几题过的人多的大概率就是简单题和签到题，可以先跟榜单。后面如果有熟悉的但是强的不是特别多的人可以跟着做，比如台州学院和xhy，榜单那边可以点星号关注。（最好还是自己做）<br>2.看题分配一下反正别看同一题。<br>3.ICPC-WF镜像比赛使用的是乌班图系统，需要打开桌面的Home，里面有Clionproject，点开就有main.cpp，右键，使用更多应用，用Clion打开。（在此之前先把Dom平台打开，点开题目缩小放在屏幕的右半边。敲模板的时候找个人在右边看题，不是前几题就换题（以看题为主，敲模板为辅）<br>4.有实在没思路做不来的题，可以考虑用rand函数暴力卡出来（try个100次）<br>5.有除法和乘法不要用取模（不然要用乘法逆元和除法逆元），尽量变成减法和加法，减法也要先加模再取模。</p>
+</blockquote>
+<blockquote>
+<p>upd：2023-11-20<br>巧技（有时作用很明显）<br>1.正难则反。包括但不限于逆向思维，逆向建图，逆向遍历数组。<br>2.建图思维。从S-&gt;T点，中间有n个加速点可以选择是否加速，问最短时间。并不是考虑某个点是否使用（01dp），而是图论问题，S-&gt;所有点连线，其他点都连线，实际上就是一个从S点出发的最短路问题。<br>3.lower_bound不要用在STL上，否则复杂度会退化成n，要使用STL自带的lower才是logn。例如：set<int>s,s.lower_bound。如果不需要大于等于，需要小于等于，请使用set&lt;int,greater<int>&gt;s<br>4.max({})中间加花括号可以多个比较，例如max({a,b,c})</p>
+</blockquote>
+<blockquote>
+<p>upd：2023-11-17<br>XCPCtip<br>1.不能乱try，10分钟造数据&#x2F;对拍 优势远大于 一次罚时。对于显而易见的签到题，队友感觉都没问题的时候，可以选择直接提交。<br>2.先跟榜单做题，如果卡了没思路感觉有难度马上换题，可能被强队带偏了。</p>
+</blockquote>
+</p></details>
+
+<details><summary>关于本文</summary><p>
+
+<blockquote>
+<p>upd：2023-11-17<br>蒟蒻就要有蒟蒻的样子，蒟蒻不刷题才是常态。<br>作为督促自己的一种方式就是更新博文，将自己的努力可视化。<br>学习内容和学习方向如果有更好的，欢迎各位神犇在下方留言。</p>
+</blockquote>
+</p></details>
+
+<p><a href="/index/ACM%E6%A8%A1%E6%9D%BF">你是否正在寻找：算法和数据结构模板？</a></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/11/17/ACM%E5%AD%A6%E4%B9%A0%E5%8A%A8%E6%80%81-%E6%96%AD%E6%9B%B4/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
+    <div class="prev">
+        
+        <a class="page-num" href="/page/3/">
+            <i class="fa-solid fa-caret-left fa-fw"></i>
+        </a>
+        
+    </div>
+    <div class="page-index">
+        
+        <span>
+            
+            <a class="page-num" href="/">1</a>
+            <span class="page-omit">...</span>
+            
+            
+            
+            
+            <a class="page-num" href="/page/2">2</a>
+            
+            
+            <a class="page-num" href="/page/3/">3</a>
+        </span>
+        
+        <span class="current">4</span>
+        
+        <span>
+            <a class="page-num" href="/page/5/">5</a>
+            
+            <a class="page-num" href="/page/6">6</a>
+            
+            
+            <span class="page-omit">...</span>
+            <a class="page-num" href="/page/12">12</a>
+            
+        </span>
+        
+    </div>
+    <div class="next">
+        
+        <a class="page-num" href="/page/5/">
+            <i class="fa-solid fa-caret-right fa-fw"></i>
+        </a>
+        
+    </div>
+</div>
+
+    </div>
+    
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">zzczzczzc</div>
+        <div class="description">
+            <p>下面是友情链接 : D</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://blog.gugugit.com/">闻俊的博客</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://1dyer.github.io">李登宇的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://chchch-art.github.io">陈昊的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://z01prime.github.io">张能祎的博客（github）</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 zzczzczzc&#39;s home
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zzczzczzc
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+    </body>
+</html>

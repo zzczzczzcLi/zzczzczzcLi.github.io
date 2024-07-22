@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+        <meta charset="utf-8" />
+        <title>实验八-Shell程序设计 | zzczzczzc&#39;s home</title>
+        <meta name="author" content="zzczzczzc" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css" />
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>床</h2>
+                        <img src="/images/1.webp" />
+                        <p>一片伟大的净土</p>
+                                                    灵魂的归处，肉体的坟墓。
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZZCZZCZZC&#39;S HOME</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;相关</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZZCZZCZZC&#39;S HOME</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">相关</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>实验八-Shell程序设计</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <pre><code class="DOCX文档，奶牛快传口令：7a2ykb">
+let为定义变量
+脚本写好之后需要chmod 777 脚本文件，来赋予运行权限
+同时执行的时候需要加上地址，比如脚本文件a.sh
+执行为./a.sh
+
+实验目的：
+1、掌握shell中的变量定义和引用。
+2、掌握Shell中的算术运算符、文件运算符。
+3、掌握shell中的控制语句。
+4、掌握shell中的预定义变量和环境变量
+5、掌握shell程序的两种执行方式
+
+实验内容：
+1.统计/etc下文件和目录的数目。
+#! /bin/bash
+
+count1=$(find /etc -type f | wc -l)
+count2=$(find /etc -type d | wc -l)
+
+echo &quot;f:$count1&quot;
+echo &quot;d:$count2&quot;
+
+2.在用户目录下创建20个目录，目录名由用户指定部分+【1-20】组成
+
+#! /bin/bash
+
+read -p &quot;Input:&quot; my_name
+for((i=1;i&lt;=20;i++))
+do
+        mkdir -p &quot;$HOME/$&#123;my_name&#125;$&#123;i&#125;&quot;
+        echo &quot;$HOME/$&#123;my_name&#125;$&#123;i&#125; is created&quot;
+done
+
+3.输出九九乘法表
+#!/bin/bash
+
+for ((i=1;i&lt;=9;i++))
+do
+    for ((j=1;j&lt;=i;j++))
+    do
+        let c=i*j
+        echo -ne &quot;$&#123;i&#125;X$&#123;j&#125;=$c\t&quot;
+    done
+    echo
+done
+
+
+4.输出200以内能被7整除的所有数，并求其和
+#! /bin/bash
+
+let sum=0
+for ((i=1; i&lt;=200; i++))
+do
+        let c=i%7
+        if [ $&#123;c&#125; -eq 0 ]; then
+                echo -ne &quot;$&#123;i&#125; &quot;
+                let sum=sum+i
+        fi
+done
+echo &quot;sum=$&#123;sum&#125;&quot;
+
+5.从键盘输入3个数，求最大值
+#!/bin/bash
+
+read -p &quot;Input 3 numbers:&quot; a b c
+let &quot;tmp = (a &gt; b) ? a : b&quot;
+let &quot;max = (tmp &gt; c) ? tmp : c&quot;
+echo &quot;max=$&#123;max&#125;&quot;
+
+6.检测当前用户是否为超级用户，若是输出“root user”，否则输出“Normal User”
+#! /bin/bash
+
+if [ $UID -eq 0 ]; then
+        echo &quot;root user&quot;
+        else echo &quot;Normal user&quot;
+fi
+
+7.编写脚本测试当前机房整个网段172.17.69.0/24中，那些机器处于开机状态，那些处于关机状态
+
+来回ping ：（
+
+
+</code></pre>
+
+    </div>
+    
+    
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 zzczzczzc&#39;s home
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zzczzczzc
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "5093c0f78df8d980d0e8",
+        clientSecret: "3bc33bc8827c07c9e2907362f7e05a5f574db90b",
+        repo: "myblogtalk",
+        owner: "zzczzczzcLi",
+        admin: "zzczzczzcLi".split(","),
+        language: "zh-CN",
+        id: decodeURI(location.pathname),
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
+
+
+
+
+        
+    </body>
+</html>

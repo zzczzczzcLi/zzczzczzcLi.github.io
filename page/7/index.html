@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+        <meta charset="utf-8" />
+        <title>zzczzczzc&#39;s home</title>
+        <meta name="author" content="zzczzczzc" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="/js/lib/home.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>床</h2>
+                        <img src="/images/1.webp" />
+                        <p>一片伟大的净土</p>
+                                                    灵魂的归处，肉体的坟墓。
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZZCZZCZZC&#39;S HOME</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;相关</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZZCZZCZZC&#39;S HOME</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">相关</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg,/images/background1.jpg,/images/background2.jpg"></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>zzczzczzc&#39;s home</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div id="home-posts-wrap"  ref="homePostsWrap">
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2023/09/18/%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB/%E9%99%88%E5%86%AC%E5%B0%B1%E4%B8%9A%E6%8E%A8%E8%8D%90/">
+        <h2 class="post-title">陈冬就业推荐</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%9D%82%E8%B0%88/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                杂谈
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/18
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <center>2023-09-18 15:40</center><br>
+进行了一次班会，班主任个人推荐我做点项目，面向岗位学点东西提升综合实力。对全班推荐了百度AI-飞浆Studio，深度学习方面的内容，说里面有些成熟的项目可以去学习一下，代码可以直接运行，也有详细的代码注释。
+<p><hr style="width:50%;border-top: solid;margin:auto;"></p>
+
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB/" style="color: #00bcd4">现实生活</a>
+        </span>
+        
+    </div>
+    <a href="/2023/09/18/%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB/%E9%99%88%E5%86%AC%E5%B0%B1%E4%B8%9A%E6%8E%A8%E8%8D%90/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/09/18/tmpLinux/%E5%9C%A8Terminal%E4%B8%AD%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/">
+        <h2 class="post-title">在终端Terminal中复制粘贴</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/18
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>在Linux一类终端（Terminal）中Ctrl+C和Ctrl+V通常拥有其他作用，要实现复制粘贴要多按一个Shift。</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
+        </span>
+        
+    </div>
+    <a href="/2023/09/18/tmpLinux/%E5%9C%A8Terminal%E4%B8%AD%E5%A4%8D%E5%88%B6%E7%B2%98%E8%B4%B4/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/09/18/%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB/%E9%AB%98%E9%93%81%E5%A6%82%E4%BD%95%E6%8D%A2%E4%B9%98/">
+        <h2 class="post-title">高铁如何换乘</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/18
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <blockquote>
+<p>有时候两地之间并没有直达的高铁或者时间不太恰当，比如宁波到衢州直达2小时的都在早上6点，刚好赶不上，而转乘的票从早到晚都有，这时候就需要知道如何换乘。
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB/" style="color: #03a9f4">现实生活</a>
+        </span>
+        
+    </div>
+    <a href="/2023/09/18/%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB/%E9%AB%98%E9%93%81%E5%A6%82%E4%BD%95%E6%8D%A2%E4%B9%98/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/09/18/Web%E5%BC%80%E5%8F%91/Web%E5%BC%80%E5%8F%91%E7%AC%AC3%E7%AB%A0-%E5%AE%9E%E6%88%98%E6%A8%A1%E6%8B%9F/">
+        <h2 class="post-title">Web开发第3章-实战模拟</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/18
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>尝试使用HBuilder将<a target="_blank" rel="noopener" href="http://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/moe_1485/202309/t20230916_1080823.html">样本网站</a>的格式复原。</br></p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Web/" style="color: #03a9f4">Web</a>
+        </span>
+        
+    </div>
+    <a href="/2023/09/18/Web%E5%BC%80%E5%8F%91/Web%E5%BC%80%E5%8F%91%E7%AC%AC3%E7%AB%A0-%E5%AE%9E%E6%88%98%E6%A8%A1%E6%8B%9F/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/09/18/Web%E5%BC%80%E5%8F%91/Web%E5%BC%80%E5%8F%91%E7%AC%AC2%E7%AB%A0-%E5%B8%B8%E7%94%A8html%E6%A0%87%E7%AD%BE/">
+        <h2 class="post-title">Web开发第2章-常用html标签</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/9/18
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>本章内容和已有文章重叠，跳转至已有文章：<a href="/2023/05/06/Web%E5%BC%80%E5%8F%91/Web%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">Web常用命令</a><br><br><font color='RED'>！返回前一章：</font><a href="/2023/09/18/Web%E5%BC%80%E5%8F%91/Web%E5%BC%80%E5%8F%91%E7%AC%AC1%E7%AB%A0-%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2">Web开发第1章-环境部署</a><br><font color='RED'>！跳转至下一章：</font><a href="/2023/09/18/Web%E5%BC%80%E5%8F%91/Web%E5%BC%80%E5%8F%91%E7%AC%AC3%E7%AB%A0-%E5%AE%9E%E6%88%98%E6%A8%A1%E6%8B%9F">Web开发第3章-实战模拟</a></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Web/" style="color: #03a9f4">Web</a>
+        </span>
+        
+    </div>
+    <a href="/2023/09/18/Web%E5%BC%80%E5%8F%91/Web%E5%BC%80%E5%8F%91%E7%AC%AC2%E7%AB%A0-%E5%B8%B8%E7%94%A8html%E6%A0%87%E7%AD%BE/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
+    <div class="prev">
+        
+        <a class="page-num" href="/page/6/">
+            <i class="fa-solid fa-caret-left fa-fw"></i>
+        </a>
+        
+    </div>
+    <div class="page-index">
+        
+        <span>
+            
+            <a class="page-num" href="/">1</a>
+            <span class="page-omit">...</span>
+            
+            
+            
+            
+            <a class="page-num" href="/page/5">5</a>
+            
+            
+            <a class="page-num" href="/page/6/">6</a>
+        </span>
+        
+        <span class="current">7</span>
+        
+        <span>
+            <a class="page-num" href="/page/8/">8</a>
+            
+            <a class="page-num" href="/page/9">9</a>
+            
+            
+            <span class="page-omit">...</span>
+            <a class="page-num" href="/page/12">12</a>
+            
+        </span>
+        
+    </div>
+    <div class="next">
+        
+        <a class="page-num" href="/page/8/">
+            <i class="fa-solid fa-caret-right fa-fw"></i>
+        </a>
+        
+    </div>
+</div>
+
+    </div>
+    
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">zzczzczzc</div>
+        <div class="description">
+            <p>下面是友情链接 : D</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://blog.gugugit.com/">闻俊的博客</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://1dyer.github.io">李登宇的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://chchch-art.github.io">陈昊的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://z01prime.github.io">张能祎的博客（github）</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 zzczzczzc&#39;s home
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zzczzczzc
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+    </body>
+</html>

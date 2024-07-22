@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+        <meta charset="utf-8" />
+        <title>zzczzczzc&#39;s home</title>
+        <meta name="author" content="zzczzczzc" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="/js/lib/home.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>床</h2>
+                        <img src="/images/1.webp" />
+                        <p>一片伟大的净土</p>
+                                                    灵魂的归处，肉体的坟墓。
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZZCZZCZZC&#39;S HOME</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;相关</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZZCZZCZZC&#39;S HOME</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">相关</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg,/images/background1.jpg,/images/background2.jpg"></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>zzczzczzc&#39;s home</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div id="home-posts-wrap"  ref="homePostsWrap">
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2023/12/13/Linux/%E4%B8%8A%E4%B8%80%E5%B1%8ALinux%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%8D%B7/">
+        <h2 class="post-title">衢州学院 2022~2023学年  第一学期《Linux操作系统及应用》期末试卷(A)</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>里面有一步是错误的<br><a href="/tmp/%E5%AE%9E%E9%AA%8C%E4%B9%9D-FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%85%8D%E7%BD%AE">正确查看</a></p>
+<pre><code class="DOCX文档，奶牛快传口令：3nk20d">一、操作题（每题5分，共25分）
+1．使用命令切换到/home/qzc目录，并显示当前工作目录路径。
+cd /home/qzc
+pwd 
+
+2．使用命令显示/dev目录下所有文件目录的详细信息，包括隐藏文件。
+cd /dev
+ls -a
+
+3．使用命令创建空文件/home/qzc /test，。
+cd /home/qzc
+mkdir test
+
+4．统计文件/etc/dhcpd.conf的行数、字符数和单词数。
+sudo yum install dhcp-server –y #-y默认一直确定操作
+su #进入root之后才能进/etc/dhcp/
+wc -l /etc/dhcp/dhcpd.conf #line统计行数
+wc -c /etc/dhcp/dhcpd.conf #char统计字符
+wc -w /etc/dhcp/dhcpd.conf #word统计单词
+
+5．使用cut命令截取/etc/passwd第三列信息（用户名）
+cut –f 3 /etc/passwd #显示第三列
+cut –d ‘：’ –f 3 /etc/passwd #显示第三列,同时分隔符为冒号
+
+二、分析题（每题5分，共25分）
+    对文件tt.txt进行以下操作
+1．查找包含至少两个a的单词。（egrep等价于grep -e，表示使用衍生正则表达式，完全升级版）
+egrep ‘a&#123;2,&#125;’ tt.txt
+
+2．查找以大写字母开始的行。
+egrep &#39;^[A-Z]&#39; tt.txt
+
+3．查找以字符.结束的行。
+egrep ‘\.$’ tt.txt
+
+4．查找包含数字的行。
+egrep &#39;[0-9]&#123;1,&#125;&#39; tt.txt
+
+5.查找以非数字开始的行
+egrep &#39;^[^0-9]&#39; tt.txt
+
+三、综合题（30分）
+利用vsftp配置FTP服务器，要求：
+1）使用NAT方式，连接网络
+
+2）创建user1， user2， user3三个本地用户，允许user1，user2登录，不允许user3登录
+yum install vsftpd –y #安装vsftpd
+systemctl stop firewalld #关闭防火墙
+systemctl start vsftpd #启动ftp服务器
+本地连接网络适配器打开NAT8 #cmd ftp测试连接
+
+useradd user1 #创建用户
+useradd user2
+useradd user3
+
+cd /etc/vsftpd #ftp服务器配置目录
+vim vsftpd.conf #添加一行userlist_deny=YES，vim userlist中的用户均无法访问ftp
+
+passwd user1 #设置用户的密码，否则上不了ftp
+passwd user2
+passwd user3
+
+3）user1只能访问自己的主目录，不能访问别的目录； user2可以访问别的目录
+这步有问题，拉到前面正确查看
+
+4）修改登录服务器后的提示信息“我的FTP服务器”
+打开ftp服务器配置文件vsftpd.conf中取消注释ftpd_banner
+并修改为ftpd_banner=my ftp server.
+
+四、编程题（20分）
+编写shell程序，在用户目录下创建20个目录，目录名由Dir+【1-20】组成,并在每个目录下面创建空文件，文件名为File+【1-20】。
+vim 1 #编写shell脚本
+chmod 777 1 #赋予运行权限
+./1 #运行shell脚本，不能1，要./1
+#for do done，和c++一样 但是for(())两层括号
+#printf “” 变量的前面加$引用
+---------文本内容----------
+#!/bin/bash #头文件,/一个也别漏
+
+cd /home/qzc; #语句用封号结尾
+
+for ((i=1;i&lt;=20;++i))
+do
+        mkdir Dir$i; #不需要双引号
+        cd Dir$i;
+        touch File$i;
+        cd ..;
+done
+
+
+
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/12/13/Linux/%E4%B8%8A%E4%B8%80%E5%B1%8ALinux%E6%9C%9F%E6%9C%AB%E8%80%83%E8%AF%95%E5%8D%B7/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E4%B8%89-vi%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8/">
+        <h2 class="post-title">实验三-vi编辑器使用</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <pre><code class="DOCX文档，奶牛快传口令：ogcq94">实验目的：
+1、掌握vi编辑器的使用方法。
+2、掌握LINUX下文件显示和处理命令，如cat、more、less、head、tail、等。
+
+实验内容：
+1、使用vi编辑器创建文本文件/root/v，文件内容为hell，最后保存退出。
+vim /root/v
+
+2、把ls命令的帮助文档输出到aa.txt文件。
+ ls --help &gt;&gt; aa.txt 
+
+3、使用命令查看文件aa.txt后三行的内容。
+tail -n 3 aa.txt 或vim中:$-3,$p
+
+4、查看文件aa.txt的前3行内容。
+head -n 3 aa.txt 或 vim中：1,3p
+
+5、设置aa.txt文件的行号。
+cat -n aa.txt 
+
+6.把aa.txt另存为bb.txt
+Vim中 w bb.txt
+
+7. 把aa.txt中所有的空白行去掉
+vim中:g/^$/d
+
+8、删除aa.txt文件的第6-11行。
+vim中6,11d
+
+9、把操作7处理后的文件的第17-24行，拷贝到第66行的位置。
+17,24co66
+
+10、把操作8处理后的文件中第11-45行中的the替换成THE
+11,45s/the/THE/g 
+
+11.把第67-105行的内容剪切（移动）到第110行后
+vim中67,105m110
+
+
+
+
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E4%B8%89-vi%E7%BC%96%E8%BE%91%E5%99%A8%E4%BD%BF%E7%94%A8/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E4%B9%9D-FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%85%8D%E7%BD%AE/">
+        <h2 class="post-title">实验九-FTP服务器的配置</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <pre><code class="DOCX文档，奶牛快传口令：ohxyh0">下载后查看
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E4%B9%9D-FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%85%8D%E7%BD%AE/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
+        <h2 class="post-title">实验二-文件和目录操作命令</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <pre><code class="DOCX文档，奶牛快传口令：pnbicz">实验目的：
+1、掌握LINUX下文件和目录的操作命令，如pwd、cd、ls、touch、mkdir、rmdir、cp、mv、rm、wc，cut等。
+
+实验内容：
+1、使用命令切换到/etc目录，并显示当前工作目录路径。
+cd /etc
+pwd
+
+2、使用命令显示/root目录下所有文件目录的详细信息，包括隐藏文件。
+ls -alh
+
+3、使用命令创建空文件/root/ab。
+mkdir /root/ab
+
+4、统计文件/root/anaconda-ks.cfg的行数、字符数和单词数。
+wc /root/anaconda-ks.cfg
+统计行数：wc -l /root/anaconda-ks.cfg
+统计单词数：wc -w /root/anaconda-ks.cfg
+统计字符数：wc -c /root/anaconda-ks.cfg (按道理来说应该是-m）
+
+5、在home目录下创建目录mydir，并把/root 下的文件anaconda-ks.cfg拷贝到mydir目录下
+mkdir /home/mydir
+cp /root/anaconda-ks.cfg  /home/mydir/
+
+6.把题5拷贝文件anaconda-ks.cfg改名为aa.txt
+mv /home/mydir/anaconda-ks.cfg  aa.txt
+
+7.使用cut命令截取/etc/passwd第一列信息（用户名）
+cut -d: -f1 /etc/passwd
+
+8.使用管道|实现/etc/总共有多少个文件
+ls -alh /etc | wc -l
+
+9.查找/etc下所有的文件小于3000字节的.conf文件
+find /etc -name &quot;*.conf&quot; -size -3000c
+
+10.查找/etc/passwd 下所有不包含root的行
+grep -v &quot;root&quot; /etc/passwd
+
+
+
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E5%8D%81-DHCP%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">
+        <h2 class="post-title">实验十-DHCP服务器配置</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <pre><code class="DOCX文档，奶牛快传口令：pf9wcj">下载后查看
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/12/13/Linux/%E5%AE%9E%E9%AA%8C%E5%8D%81-DHCP%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
+    <div class="prev">
+        
+        <a class="page-num" href="/page/2/">
+            <i class="fa-solid fa-caret-left fa-fw"></i>
+        </a>
+        
+    </div>
+    <div class="page-index">
+        
+        <span>
+            
+            
+            
+            <a class="page-num" href="/">1</a>
+            
+            
+            
+            <a class="page-num" href="/page/2/">2</a>
+        </span>
+        
+        <span class="current">3</span>
+        
+        <span>
+            <a class="page-num" href="/page/4/">4</a>
+            
+            <a class="page-num" href="/page/5">5</a>
+            
+            
+            <span class="page-omit">...</span>
+            <a class="page-num" href="/page/12">12</a>
+            
+        </span>
+        
+    </div>
+    <div class="next">
+        
+        <a class="page-num" href="/page/4/">
+            <i class="fa-solid fa-caret-right fa-fw"></i>
+        </a>
+        
+    </div>
+</div>
+
+    </div>
+    
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">zzczzczzc</div>
+        <div class="description">
+            <p>下面是友情链接 : D</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://blog.gugugit.com/">闻俊的博客</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://1dyer.github.io">李登宇的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://chchch-art.github.io">陈昊的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://z01prime.github.io">张能祎的博客（github）</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 zzczzczzc&#39;s home
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zzczzczzc
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+    </body>
+</html>

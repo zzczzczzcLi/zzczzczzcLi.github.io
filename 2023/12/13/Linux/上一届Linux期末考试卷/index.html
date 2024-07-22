@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+        <meta charset="utf-8" />
+        <title>衢州学院 2022~2023学年  第一学期《Linux操作系统及应用》期末试卷(A) | zzczzczzc&#39;s home</title>
+        <meta name="author" content="zzczzczzc" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css" />
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>床</h2>
+                        <img src="/images/1.webp" />
+                        <p>一片伟大的净土</p>
+                                                    灵魂的归处，肉体的坟墓。
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZZCZZCZZC&#39;S HOME</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;相关</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZZCZZCZZC&#39;S HOME</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">相关</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>衢州学院 2022~2023学年  第一学期《Linux操作系统及应用》期末试卷(A)</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>里面有一步是错误的<br><a href="/tmp/%E5%AE%9E%E9%AA%8C%E4%B9%9D-FTP%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E9%85%8D%E7%BD%AE">正确查看</a></p>
+<pre><code class="DOCX文档，奶牛快传口令：3nk20d">一、操作题（每题5分，共25分）
+1．使用命令切换到/home/qzc目录，并显示当前工作目录路径。
+cd /home/qzc
+pwd 
+
+2．使用命令显示/dev目录下所有文件目录的详细信息，包括隐藏文件。
+cd /dev
+ls -a
+
+3．使用命令创建空文件/home/qzc /test，。
+cd /home/qzc
+mkdir test
+
+4．统计文件/etc/dhcpd.conf的行数、字符数和单词数。
+sudo yum install dhcp-server –y #-y默认一直确定操作
+su #进入root之后才能进/etc/dhcp/
+wc -l /etc/dhcp/dhcpd.conf #line统计行数
+wc -c /etc/dhcp/dhcpd.conf #char统计字符
+wc -w /etc/dhcp/dhcpd.conf #word统计单词
+
+5．使用cut命令截取/etc/passwd第三列信息（用户名）
+cut –f 3 /etc/passwd #显示第三列
+cut –d ‘：’ –f 3 /etc/passwd #显示第三列,同时分隔符为冒号
+
+二、分析题（每题5分，共25分）
+    对文件tt.txt进行以下操作
+1．查找包含至少两个a的单词。（egrep等价于grep -e，表示使用衍生正则表达式，完全升级版）
+egrep ‘a&#123;2,&#125;’ tt.txt
+
+2．查找以大写字母开始的行。
+egrep &#39;^[A-Z]&#39; tt.txt
+
+3．查找以字符.结束的行。
+egrep ‘\.$’ tt.txt
+
+4．查找包含数字的行。
+egrep &#39;[0-9]&#123;1,&#125;&#39; tt.txt
+
+5.查找以非数字开始的行
+egrep &#39;^[^0-9]&#39; tt.txt
+
+三、综合题（30分）
+利用vsftp配置FTP服务器，要求：
+1）使用NAT方式，连接网络
+
+2）创建user1， user2， user3三个本地用户，允许user1，user2登录，不允许user3登录
+yum install vsftpd –y #安装vsftpd
+systemctl stop firewalld #关闭防火墙
+systemctl start vsftpd #启动ftp服务器
+本地连接网络适配器打开NAT8 #cmd ftp测试连接
+
+useradd user1 #创建用户
+useradd user2
+useradd user3
+
+cd /etc/vsftpd #ftp服务器配置目录
+vim vsftpd.conf #添加一行userlist_deny=YES，vim userlist中的用户均无法访问ftp
+
+passwd user1 #设置用户的密码，否则上不了ftp
+passwd user2
+passwd user3
+
+3）user1只能访问自己的主目录，不能访问别的目录； user2可以访问别的目录
+这步有问题，拉到前面正确查看
+
+4）修改登录服务器后的提示信息“我的FTP服务器”
+打开ftp服务器配置文件vsftpd.conf中取消注释ftpd_banner
+并修改为ftpd_banner=my ftp server.
+
+四、编程题（20分）
+编写shell程序，在用户目录下创建20个目录，目录名由Dir+【1-20】组成,并在每个目录下面创建空文件，文件名为File+【1-20】。
+vim 1 #编写shell脚本
+chmod 777 1 #赋予运行权限
+./1 #运行shell脚本，不能1，要./1
+#for do done，和c++一样 但是for(())两层括号
+#printf “” 变量的前面加$引用
+---------文本内容----------
+#!/bin/bash #头文件,/一个也别漏
+
+cd /home/qzc; #语句用封号结尾
+
+for ((i=1;i&lt;=20;++i))
+do
+        mkdir Dir$i; #不需要双引号
+        cd Dir$i;
+        touch File$i;
+        cd ..;
+done
+
+
+
+</code></pre>
+
+    </div>
+    
+    
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 zzczzczzc&#39;s home
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zzczzczzc
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "5093c0f78df8d980d0e8",
+        clientSecret: "3bc33bc8827c07c9e2907362f7e05a5f574db90b",
+        repo: "myblogtalk",
+        owner: "zzczzczzcLi",
+        admin: "zzczzczzcLi".split(","),
+        language: "zh-CN",
+        id: decodeURI(location.pathname),
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
+
+
+
+
+        
+    </body>
+</html>

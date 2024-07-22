@@ -1,0 +1,552 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+        <meta charset="utf-8" />
+        <title>zzczzczzc&#39;s home</title>
+        <meta name="author" content="zzczzczzc" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="/js/lib/home.js"></script>
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>床</h2>
+                        <img src="/images/1.webp" />
+                        <p>一片伟大的净土</p>
+                                                    灵魂的归处，肉体的坟墓。
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZZCZZCZZC&#39;S HOME</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;相关</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZZCZZCZZC&#39;S HOME</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">相关</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg,/images/background1.jpg,/images/background2.jpg"></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>zzczzczzc&#39;s home</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
+    </div>
+</div>
+<div id="home-posts-wrap"  ref="homePostsWrap">
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2023/05/14/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/%E4%B8%8D%E4%BD%BF%E7%94%A8CDN%E4%BB%A3%E7%90%86%EF%BC%8C%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2SSL%E8%AF%81%E4%B9%A6/">
+        <h2 class="post-title">不使用CDN代理，本地部署SSL证书</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/14
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>CDN代理的时候会自动设置好通过CloudFlare流量的SSL配置，仅用DNS不会给你自动配置。</p>
+<p>按照以下步骤来配置SSL证书（基于frpc）：<br>涉及：Let’s Encrypt，Certbot。</p>
+<ol>
+<li>查看<a target="_blank" rel="noopener" href="https://letsencrypt.org/zh-cn/getting-started">Let’s Encrypt入门指南</a>。</li>
+<li>正常情况下选择<a target="_blank" rel="noopener" href="https://certbot.eff.org/">Certbot</a>，根据步骤安装Certbot。</li>
+<li>全部完成之后会获得<font color='RED'>fullchain.pem</font>和<font color='RED'>privkey.pem</font>两个文件的路径。</li>
+<li></li>
+</ol>
+<p>注：如果密钥还存在，Certbot就会自动更新TLS证书，如果没更新依旧用上述步骤。</p>
+<blockquote>
+<p>关于域名到期，但是SSL没到期，是否要取消SSL的问题。</p>
+</blockquote>
+<p>没必要，密钥只会出现一次，即第一次申请证书时出现在你电脑上的那份。<br>删除掉那个即可。实在想全部删掉可以按照以下步骤来：</p>
+<ol>
+<li>注销帐号，<font color='RED'>sudo certbot unregister</font></li>
+<li>打开终端输入<font color='RED'>cd &#x2F;etc</font>，删除文件夹<font color='RED'>letsencrypt</font>。</li>
+<li>卸载certbot，<font color='RED'>sudo snap remove certbot</font></li>
+</ol>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ffa2c4">内网穿透</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/14/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/%E4%B8%8D%E4%BD%BF%E7%94%A8CDN%E4%BB%A3%E7%90%86%EF%BC%8C%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2SSL%E8%AF%81%E4%B9%A6/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/frpc%E4%B8%80%E7%9B%B4io:timeout/">
+        <h2 class="post-title">frpc一直io:timeout</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>按理来说手机热点应该是稳定的，连热点的时候网络波动很大的时候有可能是，<br>手机热点的名字太长了，或者前面用了#开头，热点名字简短一点最好，比如：青雀</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/13/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/frpc%E4%B8%80%E7%9B%B4io:timeout/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/12/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/frp%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7/">
+        <h2 class="post-title">frp穿透工具</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E5%B7%A5%E5%85%B7/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                工具
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/12
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>MCBBS上会有很多内网穿透商人，下面所给的实在不行就去百度或者MCBBS上软件工具栏去找。<br>也可以问问聪明的ChatGPT。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #03a9f4">内网穿透</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/12/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/frp%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/10/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/%E5%9C%A8Linux%E4%B8%8A%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+        <h2 class="post-title">在Linux上搭建我的世界服务器</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/10
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <blockquote>
+<p>常用命令<br>screen -S “Mine”：新建一个名为”Mine”的屏幕，并且进入。（相当于新开一个线程）<br>screen -r：进入屏幕。<br>ctrl a+d：退出屏幕，如果屏幕在运行会保持后台运行。<br>ctrl c&#x2F;stop：关闭服务器。<br>sh startmcs.sh：通过sh脚本启动服务器。</p>
+</blockquote>
+<p>搭建我的世界服务器只需要两样东西：</p>
+<ol>
+<li>服务器核心</li>
+<li>Java开发环境（注意jdk和jre的区别，我们只要jdk）</li>
+</ol>
+<p>首先我们获取Java开发环境，1.12.2版本只能用Java9及以下，这里我选择经典的Java8。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
+        </span>
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #ffa2c4">我的世界</a>
+        </span>
+        
+    </div>
+    <a href="/2023/05/10/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/%E5%9C%A8Linux%E4%B8%8A%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/09/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A52-1/">
+        <h2 class="post-title">校园末日2-1</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%B0%8F%E8%AF%B4/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                交互式小说
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/9
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>目睹了一切的严煜博早知末日真的降临了，不仅是这四个人，严煜博远远的看见了城区四处可见的滚滚浓烟。<br>秩序早已崩坏。</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/05/09/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A52-1/" class="go-post">阅读全文</a>
+</div>
+
+
+        <div class="page-current">
+    <div class="prev">
+        
+        <a class="page-num" href="/page/8/">
+            <i class="fa-solid fa-caret-left fa-fw"></i>
+        </a>
+        
+    </div>
+    <div class="page-index">
+        
+        <span>
+            
+            <a class="page-num" href="/">1</a>
+            <span class="page-omit">...</span>
+            
+            
+            
+            
+            <a class="page-num" href="/page/7">7</a>
+            
+            
+            <a class="page-num" href="/page/8/">8</a>
+        </span>
+        
+        <span class="current">9</span>
+        
+        <span>
+            <a class="page-num" href="/page/10/">10</a>
+            
+            <a class="page-num" href="/page/11">11</a>
+            
+            
+            <span class="page-omit">...</span>
+            <a class="page-num" href="/page/12">12</a>
+            
+        </span>
+        
+    </div>
+    <div class="next">
+        
+        <a class="page-num" href="/page/10/">
+            <i class="fa-solid fa-caret-right fa-fw"></i>
+        </a>
+        
+    </div>
+</div>
+
+    </div>
+    
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">zzczzczzc</div>
+        <div class="description">
+            <p>下面是友情链接 : D</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://blog.gugugit.com/">闻俊的博客</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://1dyer.github.io">李登宇的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://chchch-art.github.io">陈昊的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://z01prime.github.io">张能祎的博客（github）</a>
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
+
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2024 zzczzczzc&#39;s home
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zzczzczzc
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+    </body>
+</html>
