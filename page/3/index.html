@@ -171,8 +171,8 @@
         
 
 <div class="post">
-    <a href="/2023/12/13/Linux/LinuxClassNO2/">
-        <h2 class="post-title">Linux第二节课</h2>
+    <a href="/2023/12/13/Linux/LinuxClassNO3/">
+        <h2 class="post-title">Linux第三节课</h2>
     </a>
     <div class="category-and-date">
         
@@ -188,28 +188,15 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>mkdir：创建文件夹<br>rmdir：删除文件夹（若文件夹非空就无法删除）<br>rm：删除文件（remove）<br>touch：新建文件<br>ll：显示目录结构</p>
-<details><summary>mv：移动（move）</summary><p>
-mv qinbt /root 将文件qinbt移动到root目录下<br>
-mv qinbt Qinbt 如果当前目录没有Qinbt文件和文件夹，就会将qinbt重命名为Qinbt<br>
-文件夹也可以移动
+            <p><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1727381056296115001&wfr=spider&for=pc">cat</a>：concatenate，连接。<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/31211694">more</a>：类似cat<br>history：查看历史命令<br><a target="_blank" rel="noopener" href="https://deepinout.com/linux-cmd/linux-folder-file-cmd/linux-cmd-wc.html#ftoc-heading-1">wc</a>：wordCounts，默认输出：统计文件行数，单词数，字节数和字符数</p>
+<details><summary>|</summary><p>
+这是一根竖线，称作“管道符”<br>
+能够将左侧的数据传输到右侧的输入之中<br>
+例如：cat 1 | find<br>
+这个命令能够将文件1的内容作为find的输入，如果文件1的内容中是"test"，那么实际效果就是find "test"
 </p></details>
 
-<details><summary>cp：复制（copy）</summary><p>
-cp qinbt /root 将文件qinbt移动到root目录下<br>
-</p></details>
-
-<details><summary>Linux通配符</summary><p>
-* 任意多个字符，也可以0个。<br>
-? 任意1个字符（如有需要可以多扣几个?）
-</p></details>
-
-<details><summary>ls（list）进阶用法</summary><p>
-ls * 显示当前所有的文件夹，以及文件夹下的全部内容。（这就是一个通配符，也可以写成*json）<br>
-ls -a 显示当前文件夹和文件，包括隐藏文件<br>
-ls blog 显示文件夹blog下面的所有内容
-</p></details>
-
+<p><a target="_blank" rel="noopener" href="https://baijiahao.baidu.com/s?id=1763984183183089036&wfr=spider&for=pc">grep</a>：文本搜索和打印<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_51338719/article/details/128416718">find</a></p>
 
             
         </div>
@@ -218,7 +205,7 @@ ls blog 显示文件夹blog下面的所有内容
         
         
     </div>
-    <a href="/2023/12/13/Linux/LinuxClassNO2/" class="go-post">阅读全文</a>
+    <a href="/2023/12/13/Linux/LinuxClassNO3/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
