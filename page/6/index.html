@@ -171,8 +171,48 @@
         
 
 <div class="post">
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%B0%86%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%B8%A6%E7%AB%AF%E5%8F%A3%E8%A7%A3%E6%9E%90%E5%88%B0%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">
-        <h2 class="post-title">将域名不带端口解析到我的世界服务器上</h2>
+    <a href="/2023/05/08/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A50/">
+        <h2 class="post-title">校园末日0</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%B0%8F%E8%AF%B4/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                交互式小说
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <blockquote>
+<p>参考Anime：校园默示录<br>你将扮演严煜博面对接下来的情况。</p>
+</blockquote>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/05/08/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A50/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9C%A8%E6%B5%B7%E5%A4%96%EF%BC%8C%E8%AE%BF%E9%97%AE%E6%85%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/">
+        <h2 class="post-title">服务器在海外，访问慢怎么办？</h2>
     </a>
     <div class="category-and-date">
         
@@ -189,7 +229,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/21
+            2023/5/7
         </span>
         
         
@@ -197,9 +237,11 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>CNAME：将域名指向另一个域名<br>连接这一个指向内网穿透的服务器上还要带上端口，除非你的端口是25565</p>
-<p>SRV：<a target="_blank" rel="noopener" href="https://www.mcio.cn/274.html">不带端口的解析</a><br>设置SRV解析前先确保你已经正确配置了CNAME</p>
-<p>特殊情况：如果电脑上配置了多个网络配置，比如有虚拟机的或者别的，服务器的配置文件<br>server-ip，后面最好空着，不然有可能连不上服务器（127.0.0.1指向了虚拟机而不是当前想转发的）<br>即，ip能ping通，防火墙也关了，但带上端口就不通了。</p>
+            <p>访问优化评分：0～10 分</p>
+<ol>
+<li>使用<a href="/2023/05/12/frp%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7">OpenFrp</a>的海外CN2节点 <font color='RED'>10分</font><br>神乎其技，快的飞起！<br>注：CN节点速度&gt;CDN代理，CDN代理了之后会变慢，但是不用CDN代理就无法使用https，也无法使用gitalk，所以要配置SSL。<br><a href="/2023/05/14/%E4%B8%8D%E4%BD%BF%E7%94%A8CDN%E4%BB%A3%E7%90%86%EF%BC%8C%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2SSL%E8%AF%81%E4%B9%A6">不使用CDN代理，本地部署SSL证书</a></li>
+<li>使用<a target="_blank" rel="noopener" href="https://cloudflare.com/">CloudFlare</a>的DNS代理功能（即CDN） <font color='RED'>2分</font><br>基本没优化，只是第一次缓存了之后让后面访问变快了。</li>
+</ol>
 
             
         </div>
@@ -213,21 +255,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #03a9f4">内网穿透</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #ff7d73">我的世界</a>
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
         </span>
         
     </div>
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%B0%86%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%B8%A6%E7%AB%AF%E5%8F%A3%E8%A7%A3%E6%9E%90%E5%88%B0%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" class="go-post">阅读全文</a>
+    <a href="/2023/05/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%9C%A8%E6%B5%B7%E5%A4%96%EF%BC%8C%E8%AE%BF%E9%97%AE%E6%85%A2%E6%80%8E%E4%B9%88%E5%8A%9E%EF%BC%9F/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/Web%E5%BC%80%E5%8F%91%E7%AC%AC4%E7%AB%A0-%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1/">
-        <h2 class="post-title">Web开发第4章-个人介绍网站设计</h2>
+    <a href="/2023/05/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E9%98%BF%E9%87%8C%E4%BA%91%E4%B9%B0%E7%9A%84%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%A4%87%E6%A1%88%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%A7%A3%E6%9E%90/">
+        <h2 class="post-title">阿里云买的域名不备案如何进行解析</h2>
     </a>
     <div class="category-and-date">
         
@@ -244,7 +281,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/21
+            2023/5/7
         </span>
         
         
@@ -252,8 +289,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>可能用到的：<br><a target="_blank" rel="noopener" href="https://www.php.cn/faq/475388.html">插入图片</a><br><a target="_blank" rel="noopener" href="https://www.php.cn/faq/474548.html">给网页两边增加间距</a></p>
-
+            <p>Step1. 了解域名和域名解析，以及是否需要备案</p>
             
         </div>
     </div>
@@ -266,16 +302,58 @@
         
         <span class="tag">
             
-            <a href="/tags/Web/" style="color: #00bcd4">Web</a>
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ffa2c4">内网穿透</a>
         </span>
         
     </div>
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/Web%E5%BC%80%E5%8F%91%E7%AC%AC4%E7%AB%A0-%E4%B8%AA%E4%BA%BA%E4%BB%8B%E7%BB%8D%E7%BD%91%E7%AB%99%E8%AE%BE%E8%AE%A1/" class="go-post">阅读全文</a>
+    <a href="/2023/05/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E9%98%BF%E9%87%8C%E4%BA%91%E4%B9%B0%E7%9A%84%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%A4%87%E6%A1%88%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E8%A7%A3%E6%9E%90/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9C%A8Ubuntu%E4%B8%AD%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%EF%BC%8C%E9%85%8D%E7%BD%AENAT/">
-        <h2 class="post-title">在Ubuntu中设置静态IP，配置NAT</h2>
+    <a href="/2023/05/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%8A%A0%E9%80%9F%E5%99%A8/">
+        <h2 class="post-title">加速器</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E5%B7%A5%E5%85%B7/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                工具
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/5/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <ol>
+<li>闪电加速盒子<br>QQ群：442102046（闪电加速大集合）<br>QQ群文件夹中有软件下载。<br>上号器最新下单地址：<a target="_blank" rel="noopener" href="https://shimo.im/docs/XKq4MbnPrXso0ZkN">https://shimo.im/docs/XKq4MbnPrXso0ZkN</a><br>微信公众号里面迅游加速器1CNY&#x2F;5DAY</li>
+<li>月轮网游加速器 <font color='RED'>FREE</font><br>还行</li>
+</ol>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/05/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%8A%A0%E9%80%9F%E5%99%A8/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2023/05/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%B1%80%E5%9F%9F%E7%BD%91%E8%81%94%E6%9C%BA%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%B9%8B%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/">
+        <h2 class="post-title">我的世界局域网联机内网穿透之后无法进入</h2>
     </a>
     <div class="category-and-date">
         
@@ -292,7 +370,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/21
+            2023/5/7
         </span>
         
         
@@ -300,8 +378,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p><a target="_blank" rel="noopener" href="https://download.csdn.net/blog/column/9529187/107760906">第一步：正确配置NAT</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_57168310/article/details/128176238">第二步：设置静态IP</a></p>
-<p>开启了虚拟机网络之后可能会导致正常联网速度变慢，不用的时候最好在适配器中关闭。<br>如果虚拟机还是不能上网：<br>1、先关闭Ubuntu虚拟机。 2、回到主机,打开运行窗口(同时按下 Win + R),输入”services.msc”并运行。 3、找到”VMware DHCP Service”和”VMware NAT Service”</p>
+            <p>高版本Minecraft中如果双方有任意一方是离线模式，就无法相互进入，必须要第三方登录（auth），或者正版登录。</p>
 
             
         </div>
@@ -315,126 +392,16 @@
         
         <span class="tag">
             
-            <a href="/tags/Linux/" style="color: #00bcd4">Linux</a>
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
         </span>
-        
-    </div>
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9C%A8Ubuntu%E4%B8%AD%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%EF%BC%8C%E9%85%8D%E7%BD%AENAT/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/09/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90-Master%E5%AE%9A%E7%90%86/">
-        <h2 class="post-title">算法设计与分析-Master定理</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/20
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>知乎：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/113406812">主定理(Master Theorem)</a><br>tip：对于$T(n)&#x3D;2T(3n&#x2F;2)$来说，其中$b&#x3D;2&#x2F;3$</p>
-<p>利用主定理求下列递归方程的时间复杂度：</p>
-<details><summary>$T(n)=5T(n/2)+\theta(n^2)$</summary><p>
-
-<p>$a&#x3D;5,b&#x3D;2,f(n)&#x3D;n^2$<br>$n^{log_b^a}&#x3D;n^{log_2^5}&gt;f(n)$<br>$\therefore T(n)&#x3D;\theta(n^{log_2^5})$</p>
-</p></details>
-
-<details><summary>$T(n)=2T(n/2)+n$</summary><p>
-
-<p>$a&#x3D;2,b&#x3D;2,f(n)&#x3D;n$<br>$n^{log_b^a}&#x3D;n&#x3D;f(n)$<br>$\therefore T(n)&#x3D;\theta(nlogn)$</p>
-</p></details>
-
-<details><summary>$T(n)=5T(n/2)+\theta(n^3)$</summary><p>
-
-<p>$a&#x3D;5,b&#x3D;2,f(n)&#x3D;n^3$<br>$n^{log_b^a}&#x3D;n^{log_2^5}&lt;f(n)$<br>$\therefore T(n)&#x3D;\theta(n^3)$</p>
-</p></details>
-
-
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
         
         <span class="tag">
             
-            <a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" style="color: #00bcd4">算法设计与分析</a>
+            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #ffa2c4">我的世界</a>
         </span>
         
     </div>
-    <a href="/2023/09/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90-Master%E5%AE%9A%E7%90%86/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E6%95%B4%E5%90%88%E5%8C%85-%E6%9C%AB%E6%97%A5%E6%97%85%E9%80%94-%E9%A3%8E%E6%9A%B4%E5%B0%86%E8%87%B3/">
-        <h2 class="post-title">我的世界末日生存整合包推荐-末日旅途-风暴将至</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>官方宣传片：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ym4y167mj/">【MC末日旅途整合包】来经历一场令人绝望的辐射灾变之旅！风暴将至！</a><br>官方整合包：<a target="_blank" rel="noopener" href="https://share.weiyun.com/i0cewgLc">腾讯微云</a><br>风暴将至地图：<a target="_blank" rel="noopener" href="https://afdian.net/a/IronCurtain">爱发电2块付费订阅</a><br>服务端+客户端整合备份：<a target="_blank" rel="noopener" href="https://cowtransfer.com/i/storage">请支持原作者，此处为zzc留档查看</a></p>
-<p>此整合包mod较多，联机时互相发送的数据量大，导致免费SakuraFrp流量消耗量大的同时延迟很高。Tailscale联机效果也很差，稳定性高，但是延迟在500ms～1s之间。<br>ZeroTier好像延迟能小于100ms，过几天有空联机了就试试。</p>
-<p>综合测试结果：SakuraFrp&gt;Tailscale&gt;Zerotier&gt;RadminLan</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #00a596">我的世界</a>
-        </span>
-        
-    </div>
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E6%95%B4%E5%90%88%E5%8C%85-%E6%9C%AB%E6%97%A5%E6%97%85%E9%80%94-%E9%A3%8E%E6%9A%B4%E5%B0%86%E8%87%B3/" class="go-post">阅读全文</a>
+    <a href="/2023/05/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E5%B1%80%E5%9F%9F%E7%BD%91%E8%81%94%E6%9C%BA%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F%E4%B9%8B%E5%90%8E%E6%97%A0%E6%B3%95%E8%BF%9B%E5%85%A5/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -467,11 +434,6 @@
         <span>
             <a class="page-num" href="/page/7/">7</a>
             
-            <a class="page-num" href="/page/8">8</a>
-            
-            
-            <span class="page-omit">...</span>
-            <a class="page-num" href="/page/12">12</a>
             
         </span>
         
