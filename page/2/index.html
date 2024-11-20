@@ -171,6 +171,57 @@
         
 
 <div class="post">
+    <a href="/2024/03/29/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E7%A0%B4%E8%A7%A3%E6%9C%BA%E6%88%BF%E7%9A%84%E7%94%B5%E8%84%91%E6%8E%A7%E5%88%B6/">
+        <h2 class="post-title">破解机房的电脑控制</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/3/29
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>tip:如果已经被控制了，先物理拔掉网线，再执行下面操作，然后把网线插回去<br>直接用taskkill &#x2F;f &#x2F;im 强制杀掉进程，一般来说都是studentmain.exe，显示上方没有举手的那个框框<br>就行了，有些控制比较极端，教学楼的是student.exe，而且杀了还会自动打开。<br>那么，循环杀，不停的杀就行了，bat代码放在下面了。</p>
+<pre><code class="cmd">@echo off
+set var=0
+rem ************循环开始了
+:continue
+set /a var+=1
+echo 第%var%次循环
+taskkill /f /im student.exe
+if %var% lss 1000000000000000000000000000000000000000000000 goto continue
+rem ************循环结束了
+echo 循环执行完毕
+pause
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2024/03/29/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E7%A0%B4%E8%A7%A3%E6%9C%BA%E6%88%BF%E7%9A%84%E7%94%B5%E8%84%91%E6%8E%A7%E5%88%B6/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2024/01/17/zzcCraft/home/">
         <h2 class="post-title">zzcCraft临时官网</h2>
     </a>
@@ -282,12 +333,12 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #00a596">内网穿透</a>
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #03a9f4">内网穿透</a>
         </span>
         
         <span class="tag">
             
-            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #ffa2c4">我的世界</a>
+            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #03a9f4">我的世界</a>
         </span>
         
     </div>
@@ -336,61 +387,11 @@
         
         <span class="tag">
             
-            <a href="/tags/Linux/" style="color: #00a596">Linux</a>
+            <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
         </span>
         
     </div>
     <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9C%A8Ubuntu%E4%B8%AD%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%EF%BC%8C%E9%85%8D%E7%BD%AENAT/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E6%95%B4%E5%90%88%E5%8C%85-%E6%9C%AB%E6%97%A5%E6%97%85%E9%80%94-%E9%A3%8E%E6%9A%B4%E5%B0%86%E8%87%B3/">
-        <h2 class="post-title">我的世界末日生存整合包推荐-末日旅途-风暴将至</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/19
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>官方宣传片：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ym4y167mj/">【MC末日旅途整合包】来经历一场令人绝望的辐射灾变之旅！风暴将至！</a><br>官方整合包：<a target="_blank" rel="noopener" href="https://share.weiyun.com/i0cewgLc">腾讯微云</a><br>风暴将至地图：<a target="_blank" rel="noopener" href="https://afdian.net/a/IronCurtain">爱发电2块付费订阅</a><br>服务端+客户端整合备份：<a target="_blank" rel="noopener" href="https://cowtransfer.com/i/storage">请支持原作者，此处为zzc留档查看</a></p>
-<p>此整合包mod较多，联机时互相发送的数据量大，导致免费SakuraFrp流量消耗量大的同时延迟很高。Tailscale联机效果也很差，稳定性高，但是延迟在500ms～1s之间。<br>ZeroTier好像延迟能小于100ms，过几天有空联机了就试试。</p>
-<p>综合测试结果：SakuraFrp&gt;Tailscale&gt;Zerotier&gt;RadminLan</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #ff7d73">我的世界</a>
-        </span>
-        
-    </div>
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E6%95%B4%E5%90%88%E5%8C%85-%E6%9C%AB%E6%97%A5%E6%97%85%E9%80%94-%E9%A3%8E%E6%9A%B4%E5%B0%86%E8%87%B3/" class="go-post">阅读全文</a>
 </div>
 
 
