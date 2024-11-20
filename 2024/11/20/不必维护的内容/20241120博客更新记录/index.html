@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Linux第二节课 | zzczzczzc&#39;s home</title>
+        <title>20241120博客更新记录 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,42 +157,80 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Linux第二节课</h1>
+        <h1>20241120博客更新记录</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/13
+            2024/11/20
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%9D%82%E8%B0%88/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                杂谈
+            </a>
         </span>
         
         
     </div>
     
     <div class="content" v-pre>
-        <p>mkdir：创建文件夹<br>rmdir：删除文件夹（若文件夹非空就无法删除）<br>rm：删除文件（remove）<br>touch：新建文件<br>ll：显示目录结构</p>
-<details><summary>mv：移动（move）</summary><p>
-mv qinbt /root 将文件qinbt移动到root目录下<br>
-mv qinbt Qinbt 如果当前目录没有Qinbt文件和文件夹，就会将qinbt重命名为Qinbt<br>
-文件夹也可以移动
-</p></details>
+        <p>这live2d小人是不是傻逼？ 左下角也会挡住，右下角也会挡住，此处留档。<br>你只需要在类似layout的地方，head中添加下列代码第一个script，body中添加第二个scrpit即可</p>
+<span id="more"></span>
+<pre><code>        &lt;script&gt;
+            const live2d_path = &quot;https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/&quot;;
 
-<details><summary>cp：复制（copy）</summary><p>
-cp qinbt /root 将文件qinbt移动到root目录下<br>
-</p></details>
+            function loadExternalResource(url, type) &#123;
+                return new Promise((resolve, reject) =&gt; &#123;
+                    let tag;
 
-<details><summary>Linux通配符</summary><p>
-* 任意多个字符，也可以0个。<br>
-? 任意1个字符（如有需要可以多扣几个?）
-</p></details>
+                    if (type === &quot;css&quot;) &#123;
+                        tag = document.createElement(&quot;link&quot;);
+                        tag.rel = &quot;stylesheet&quot;;
+                        tag.href = url;
+                    &#125; else if (type === &quot;js&quot;) &#123;
+                        tag = document.createElement(&quot;script&quot;);
+                        tag.src = url;
+                    &#125;
+                    if (tag) &#123;
+                        tag.onload = () =&gt; resolve(url);
+                        tag.onerror = () =&gt; reject(url);
+                        document.head.appendChild(tag);
+                    &#125;
+                &#125;);
+            &#125;
 
-<details><summary>ls（list）进阶用法</summary><p>
-ls * 显示当前所有的文件夹，以及文件夹下的全部内容。（这就是一个通配符，也可以写成*json）<br>
-ls -a 显示当前文件夹和文件，包括隐藏文件<br>
-ls blog 显示文件夹blog下面的所有内容
-</p></details>
-
+            if (screen.width &gt;= 768) &#123;
+                Promise.all([
+                    loadExternalResource(live2d_path + &quot;waifu.css&quot;, &quot;css&quot;),
+                    loadExternalResource(live2d_path + &quot;live2d.min.js&quot;, &quot;js&quot;),
+                    loadExternalResource(live2d_path + &quot;waifu-tips.js&quot;, &quot;js&quot;),
+                ]).then(() =&gt; &#123;
+                    initWidget(&#123;
+                        waifuPath: live2d_path + &quot;waifu-tips.json&quot;,
+                        cdnPath: &quot;https://fastly.jsdelivr.net/gh/fghrsh/live2d_api/&quot;,
+                        tools: [&quot;hitokoto&quot;, &quot;asteroids&quot;, &quot;switch-model&quot;, &quot;switch-texture&quot;, &quot;photo&quot;, &quot;info&quot;, &quot;quit&quot;],
+                    &#125;);
+                &#125;);
+            &#125;
+        &lt;/script&gt;
+        &lt;script&gt;
+            window.addEventListener(&#39;load&#39;, () =&gt; &#123;
+                // Ensure the Live2D widget is initialized before applying style changes
+                const waifuElement = document.getElementById(&#39;waifu&#39;);
+                if (waifuElement) &#123;
+                    waifuElement.style.left = &#39;unset&#39;; // Remove left positioning
+                    waifuElement.style.right = &#39;0&#39;;    // Set right positioning to 0
+                    waifuElement.style.bottom = &#39;0&#39;;   // Set bottom positioning to 0
+                &#125;
+            &#125;);
+        &lt;/script&gt;
+</code></pre>
 
     </div>
     

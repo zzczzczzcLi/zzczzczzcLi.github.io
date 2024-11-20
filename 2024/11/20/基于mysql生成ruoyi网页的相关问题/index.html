@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Linux第二节课 | zzczzczzc&#39;s home</title>
+        <title>基于mysql生成ruoyi网页的相关问题 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,42 +157,44 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>Linux第二节课</h1>
+        <h1>基于mysql生成ruoyi网页的相关问题</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/12/13
+            2024/11/20
         </span>
         
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #03a9f4">毕业设计</a>
+            </span>
+            
+        </span>
         
     </div>
     
     <div class="content" v-pre>
-        <p>mkdir：创建文件夹<br>rmdir：删除文件夹（若文件夹非空就无法删除）<br>rm：删除文件（remove）<br>touch：新建文件<br>ll：显示目录结构</p>
-<details><summary>mv：移动（move）</summary><p>
-mv qinbt /root 将文件qinbt移动到root目录下<br>
-mv qinbt Qinbt 如果当前目录没有Qinbt文件和文件夹，就会将qinbt重命名为Qinbt<br>
-文件夹也可以移动
-</p></details>
-
-<details><summary>cp：复制（copy）</summary><p>
-cp qinbt /root 将文件qinbt移动到root目录下<br>
-</p></details>
-
-<details><summary>Linux通配符</summary><p>
-* 任意多个字符，也可以0个。<br>
-? 任意1个字符（如有需要可以多扣几个?）
-</p></details>
-
-<details><summary>ls（list）进阶用法</summary><p>
-ls * 显示当前所有的文件夹，以及文件夹下的全部内容。（这就是一个通配符，也可以写成*json）<br>
-ls -a 显示当前文件夹和文件，包括隐藏文件<br>
-ls blog 显示文件夹blog下面的所有内容
-</p></details>
-
+        <p>1.ruoyi数据从哪来<br>首先ruoyi是没有数据的，数据是根据底层的spring boot Java代码（map和control）从mysql里面处理出来。<br>生成代码给的sql运行之后就会生成网页，但是没有数据是正常的。（因为代码没运行）<br>需要把main放到新模块下，然后把main的template模板挪到admin的模板下（admin是主网页，需要手动挪过去）<br>如果搜索模块少了几个是正常的，在ruoyi自带的模板中，mysql只有varchar能作为搜索类型，所以新闻内容<br>这种较长的格式设置为text，不能被加入搜索是正常的（不是bug）</p>
+<p>2.网页生成了，数据能显示了，有bug也直接去改代码，不需要在用代码生成模块了<br>bug很有可能是java类型，或者spring底层代码导致的错误，也就是原本模块就没考虑到这个问题<br>所以需要我们直接去对代码进行修改<br>比如新闻内容显示很长，这里对control获取的内容进行修改，不对实际获取内容修改，将实际内容改成30个字符就可以解决问题<br>如下所示<br><img src="https://s21.ax1x.com/2024/11/20/pAWBDzV.png"></p>
+<p>3.数据不显示，网页有问题<br>具体代码生成模板<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Ning-Blog/p/15206967.html">点此处查看</a><br>提几个重点，表和表字段均要有注释。<br>需要有主键，没有的话自己生成一个自增主键（这里解决了一个多查询错误的问题，但是又跳了一个新的问题，只能明天再说了）<br>三个pom引用是否写错（主项目引用有version，分模块中没有）<br>引用之后是否刷新了pom文件</p>
 
     </div>
     

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
         <meta charset="utf-8" />
         <title>zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
@@ -171,6 +171,94 @@
         
 
 <div class="post">
+    <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20241120%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/">
+        <h2 class="post-title">20241120博客更新记录</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%9D%82%E8%B0%88/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                杂谈
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/11/20
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>这live2d小人是不是傻逼？ 左下角也会挡住，右下角也会挡住，此处留档。<br>你只需要在类似layout的地方，head中添加下列代码第一个script，body中添加第二个scrpit即可</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20241120%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2024/11/20/%E5%9F%BA%E4%BA%8Emysql%E7%94%9F%E6%88%90ruoyi%E7%BD%91%E9%A1%B5%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+        <h2 class="post-title">基于mysql生成ruoyi网页的相关问题</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/11/20
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>1.ruoyi数据从哪来<br>首先ruoyi是没有数据的，数据是根据底层的spring boot Java代码（map和control）从mysql里面处理出来。<br>生成代码给的sql运行之后就会生成网页，但是没有数据是正常的。（因为代码没运行）<br>需要把main放到新模块下，然后把main的template模板挪到admin的模板下（admin是主网页，需要手动挪过去）<br>如果搜索模块少了几个是正常的，在ruoyi自带的模板中，mysql只有varchar能作为搜索类型，所以新闻内容<br>这种较长的格式设置为text，不能被加入搜索是正常的（不是bug）</p>
+<p>2.网页生成了，数据能显示了，有bug也直接去改代码，不需要在用代码生成模块了<br>bug很有可能是java类型，或者spring底层代码导致的错误，也就是原本模块就没考虑到这个问题<br>所以需要我们直接去对代码进行修改<br>比如新闻内容显示很长，这里对control获取的内容进行修改，不对实际获取内容修改，将实际内容改成30个字符就可以解决问题<br>如下所示<br><img src="https://s21.ax1x.com/2024/11/20/pAWBDzV.png"></p>
+<p>3.数据不显示，网页有问题<br>具体代码生成模板<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Ning-Blog/p/15206967.html">点此处查看</a><br>提几个重点，表和表字段均要有注释。<br>需要有主键，没有的话自己生成一个自增主键（这里解决了一个多查询错误的问题，但是又跳了一个新的问题，只能明天再说了）<br>三个pom引用是否写错（主项目引用有version，分模块中没有）<br>引用之后是否刷新了pom文件</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #00a596">毕业设计</a>
+        </span>
+        
+    </div>
+    <a href="/2024/11/20/%E5%9F%BA%E4%BA%8Emysql%E7%94%9F%E6%88%90ruoyi%E7%BD%91%E9%A1%B5%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%89%93%E5%8D%B0%E8%AE%BA%E6%96%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
         <h2 class="post-title">打印论文注意事项</h2>
     </a>
@@ -211,7 +299,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E8%AE%BA%E6%96%87/" style="color: #03a9f4">论文</a>
+            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ffa2c4">毕业设计</a>
         </span>
         
     </div>
@@ -325,87 +413,6 @@
     <a href="/2024/11/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/Everything-%E5%BF%AB%E9%80%9F%E6%9F%A5%E6%89%BEwindows%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/" class="go-post">阅读全文</a>
 </div>
 
-<div class="post">
-    <a href="/2024/11/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20241118%E6%9D%82%E8%B0%88/">
-        <h2 class="post-title">20241118杂谈</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%9D%82%E8%B0%88/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                杂谈
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/11/18
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>博客放在虚拟机里面还是麻烦，考虑到vmDHCP服务和NAT服务可能会吃资源所以都需要手动启动。<br>不是不更新博客，是虚拟机启动实在太麻烦（即答<br>tip:复制出来真方便，整个挪出来就能用了</p>
-<p>赛氪的编程比赛变难了，会查。<br>第二课堂学分建议用英语翻译比赛，直接chatgpt就能过。</p>
-<p>稍后会更新机场推荐<br>中转机场标准是10r&#x2F;200g每月，低于此标准可能是跑路机场，但是如果速度达标用用又何妨。<br>这里吐槽一句ccy买了vpn加速软件，那种一眼就是脏乱差的软件，还花了100买了三个月，沟槽的 :)</p>
-<p>推荐一个工具，Everything，10s内就可以检索完电脑，比如你C盘很里面藏了一个doc，用everthing就能马上找出来<br>如果用电脑自带的检索你就等着爆炸把。<br><a target="_blank" rel="noopener" href="https://t.me/c/2338356863/39">下载链接</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2024/11/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20241118%E6%9D%82%E8%B0%88/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/04/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E8%A1%97%E6%9C%BA%E5%B0%8F%E9%9C%B8%E7%8E%8B/">
-        <h2 class="post-title">街机小霸王</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/4/18
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p><a target="_blank" rel="noopener" href="http://www.yikm.net/">www.yikm.net</a></p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        
-    </div>
-    <a href="/2024/04/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E8%A1%97%E6%9C%BA%E5%B0%8F%E9%9C%B8%E7%8E%8B/" class="go-post">阅读全文</a>
-</div>
-
 
         <div class="page-current">
     <div class="prev">
@@ -422,7 +429,7 @@
             
             
             <span class="page-omit">...</span>
-            <a class="page-num" href="/page/7">7</a>
+            <a class="page-num" href="/page/8">8</a>
             
         </span>
         
