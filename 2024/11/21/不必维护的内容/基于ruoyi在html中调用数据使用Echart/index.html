@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>标签 | zzczzczzc&#39;s home</title>
+        <title>基于ruoyi在html中调用数据使用Echart | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -33,6 +33,13 @@
 
 
 <script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css" />
 
 
 
@@ -148,77 +155,63 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div id="archives">
-    
-    <div class="categories-tags">
+                    <div class="article">
+    <div>
+        <h1>基于ruoyi在html中调用数据使用Echart</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/11/21
+        </span>
         
-        
-        <span>
-            <a href="/tags/%E7%BF%BB%E5%A2%99/" style="background: #ffa2c4">
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                翻墙
+                教程
             </a>
         </span>
         
         
-        
-        <span>
-            <a href="/tags/Linux/" style="background: #ff7d73">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                Linux
-            </a>
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ffa2c4">毕业设计</a>
+            </span>
+            
         </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="background: #00bcd4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                内网穿透
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="background: #00a596">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                我的世界
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                毕业设计
-            </a>
-        </span>
-        
-        
-        
-        <span>
-            <a href="/tags/%E7%8E%B0%E5%AE%9E%E7%94%9F%E6%B4%BB/" style="background: #ffa2c4">
-                <span class="icon">
-                    <i class="fa-solid fa-tags fa-fw"></i>
-                </span>
-                现实生活
-            </a>
-        </span>
-        
         
     </div>
+    
+    <div class="content" v-pre>
+        <p>这一步不是很难主要理解一个流程<br>数据从类库的service服务中已经从mysql里面获取了<br>所以我们只需要在control类给前端提供一个接口（接口就是返回一堆数据给前端）<br>所以直接新建一个类，写一个control就可以了</p>
+<p>点击查看详情</p>
+<span id="more"></span>
+
+<p>事实上你只需要把模板生成的Control代码拿出来给Chat，然后告诉chat（这一步能让chat从其他方法里面得出数据路径是怎么样的）<br>我要在某某路径下的html生成一个Echart可视化，分析是什么，他就会给你写好Control代码和html代码。</p>
+<p>之后如果能够成功显示Echart了，那么就不必对Control进行修改了（毕竟就是一个提供数据的东西）<br>接下来的分析，全部放在html里面去做就可以（反正是让chat对着html代码去改 o.O）<br>刷新一下你的图表html<br>如果Java显示下图内容那就是代表API成功给前端返回了数据<br><img src="https://s21.ax1x.com/2024/11/21/pAWqFJI.png"><br>那么前端处理一下数据就可以实现可视化<br><img src="https://s21.ax1x.com/2024/11/21/pAWqESP.png"><br>查看前端报错需要在新标签页打开首页（毕竟他是嵌在一个大网页里面的，直接看会很麻烦）<br><img src="https://s21.ax1x.com/2024/11/21/pAWqZy8.png"></p>
+<p>明白了流程，在确定如果他给的html不能显示图表，但是Java端显示给予的数据是正常的<br>就F12打开网页开发者工具，把控制台的报错直接给chatgpt，他就能解决。</p>
+<p>还有Echart直接使用Script调用网上的js文件就行了，不需要去下载实体文件再去引用<br>ps:说的就是你ccy</p>
+
+    </div>
+    
+    
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
+    </div>
+    
+    
+    
+    
     
 </div>
 
@@ -251,6 +244,26 @@
             
         </div>
         <script src="/js/main.js"></script>
+        
+        
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "5093c0f78df8d980d0e8",
+        clientSecret: "3bc33bc8827c07c9e2907362f7e05a5f574db90b",
+        repo: "myblogtalk",
+        owner: "zzczzczzcLi",
+        admin: "zzczzczzcLi".split(","),
+        language: "zh-CN",
+        id: decodeURI(location.pathname),
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
+
+
+
+
         
     </body>
 </html>
