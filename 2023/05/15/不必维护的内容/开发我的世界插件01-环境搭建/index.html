@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>基于ruoyi生成的网页无法在前端修改数据 | zzczzczzc&#39;s home</title>
+        <title>开发我的世界插件01-环境搭建 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,14 +157,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>基于ruoyi生成的网页无法在前端修改数据</h1>
+        <h1>开发我的世界插件01-环境搭建</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/11/21
+            2023/5/15
         </span>
         
         <span class="category">
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ffa2c4">毕业设计</a>
+                <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #ffa2c4">我的世界</a>
             </span>
             
         </span>
@@ -192,14 +192,7 @@
     </div>
     
     <div class="content" v-pre>
-        <p>如果数据已经能显示了，说明已经由mapper和control成功在mysql绑定了数据<br>并且导出数据和删除都是正常的话那么问题大概率就是</p>
-<p>ruoyi代码生成器自动生成的模板似乎只支持varchar等类型的修改，其他类型他默认是不给你修改的。<br>varchar对应会生成th:field控件Thymeleaf模板中的SpringEL表达式，实现了数据显示和数据绑定<br>但是text似乎没有对应的模板，用的是Freemaker语法，它会直接显示数据，而不涉及数据绑定。</p>
-<p>如果我们不希望数据被修改，似乎也可以使用Freemaker语法。</p>
-<pre><code>Freemaker的语法
-&lt;textarea name=&quot;新闻内容&quot; class=&quot;form-control&quot;&gt;[[*&#123;新闻内容&#125;]]&lt;/textarea&gt;
-正确的代码
-&lt;textarea name=&quot;新闻内容&quot; class=&quot;form-control&quot; th:field=&quot;*&#123;新闻内容&#125;&quot;&gt;&lt;/textarea&gt;
-</code></pre>
+        <p><font color='RED'>第一步：安装Java Development Kit（JDK）</font><br>注意是jdk，不是jre，区别：<a target="_blank" rel="noopener" href="http://www.ujiuye.com/wenda/2021/70321.html">jdk和jre的区别</a><br>我的世界每一次版本的更新都使用了不同的Java版本，如有需要自行百度或者ChatGPT查询对应我的世界版本的Java版本。<br>本文以开发MC1.12.2服务器插件为核心，来介绍具体步骤，只需要JDK8。<br>JDK8下载链接：[JDK8下载链接]<br>JDK8和JDK1.8并无区别，若有疑惑查看博文：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/2027967">JDK8和JDK1.8有什么区别</a>。</p>
 
     </div>
     

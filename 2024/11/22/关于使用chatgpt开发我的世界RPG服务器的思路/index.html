@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>基于ruoyi生成的网页无法在前端修改数据 | zzczzczzc&#39;s home</title>
+        <title>关于使用chatgpt开发我的世界RPG服务器的思路（置顶） | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,22 +157,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>基于ruoyi生成的网页无法在前端修改数据</h1>
+        <h1>关于使用chatgpt开发我的世界RPG服务器的思路（置顶）</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/11/21
+            2024/11/22
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E7%81%B5%E6%84%9F/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                灵感
             </a>
         </span>
         
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ffa2c4">毕业设计</a>
+                <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CRPG%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">我的世界RPG服务器开发</a>
             </span>
             
         </span>
@@ -192,14 +192,10 @@
     </div>
     
     <div class="content" v-pre>
-        <p>如果数据已经能显示了，说明已经由mapper和control成功在mysql绑定了数据<br>并且导出数据和删除都是正常的话那么问题大概率就是</p>
-<p>ruoyi代码生成器自动生成的模板似乎只支持varchar等类型的修改，其他类型他默认是不给你修改的。<br>varchar对应会生成th:field控件Thymeleaf模板中的SpringEL表达式，实现了数据显示和数据绑定<br>但是text似乎没有对应的模板，用的是Freemaker语法，它会直接显示数据，而不涉及数据绑定。</p>
-<p>如果我们不希望数据被修改，似乎也可以使用Freemaker语法。</p>
-<pre><code>Freemaker的语法
-&lt;textarea name=&quot;新闻内容&quot; class=&quot;form-control&quot;&gt;[[*&#123;新闻内容&#125;]]&lt;/textarea&gt;
-正确的代码
-&lt;textarea name=&quot;新闻内容&quot; class=&quot;form-control&quot; th:field=&quot;*&#123;新闻内容&#125;&quot;&gt;&lt;/textarea&gt;
-</code></pre>
+        <p>事实上RPG服务器在做的就是，基于当前世界一个合理的背景<br>合理的武器数值，合理的武器技能，合理的武器描述和背景，合理的NPC怪物<br>当合理向非合理靠近，那就是需要氪金的部分。</p>
+<p>所以与其自己做这些策划，我们不如直接新建一个属于当前服务器的Chatgpt，然后给他大致的世界框架<br>他应该就会生成对应的武器 以及一本二本后续的内容</p>
+<p>当然，如果已经使用了rpg插件生成了一本的武器，我们也可以直接把配置文件交给chat，他就会把后续的rpg武器直接<br>以配置文件的形式生成。</p>
+<p>包括先前弃坑的两张我的世界插件开发，插件开发理论上也可以使用chatgpt来生成，我们只需要了解我弃坑的那两张<br>了解一下大体思路，应该就能完成插件开发。</p>
 
     </div>
     

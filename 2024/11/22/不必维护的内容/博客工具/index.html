@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>基于ruoyi生成的网页无法在前端修改数据 | zzczzczzc&#39;s home</title>
+        <title>博客工具 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,22 +157,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>基于ruoyi生成的网页无法在前端修改数据</h1>
+        <h1>博客工具</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/11/21
+            2024/11/22
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E5%B7%A5%E5%85%B7/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                工具
             </a>
         </span>
         
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ffa2c4">毕业设计</a>
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color: #00bcd4">博客</a>
             </span>
             
         </span>
@@ -192,13 +192,70 @@
     </div>
     
     <div class="content" v-pre>
-        <p>如果数据已经能显示了，说明已经由mapper和control成功在mysql绑定了数据<br>并且导出数据和删除都是正常的话那么问题大概率就是</p>
-<p>ruoyi代码生成器自动生成的模板似乎只支持varchar等类型的修改，其他类型他默认是不给你修改的。<br>varchar对应会生成th:field控件Thymeleaf模板中的SpringEL表达式，实现了数据显示和数据绑定<br>但是text似乎没有对应的模板，用的是Freemaker语法，它会直接显示数据，而不涉及数据绑定。</p>
-<p>如果我们不希望数据被修改，似乎也可以使用Freemaker语法。</p>
-<pre><code>Freemaker的语法
-&lt;textarea name=&quot;新闻内容&quot; class=&quot;form-control&quot;&gt;[[*&#123;新闻内容&#125;]]&lt;/textarea&gt;
-正确的代码
-&lt;textarea name=&quot;新闻内容&quot; class=&quot;form-control&quot; th:field=&quot;*&#123;新闻内容&#125;&quot;&gt;&lt;/textarea&gt;
+        <p>之前deploy的时候每次都要去仓库重新设置域名，以为正常是这样的，实际上只要在source根目录下<br>新建一个文件CNAME，然后把域名放进去就行了。</p>
+<p>以及下面三个好用的脚本</p>
+<span id="more"></span>
+<pre><code>打开终端
+@echo off
+cd /d &quot;D:\hexoblog&quot;
+start powershell -NoExit -Command &quot;ls&quot;
+
+
+一键上传
+@echo off
+chcp 65001 &gt;nul
+
+:: 确保切换到正确的目录
+cd /d &quot;D:\hexoblog&quot;
+if %errorlevel% neq 0 (
+    echo 切换目录失败，请检查路径是否存在。
+    pause
+    exit /b
+)
+
+:: 显示 hexo 的完整路径，确保命令可以找到
+where hexo
+if %errorlevel% neq 0 (
+    echo 无法找到 hexo 命令，请检查环境变量是否正确。
+    pause
+    exit /b
+)
+
+echo 正在执行 hexo clean...
+call hexo clean
+if %errorlevel% neq 0 (
+    echo hexo clean 执行失败。
+    pause
+    exit /b
+)
+
+echo 正在执行 hexo generate...
+call hexo generate
+if %errorlevel% neq 0 (
+    echo hexo generate 执行失败。
+    pause
+    exit /b
+)
+
+echo 正在执行 hexo deploy...
+call hexo deploy
+if %errorlevel% neq 0 (
+    echo hexo deploy 执行失败。
+    pause
+    exit /b
+)
+
+echo 所有操作成功完成！
+pause
+
+
+内网查看
+@echo off
+
+cd /d &quot;D:\hexoblog&quot;
+start /B hexo s -p 80
+timeout /t 2 /nobreak &gt;nul
+start microsoft-edge:http://localhost:80
 </code></pre>
 
     </div>
