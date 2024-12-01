@@ -203,8 +203,7 @@
             
             <p>注：本篇zzc当备忘录和进度使用</p>
 <p>大致路线：<br>1、数电，模电，画板子，找具体项目和案例嵌入式编程C（github或许可以参考），了解基本电子元件<br>2、问王哥要具体项目和源代码<br>3、放假去公司实习具体学习</p>
-<p>正在摸索的内容：<br>1、玩游戏，Turing_Complete，据说是数电学习的好游戏</p>
-<p>进度（2024年11月28日开始）：<br><a href="/2024/11/27/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0day1">20241128，Turing_Compelete</a></p>
+<p>github有人有数电笔记就不记了（即答）</p>
 
             
         </div>
@@ -290,94 +289,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%BF%BB%E5%A2%99/" style="color: #00bcd4">翻墙</a>
+            <a href="/tags/%E7%BF%BB%E5%A2%99/" style="color: #ffa2c4">翻墙</a>
         </span>
         
     </div>
     <a href="/2024/11/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2024/11/27/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0day1/">
-        <h2 class="post-title">嵌入式开发学习day1</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/11/27
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <blockquote>
-<p>与非门（NAnd，Not And）<br>逻辑上：Y&#x3D;¬(A∧B)，就是与门的值输出取反<br>物理上并不是非门与与门的组合，是一个单元实现逻辑功能，效率更高<br>与门只有两个1才出1，so与非门两个1才出0（其他情况相反就行）</p>
-</blockquote>
-<blockquote>
-<p>与门（AND）<br>与非门两个输入共用一个信号就可以无视And（因为满足1进1，0出0）就是非门 so NAND&#x3D;Not （  :3  )<br>NAnd&#x3D;Not+And，so Not+Nand&#x3D;And</p>
-</blockquote>
-<blockquote>
-<p>或非门（NOR，Not OR）<br>或门的值取反<br>或门全0才出1，与门是全1才出1<br>输入00取反11进与门出1，或门? 再加NOT就行？</p>
-</blockquote>
-<blockquote>
-<p>或门（OR）<br>或非门的关卡先来，那或还有什么难度 无敌了图灵完备。</p>
-</blockquote>
-<blockquote>
-<p>非门（N，Not）</p>
-</blockquote>
-<blockquote>
-<p>高电平（ON）<br>不管怎么输入都要求出1，OR门，输入信号0过一遍非门进OR，原生直接进OR</p>
-</blockquote>
-<blockquote>
-<p>低电平（OFF）</p>
-</blockquote>
-<blockquote>
-<p>德摩根定律<br><img src="https://s21.ax1x.com/2024/11/28/pA4xvz4.png"><br>交叉对应和左右对应，左下和右上就是忧伤的输入取反，输出再取反（运算自己考虑，只需要记两个式子）</p>
-</blockquote>
-<blockquote>
-<p>异或门（XOR）<br>A⊕B&#x3D;(A∧¬B)∨(¬A∧B)<br>当输入1的个数为奇数的时候才输出1（输入中1的个数 mod 2的结果）</p>
-</blockquote>
-<blockquote>
-<p>化简逻辑式子<br>我突然想到一个问题，我又不考试，为什么不直接把式子给gpt<br>让他给我化简，无敌了。</p>
-</blockquote>
-<blockquote>
-<p>存储<br>延迟线把信号接回去，让他自己循环信号（上接一个开关，如果没有新的值写入）</p>
-</blockquote>
-<blockquote>
-<p>处理器架构<br>6个寄存器之间相互读取写入，从A读-&gt;写入B，写入的时候会指定一个，所以读取也会指定一个<br>所以12个口的线直接同一条（不会同时激活，所以不会短路）<br>whr说这部分是微电子，后面不需要学了（目前）</p>
-</blockquote>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00a596">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2024/11/27/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0day1/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -411,7 +327,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ffa2c4">毕业设计</a>
+            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #00a596">毕业设计</a>
         </span>
         
     </div>
@@ -467,6 +383,54 @@
         
     </div>
     <a href="/2024/11/22/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%85%B3%E4%BA%8E%E4%BD%BF%E7%94%A8chatgpt%E5%BC%80%E5%8F%91%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8CRPG%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E6%80%9D%E8%B7%AF/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2024/11/22/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%8D%9A%E5%AE%A2%E5%B7%A5%E5%85%B7/">
+        <h2 class="post-title">博客工具</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E5%B7%A5%E5%85%B7/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                工具
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2024/11/22
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>之前deploy的时候每次都要去仓库重新设置域名，以为正常是这样的，实际上只要在source根目录下<br>新建一个文件CNAME，然后把域名放进去就行了。</p>
+<p>以及下面三个好用的脚本</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color: #03a9f4">博客</a>
+        </span>
+        
+    </div>
+    <a href="/2024/11/22/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%8D%9A%E5%AE%A2%E5%B7%A5%E5%85%B7/" class="go-post">阅读全文</a>
 </div>
 
 
