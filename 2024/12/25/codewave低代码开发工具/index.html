@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>在终端Terminal中复制粘贴 | zzczzczzc&#39;s home</title>
+        <title>codewave低代码开发工具 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,22 +157,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>在终端Terminal中复制粘贴</h1>
+        <h1>codewave低代码开发工具</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/18
+            2024/12/25
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E5%B7%A5%E5%85%B7/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                工具
             </a>
         </span>
         
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/Linux/" style="color: #00a596">Linux</a>
+                <a href="/tags/%E7%94%9F%E4%BA%A7%E5%AE%9E%E4%B9%A0/" style="color: #ffa2c4">生产实习</a>
             </span>
             
         </span>
@@ -192,7 +192,29 @@
     </div>
     
     <div class="content" v-pre>
-        <p>在Linux一类终端（Terminal）中Ctrl+C和Ctrl+V通常拥有其他作用，要实现复制粘贴要多按一个Shift。</p>
+        <p>正常导出投入使用，除了要钱这东西似乎没什么缺点，但是他免费版会给你提供服务器，弄上对应域名似乎可以白嫖？<br>用来开发前端好像挺好用的，逻辑和数据（内置Mysql）都是傻瓜式拖拽（导出了搞不好前后端都有，好东西）。</p>
+<blockquote>
+<p>组件使用<br>就是前端能看到的东西，需要配合布局使用（布局好了再放组件）</p>
+</blockquote>
+<blockquote>
+<p>数据库<br>就是数据里面建表，然后把表拖到布局里面就会自动展示表的全部内容<br>如果要实现点击表里的某个数据实现事件，需要调用current.item.下的属性，而不是直接调用数据表</p>
+</blockquote>
+<blockquote>
+<p>事件<br>按钮，文本之类的可以添加事件，单击触发什么效果，如果需要用到变量或者什么组件的属性（比如点击按钮改变按钮的字）<br>需要在当前页面下右键新建局部变量，然后局部变量绑定某个组件的属性（也可以直接用组件的属性，就是比较麻烦）</p>
+</blockquote>
+<blockquote>
+<p>逻辑<br>有些组件自带一些功能，比如弹窗，假设放了一个弹窗modal1，你可以调用逻辑modal1_open，就是打开这个弹窗。<br>如果你的页面总的是什么table_7，那么table_7_reload就是刷新网页（直接搜reload）</p>
+</blockquote>
+<blockquote>
+<p>具体案例<br>比如批量删除，可以建一个变量list<integer>，点击单选框的时候把这个id加入list（有则删除，没则加入）<br>点击删除就是调用数据表的批量删除逻辑，加入list，删除之后清空list内容即可（注意要刷新网页）。</p>
+</blockquote>
+<blockquote>
+<p>前后端<br>后台管理放在PC端，前端展示放在H5端，但他们数据是一样的，所以只需要在PC端实现创建数据，而前端没有创建和删除功能<br>这样看起来就像是前后端分离了（虽然就是这么一回事）</p>
+</blockquote>
+<blockquote>
+<p>各种功能的实现<br>动脑筋，组件里面的内置函数，匹配（等于switch，但是更好用），if，就可以实现所有功能了</p>
+</blockquote>
+<p>奶奶滴他就第一天查了一下人数，我想着这倒数第二天应该不会点了，最后一天点差不多，逃课被逮个正着</p>
 
     </div>
     
