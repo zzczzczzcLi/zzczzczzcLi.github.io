@@ -171,60 +171,6 @@
         
 
 <div class="post">
-    <a href="/2024/11/27/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        <h2 class="post-title">嵌入式开发学习笔记（置顶）</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/11/27
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>注：本篇zzc当备忘录和进度使用</p>
-<p>大致路线：<br>1、数电，模电，画板子，找具体项目和案例嵌入式编程C（github或许可以参考），了解基本电子元件<br>2、问王哥要具体项目和源代码<br>3、放假去公司实习具体学习（提一下给孩子们培训算法和数据结构 ：））<br>如果实在差强人意可以2月开学之后再投编程培训也不迟（不过有人带应该不会有问题）<br>也并非会浪费算法学的那点东西，可以给老板和同事们的孩子培训算法和数据结构<br>老板还想赶我走？ 你的孩子都是我在教算法！<br>主要是这boss直聘也太多人找我了，要的工资太低了导致的</p>
-<p>github有人有数电笔记就不记了（即答）</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2024/11/27/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
     <a href="/2024/11/18/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/">
         <h2 class="post-title">机场推荐（置顶）</h2>
     </a>
@@ -289,7 +235,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%BF%BB%E5%A2%99/" style="color: #03a9f4">翻墙</a>
+            <a href="/tags/%E7%BF%BB%E5%A2%99/" style="color: #ffa2c4">翻墙</a>
         </span>
         
     </div>
@@ -297,7 +243,56 @@
 </div>
 
 <div class="post">
-    <a href="/2024/12/25/codewave%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
+    <a href="/2025/01/14/stm32%E4%BD%8E%E5%8A%9F%E8%80%97%E6%A8%A1%E5%BC%8FWFI%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E7%83%A7%E5%BD%95%EF%BC%88Notarget%E6%8A%A5%E9%94%99%EF%BC%89/">
+        <h2 class="post-title">stm32低功耗模式WFI导致无法烧录（Notarget报错）</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/1/14
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>查明问题：<br>硬件连着好好的，结果烧录显示No target报错。<br>查看半天代码发现是Chatgpt生成的代码中使用了函数导致某些问题。<br>__WFI();  &#x2F;&#x2F; 使用 Wait-For-Interrupt 指令来降低 CPU 的功耗<br>这些函数使用的时候都需要配置（WFI会进入低功耗导致无法烧录，需要提前配置好低功耗模式），否则会导致某些问题（只用底层寄存器写法应该就没问题）<br>此处把WFI改成for循环来等待就可以继续烧录了，不会报错。</p>
+<p>解决方法：<br>把boot0跳线拨到高电位就不会使用flash代码运行，此时再烧录一下把flash代码刷掉即可。<br>（正常情况下烧录只会把代码烧录到flash中，keil5中的download全称是download to flash memory）<br>然后再把跳线拨回去。<br>此处应该都不一样，具体看参考手册，是否是boot1&#x3D;0，boot0&#x3D;1用的是系统存储运行。<br><img src="https://s21.ax1x.com/2025/01/14/pEi0o6g.png"><br>tip：可以用ctrl+f来查找具体的问题，比如此处搜boot即可</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/01/14/stm32%E4%BD%8E%E5%8A%9F%E8%80%97%E6%A8%A1%E5%BC%8FWFI%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E7%83%A7%E5%BD%95%EF%BC%88Notarget%E6%8A%A5%E9%94%99%EF%BC%89/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2024/12/25/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/codewave%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/">
         <h2 class="post-title">codewave低代码开发工具</h2>
     </a>
     <div class="category-and-date">
@@ -327,38 +322,6 @@
 <blockquote>
 <p>20241227,2:32评<br>这玩意预览只支持2小时访问，正式发布要钱，鉴定为纯纯的电子垃圾，怪不得没人用。（收你傻瓜式开发的钱，还收你服务器的钱，就是欺负不会前后端的人）</p>
 </blockquote>
-<blockquote>
-<p>组件使用<br>就是前端能看到的东西，需要配合布局使用（布局好了再放组件）</p>
-</blockquote>
-<blockquote>
-<p>数据库<br>就是数据里面建表，然后把表拖到布局里面就会自动展示表的全部内容<br>如果要实现点击表里的某个数据实现事件，需要调用current.item.下的属性，而不是直接调用数据表</p>
-</blockquote>
-<blockquote>
-<p>事件<br>按钮，文本之类的可以添加事件，单击触发什么效果，如果需要用到变量或者什么组件的属性（比如点击按钮改变按钮的字）<br>需要在当前页面下右键新建局部变量，然后局部变量绑定某个组件的属性（也可以直接用组件的属性，就是比较麻烦）</p>
-</blockquote>
-<blockquote>
-<p>逻辑<br>有些组件自带一些功能，比如弹窗，假设放了一个弹窗modal1，你可以调用逻辑modal1_open，就是打开这个弹窗。<br>如果你的页面总的是什么table_7，那么table_7_reload就是刷新网页（直接搜reload）</p>
-</blockquote>
-<blockquote>
-<p>*插件管理-逻辑<br>如果需要某些功能但是没有可以在插件管理里面找，比如加密和解密，然后调用逻辑就行。</p>
-</blockquote>
-<blockquote>
-<p>具体案例<br>比如批量删除，可以建一个变量list<integer>，点击单选框的时候把这个id加入list（有则删除，没则加入）<br>点击删除就是调用数据表的批量删除逻辑，加入list，删除之后清空list内容即可（注意要刷新网页）。</p>
-</blockquote>
-<blockquote>
-<p>前后端<br>后台管理放在PC端，前端展示放在H5端，但他们数据是一样的，所以只需要在PC端实现创建数据，而前端没有创建和删除功能<br>这样看起来就像是前后端分离了（虽然就是这么一回事）</p>
-</blockquote>
-<blockquote>
-<p>各种功能的实现<br>动脑筋，组件里面的内置函数，匹配（等于switch，但是更好用），if，就可以实现所有功能了</p>
-</blockquote>
-<blockquote>
-<p>常见错误<br>无法预览，拖出数据表一大堆报错（浏览器问题，可以换edge最新版，火狐，360安全等试试，谷歌不一定星）</p>
-</blockquote>
-<blockquote>
-<p>其他内容<br>调用组件属性，一般来说表单组件的才能调用，比如input_value，正常组件无法调用，需要给他绑定一个变量（等价于input_value）<br>正常情况下current_item代表数据表里面的全部数据，用&#x3D;或者其他条件来筛选内容</p>
-</blockquote>
-<p>奶奶滴他就第一天查了一下人数，我想着这倒数第二天应该不会点了，最后一天点差不多，逃课被逮个正着</p>
-
             
         </div>
     </div>
@@ -371,11 +334,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%94%9F%E4%BA%A7%E5%AE%9E%E4%B9%A0/" style="color: #ff7d73">生产实习</a>
+            <a href="/tags/%E7%94%9F%E4%BA%A7%E5%AE%9E%E4%B9%A0/" style="color: #00a596">生产实习</a>
         </span>
         
     </div>
-    <a href="/2024/12/25/codewave%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="go-post">阅读全文</a>
+    <a href="/2024/12/25/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/codewave%E4%BD%8E%E4%BB%A3%E7%A0%81%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -418,24 +381,40 @@
 </div>
 
 <div class="post">
-    <a href="/2024/11/23/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%AE%AD%E6%88%AA%E5%9B%BE/">
-        <h2 class="post-title">工程实训截图</h2>
+    <a href="/2024/11/27/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+        <h2 class="post-title">嵌入式开发学习笔记</h2>
     </a>
     <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
         
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2024/11/23
+            2024/11/27
         </span>
         
+        
+        <span class="special">
+            <i class="fa-solid fa-grip-vertical fa-fw"></i>
+        </span>
         
     </div>
     <div class="description">
         <div class="content" v-pre>
             
-            <p>呃呃</p>
+            <p>注：本篇zzc当备忘录和进度使用，标签打上以后搜标签就行，此处作废</p>
+<p>大致路线：<br>1、数电，模电，画板子，找具体项目和案例嵌入式编程C（github或许可以参考），了解基本电子元件<br>upd:2025&#x2F;1&#x2F;14，大概看一下模电就行了，不需要细学<br>模电也太几把难了，这感觉就像是学软件开发要学计算机组成原理一样<br>优先学stm32，把嵌入式学明白<br>2、问王哥要具体项目和源代码<br>3、放假去公司实习具体学习（提一下给孩子们培训算法和数据结构 ：））<br>如果实在差强人意可以2月开学之后再投编程培训也不迟（不过有人带应该不会有问题）<br>也并非会浪费算法学的那点东西，可以给老板和同事们的孩子培训算法和数据结构<br>老板还想赶我走？ 你的孩子都是我在教算法！<br>主要是这boss直聘也太多人找我了，要的工资太低了导致的</p>
+<p>github有人有数电笔记就不记了（即答）</p>
+
             
         </div>
     </div>
@@ -448,11 +427,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ff7d73">毕业设计</a>
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
         </span>
         
     </div>
-    <a href="/2024/11/23/%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%AE%AD%E6%88%AA%E5%9B%BE/" class="go-post">阅读全文</a>
+    <a href="/2024/11/27/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -531,7 +510,7 @@
     <div id="footer-wrap">
         <div>
             &copy;
-            2022 - 2024 zzczzczzc&#39;s home
+            2022 - 2025 zzczzczzc&#39;s home
             <span id="footer-icon">
                 <i class="fa-solid fa-font-awesome fa-fw"></i>
             </span>
