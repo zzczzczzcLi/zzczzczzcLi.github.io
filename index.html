@@ -235,7 +235,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%BF%BB%E5%A2%99/" style="color: #ffa2c4">翻墙</a>
+            <a href="/tags/%E7%BF%BB%E5%A2%99/" style="color: #00a596">翻墙</a>
         </span>
         
     </div>
@@ -243,7 +243,57 @@
 </div>
 
 <div class="post">
-    <a href="/2025/01/14/stm32%E4%BD%8E%E5%8A%9F%E8%80%97%E6%A8%A1%E5%BC%8FWFI%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E7%83%A7%E5%BD%95%EF%BC%88Notarget%E6%8A%A5%E9%94%99%EF%BC%89/">
+    <a href="/2025/01/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E7%82%B9%E4%BA%AEstm32%E6%9C%80%E5%B0%8F%E7%B3%BB%E7%BB%9F%E6%9D%BF%E7%9A%84%E6%8C%87%E7%A4%BA%E7%81%AF/">
+        <h2 class="post-title">用库函数点亮stm32最小系统板的指示灯</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/1/19
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>个人感觉控制硬件应该都是这三个步骤。<br>什么是时钟，什么是使能，什么是RCC，如何配置参数这些就懒得说了，基本概念谷歌+gpt了解即可</p>
+<p>使用端口三个步骤：使能时钟-&gt;配置参数-&gt;使用端口<br>观察开发板发现PC13端口就是一个指示灯，把他点亮</p>
+<p>1.使用RCC时钟控制模块，使能PC13端口的时钟信号<br>2.使用GPIO函数来初始化端口<br>3.使用GPIO函数来使用初始好的端口，如设置电位GPIO_SetBits</p>
+<p>解析：</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/01/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E7%94%A8%E5%BA%93%E5%87%BD%E6%95%B0%E7%82%B9%E4%BA%AEstm32%E6%9C%80%E5%B0%8F%E7%B3%BB%E7%BB%9F%E6%9D%BF%E7%9A%84%E6%8C%87%E7%A4%BA%E7%81%AF/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/01/14/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/stm32%E4%BD%8E%E5%8A%9F%E8%80%97%E6%A8%A1%E5%BC%8FWFI%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E7%83%A7%E5%BD%95%EF%BC%88Notarget%E6%8A%A5%E9%94%99%EF%BC%89/">
         <h2 class="post-title">stm32低功耗模式WFI导致无法烧录（Notarget报错）</h2>
     </a>
     <div class="category-and-date">
@@ -271,6 +321,7 @@
             
             <p>查明问题：<br>硬件连着好好的，结果烧录显示No target报错。<br>查看半天代码发现是Chatgpt生成的代码中使用了函数导致某些问题。<br>__WFI();  &#x2F;&#x2F; 使用 Wait-For-Interrupt 指令来降低 CPU 的功耗<br>这些函数使用的时候都需要配置（WFI会进入低功耗导致无法烧录，需要提前配置好低功耗模式），否则会导致某些问题（只用底层寄存器写法应该就没问题）<br>此处把WFI改成for循环来等待就可以继续烧录了，不会报错。</p>
 <p>解决方法：<br>把boot0跳线拨到高电位就不会使用flash代码运行，此时再烧录一下把flash代码刷掉即可。<br>（正常情况下烧录只会把代码烧录到flash中，keil5中的download全称是download to flash memory）<br>然后再把跳线拨回去。<br>此处应该都不一样，具体看参考手册，是否是boot1&#x3D;0，boot0&#x3D;1用的是系统存储运行。<br><img src="https://s21.ax1x.com/2025/01/14/pEi0o6g.png"><br>tip：可以用ctrl+f来查找具体的问题，比如此处搜boot即可</p>
+<p>题外话：<br>stm32硬件上的reset按钮相当于重启stm32，所有状态全部从默认开始（不会刷掉flash里面的代码，代码也是从头开始）</p>
 
             
         </div>
@@ -284,11 +335,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00a596">嵌入式开发</a>
         </span>
         
     </div>
-    <a href="/2025/01/14/stm32%E4%BD%8E%E5%8A%9F%E8%80%97%E6%A8%A1%E5%BC%8FWFI%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E7%83%A7%E5%BD%95%EF%BC%88Notarget%E6%8A%A5%E9%94%99%EF%BC%89/" class="go-post">阅读全文</a>
+    <a href="/2025/01/14/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/stm32%E4%BD%8E%E5%8A%9F%E8%80%97%E6%A8%A1%E5%BC%8FWFI%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E7%83%A7%E5%BD%95%EF%BC%88Notarget%E6%8A%A5%E9%94%99%EF%BC%89/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
@@ -334,7 +385,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E7%94%9F%E4%BA%A7%E5%AE%9E%E4%B9%A0/" style="color: #00a596">生产实习</a>
+            <a href="/tags/%E7%94%9F%E4%BA%A7%E5%AE%9E%E4%B9%A0/" style="color: #03a9f4">生产实习</a>
         </span>
         
     </div>
@@ -380,60 +431,6 @@
     <a href="/2024/12/05/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20241205%E6%9D%82%E8%B0%88/" class="go-post">阅读全文</a>
 </div>
 
-<div class="post">
-    <a href="/2024/11/27/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
-        <h2 class="post-title">嵌入式开发学习笔记</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2024/11/27
-        </span>
-        
-        
-        <span class="special">
-            <i class="fa-solid fa-grip-vertical fa-fw"></i>
-        </span>
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>注：本篇zzc当备忘录和进度使用，标签打上以后搜标签就行，此处作废</p>
-<p>大致路线：<br>1、数电，模电，画板子，找具体项目和案例嵌入式编程C（github或许可以参考），了解基本电子元件<br>upd:2025&#x2F;1&#x2F;14，大概看一下模电就行了，不需要细学<br>模电也太几把难了，这感觉就像是学软件开发要学计算机组成原理一样<br>优先学stm32，把嵌入式学明白<br>2、问王哥要具体项目和源代码<br>3、放假去公司实习具体学习（提一下给孩子们培训算法和数据结构 ：））<br>如果实在差强人意可以2月开学之后再投编程培训也不迟（不过有人带应该不会有问题）<br>也并非会浪费算法学的那点东西，可以给老板和同事们的孩子培训算法和数据结构<br>老板还想赶我走？ 你的孩子都是我在教算法！<br>主要是这boss直聘也太多人找我了，要的工资太低了导致的</p>
-<p>github有人有数电笔记就不记了（即答）</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2024/11/27/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="go-post">阅读全文</a>
-</div>
-
 
         <div class="page-current">
     <div class="prev">
@@ -450,7 +447,7 @@
             
             
             <span class="page-omit">...</span>
-            <a class="page-num" href="/page/9">9</a>
+            <a class="page-num" href="/page/10">10</a>
             
         </span>
         
