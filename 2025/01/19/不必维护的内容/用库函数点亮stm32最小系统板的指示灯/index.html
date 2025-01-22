@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
             </span>
             
         </span>
@@ -200,6 +200,7 @@
 <p>RCC（Reset and Clock Control）时钟控制模块<br>GPIO（库函数，所有通用输入输出都在此处操作）<br>PC13端口是stm32上GPIOC（General Purpose Input&#x2F;Output 通用输入&#x2F;输出，C是指这个端口被分配在GPIO的C组引脚编号里面）<br>（为什么PC13是PortC而不是PurposeC，因为GPIO可以有多个用途，而此处PC13指代是硬件引脚，而非特定用途。）</p>
 <p>要使能PC13，必须要启动C组的时钟信号（不能单独启动引脚13，没有这个功能，最低粒度是端口，即C组端口）<br>其中GPIO置于APB2上，即 Advanced Peripheral Bus 2 ，表示 高级外设总线 2<br>STM32 微控制器通常有两条 APB 总线：<br>APB1：高级外设总线 1<br>APB1 用于连接一些低速外设，比如定时器（如 TIM2、TIM3）、USART、I2C、SPI 等。<br>APB1 通常支持较低的时钟频率，适合低速外设。<br>APB2：高级外设总线 2<br>APB2 主要连接高性能外设，如 ADC、SPI、USART、GPIO、TIM1、SDIO 等。<br>APB2 支持较高的时钟频率，适用于性能要求较高的外设。<br>故使能代码为RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOC,ENABLE);<br>Periph是外设的意思（面向对象编程，所以必须要写清楚）</p>
 <p>GPIO_init(GPIOC,&amp;GPIO_InitStruct)<br>此代码会初始化GPIOC的目标引脚（不会动其他引脚），引脚由GPIO_InitStruct结构体设定<br>用&amp;而非实际变量是节省内存，毕竟这代码要写到MCU里面，一个变量就可以修改全部引脚。</p>
+<p>GPIO_SetBits设置高电位的函数也一样，设置哪个端口组，设置哪个引脚（引脚变量是共用的，估计也是内存太少了）<br>ResetBits则是设置低电位</p>
 
     </div>
     
