@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>元素之诗副本收益 | zzczzczzc&#39;s home</title>
+        <title>面包板使用前注意 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,22 +157,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>元素之诗副本收益</h1>
+        <h1>面包板使用前注意</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/1/23
+            2025/1/25
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                游戏
+                教程
             </a>
         </span>
         
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97/" style="color: #00a596">元素之诗</a>
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
             </span>
             
         </span>
@@ -192,34 +192,10 @@
     </div>
     
     <div class="content" v-pre>
-        <p>由于噩梦骸骨能单刷以及boss，所以螃蟹不考虑（赶时间可以打）</p>
-<span id="more"></span>
-
-<blockquote>
-<p>大漠骨冢-噩梦（不含boss）<br>平均：18871<br>数据：17780 19220 19120 19000 19140 16900 18920 20040 19000 19780 17380 18160 -1</p>
-</blockquote>
-<blockquote>
-<p>神殿长廊-噩梦（螃蟹，数据价值不包含卡牌）<br>平均：17894<br>数据：17320 19800 16640 17820 -1</p>
-</blockquote>
-<p>C++代码处理平均值，在线编译C++，<a target="_blank" rel="noopener" href="https://www.jyshare.com/compile/12/">https://www.jyshare.com/compile/12/</a></p>
-<pre><code class="C++">#include &lt;iostream&gt;
-using namespace std;
-
-int main()
-&#123;
-    double tmp=0;
-    int n,cnt=0,ans;
-    while(cin&gt;&gt;n)&#123;
-        tmp+=n;
-        cnt++;
-        if(n==-1)break;
-    &#125;
-    cnt--;
-    ans=tmp/cnt;
-    cout&lt;&lt;&quot;平均值：&quot;&lt;&lt;ans;
-   return 0;
-&#125;
-</code></pre>
+        <p>要先用镊子顶开铁夹子，要接哪些口都要用镊子先捅进去（诗人我吃）</p>
+<p>一些单词：<br>IPU，InputPullUp，输入模式且默认为高电位（上拉电阻），若按钮按下是导通，则接低电位，会导致引脚为低电位，以及IPD类似作用。<br>OD，OpenDrain，开漏<br>PP，PushPull，推挽，Pull-Up，Pull-Down，拉高（电平），拉低（电平），可以选择低电平或者高电平。<br>和上面开漏不同的是，开漏只能漏东西（即低电平），没有高电平，高电平则为高阻抗（断路）</p>
+<p>tip：<br>写代码的时候，如果用了RCC_开头的函数，那么后面的参数也是RCC开头的<br>同理GPIO也是</p>
+<p>接上一次任务，解析会了之后，本次较为简单：<br>能够PC13点灯之后，使用面包板接线，实现点亮发光二极管，流水灯（循环一个一个点亮），蜂鸣器的使用<br>此处循环的时候 1&lt;&lt;i，就是具体pin脚，比如GPIO_Pin_12，就是1&lt;&lt;i，赋值给GPIO结构体的成员PIN就可以了<br>具体看define<br>此处修改引脚的speed，并不会导致蜂鸣器声音变化，引脚speed只决定引脚的驱动能力上限和信号传递速度<br>并不直接影响电流大小。</p>
 
     </div>
     
