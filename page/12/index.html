@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>元素之诗每周清单 | zzczzczzc&#39;s home</title>
+        <title>zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -38,12 +38,7 @@
 
 
 
-<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
-<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css" />
-
-
-
-
+<script src="/js/lib/home.js"></script>
 
 <link rel="stylesheet" href="/css/main.css" />
 
@@ -155,77 +150,145 @@
 
             <transition name="into">
                 <div id="main" v-show="!loading">
-                    <div class="article">
-    <div>
-        <h1>元素之诗每周清单</h1>
+                    <div id="home-head">
+    <div id="home-background" ref="homeBackground" data-images="/images/background.jpg,/images/background1.jpg,/images/background2.jpg"></div>
+    <div id="home-info" @click="homeClick">
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="loop"></span>
+        <span class="info">
+            <div class="wrap">
+                <h1>zzczzczzc&#39;s home</h1>
+                <h3></h3>
+                <h5></h5>
+            </div>
+        </span>
     </div>
-    <div class="info">
+</div>
+<div id="home-posts-wrap"  ref="homePostsWrap">
+    <div id="home-posts">
+        
+
+<div class="post">
+    <a href="/2023/05/06/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/frpc%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/">
+        <h2 class="post-title">frpc实现内网穿透</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/1/24
-        </span>
-        
-        <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏
-            </a>
+            2023/5/6
         </span>
         
         
-        <span class="tags">
-            <span class="icon">
-                <i class="fa-solid fa-tags fa-fw"></i>
-            </span>
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
             
-            <span class="tag">
-                
-                <a href="/tags/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97/" style="color: #00bcd4">元素之诗</a>
-            </span>
+            <p>#frps -&gt; frp-server<br>#frpc -&gt; frp-client<br>一般家用电脑都不会拥有公网IP，都只有内网，无法被互联网访问。<br>外网和内网之前存在一墙之隔。<br>因此我们把<font color='RED'>让内网能被外网访问</font>这一步骤称作：内网穿透</p>
             
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
         </span>
         
     </div>
-    
-    <div class="content" v-pre>
-        <span id="more"></span>
+    <a href="/2023/05/06/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/frpc%E5%AE%9E%E7%8E%B0%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" class="go-post">阅读全文</a>
+</div>
 
-<p>每周委托也一并看了，在隔壁</p>
-<details open><summary>杂项</summary><p>
 
-<blockquote>
-<p>工会礼包 - 检查通行证 - 工会讨伐<br>护石刻刀（图鉴守卫者之心，需20炽烈之石，5守护者之心）</p>
-</blockquote>
-</p></details>
+        <div class="page-current">
+    <div class="prev">
+        
+        <a class="page-num" href="/page/11/">
+            <i class="fa-solid fa-caret-left fa-fw"></i>
+        </a>
+        
+    </div>
+    <div class="page-index">
+        
+        <span>
+            
+            <a class="page-num" href="/">1</a>
+            <span class="page-omit">...</span>
+            
+            
+            
+            
+            <a class="page-num" href="/page/10">10</a>
+            
+            
+            <a class="page-num" href="/page/11/">11</a>
+        </span>
+        
+        <span class="current">12</span>
+        
+    </div>
+    <div class="next">
+        
+    </div>
+</div>
 
-<details open><summary>弗朗蒂亚城</summary><p>
-
-<blockquote>
-<p>每周委托 - 纹章钥匙</p>
-</blockquote>
-</p></details>
-
-<details open><summary>斯兰</summary><p>
-
-<blockquote>
-<p>史莱姆兑换 - 熔火兑换 - 温泉箱</p>
-</blockquote>
-</p></details>
     </div>
     
-    
-    
-    <div id="comment">
-        <div id="gitalk-container"></div>
+    <div id="home-card">
+        <div id="card-div">
+    <div class="card-style">
+        <div class="avatar">
+            <img src="/images/avatar.jpg" alt="avatar" />
+        </div>
+        <div class="name">zzczzczzc</div>
+        <div class="description">
+            <p>下面是友情链接 : D</p>
+
+        </div>
+        
+        
+        <div class="friend-links">
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://blog.gugugit.com/">闻俊的博客</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://1dyer.github.io">李登宇的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://chchch-art.github.io">陈昊的博客（github）</a>
+            </div>
+            
+            <div class="friend-link">
+                <a target="_blank" rel="noopener" href="https://z01prime.github.io">张能祎的博客（github）</a>
+            </div>
+            
+        </div>
+        
     </div>
-    
-    
-    
-    
+</div>
+
+    </div>
     
 </div>
 
@@ -258,26 +321,6 @@
             
         </div>
         <script src="/js/main.js"></script>
-        
-        
-
-<script>
-    const gitalk = new Gitalk({
-        clientID: "5093c0f78df8d980d0e8",
-        clientSecret: "3bc33bc8827c07c9e2907362f7e05a5f574db90b",
-        repo: "myblogtalk",
-        owner: "zzczzczzcLi",
-        admin: "zzczzczzcLi".split(","),
-        language: "zh-CN",
-        id: decodeURI(location.pathname),
-        
-    })
-    gitalk.render("gitalk-container");
-</script>
-
-
-
-
         
     </body>
 </html>
