@@ -171,8 +171,8 @@
         
 
 <div class="post">
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%B0%86%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%B8%A6%E7%AB%AF%E5%8F%A3%E8%A7%A3%E6%9E%90%E5%88%B0%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">
-        <h2 class="post-title">将域名不带端口解析到我的世界服务器上</h2>
+    <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9F%BA%E4%BA%8Emysql%E7%94%9F%E6%88%90ruoyi%E7%BD%91%E9%A1%B5%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+        <h2 class="post-title">基于mysql生成ruoyi网页的相关问题</h2>
     </a>
     <div class="category-and-date">
         
@@ -189,7 +189,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/21
+            2024/11/20
         </span>
         
         
@@ -197,9 +197,9 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>CNAME：将域名指向另一个域名<br>连接这一个指向内网穿透的服务器上还要带上端口，除非你的端口是25565</p>
-<p>SRV：<a target="_blank" rel="noopener" href="https://www.mcio.cn/274.html">不带端口的解析</a><br>设置SRV解析前先确保你已经正确配置了CNAME</p>
-<p>特殊情况：如果电脑上配置了多个网络配置，比如有虚拟机的或者别的，服务器的配置文件<br>server-ip，后面最好空着，不然有可能连不上服务器（127.0.0.1指向了虚拟机而不是当前想转发的）<br>即，ip能ping通，防火墙也关了，但带上端口就不通了。</p>
+            <p>1.ruoyi数据从哪来<br>首先ruoyi是没有数据的，数据是根据底层的spring boot Java代码（map和control）从mysql里面处理出来。<br>生成代码给的sql运行之后就会生成网页，但是没有数据是正常的。（因为代码没运行）<br>需要把main放到新模块下，然后把main的template模板挪到admin的模板下（admin是主网页，需要手动挪过去）<br>如果搜索模块少了几个是正常的，在ruoyi自带的模板中，mysql只有varchar能作为搜索类型，所以新闻内容<br>这种较长的格式设置为text，不能被加入搜索是正常的（不是bug）</p>
+<p>2.网页生成了，数据能显示了，有bug也直接去改代码，不需要在用代码生成模块了<br>bug很有可能是java类型，或者spring底层代码导致的错误，也就是原本模块就没考虑到这个问题<br>所以需要我们直接去对代码进行修改<br>比如新闻内容显示很长，这里对control获取的内容进行修改，不对实际获取内容修改，将实际内容改成30个字符就可以解决问题<br>如下所示<br><img src="https://s21.ax1x.com/2024/11/20/pAWBDzV.png"></p>
+<p>3.数据不显示，网页有问题<br>具体代码生成模板<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Ning-Blog/p/15206967.html">点此处查看</a><br>提几个重点，表和表字段均要有注释。<br>需要有主键，没有的话自己生成一个自增主键（这里解决了一个多查询错误的问题，但是又跳了一个新的问题，只能明天再说了）<br>三个pom引用是否写错（主项目引用有version，分模块中没有）<br>引用之后是否刷新了pom文件</p>
 
             
         </div>
@@ -213,21 +213,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #03a9f4">内网穿透</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #03a9f4">我的世界</a>
+            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ffa2c4">毕业设计</a>
         </span>
         
     </div>
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%B0%86%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%B8%A6%E7%AB%AF%E5%8F%A3%E8%A7%A3%E6%9E%90%E5%88%B0%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" class="go-post">阅读全文</a>
+    <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9F%BA%E4%BA%8Emysql%E7%94%9F%E6%88%90ruoyi%E7%BD%91%E9%A1%B5%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9C%A8Ubuntu%E4%B8%AD%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%EF%BC%8C%E9%85%8D%E7%BD%AENAT/">
-        <h2 class="post-title">在Ubuntu中设置静态IP，配置NAT</h2>
+    <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%89%93%E5%8D%B0%E8%AE%BA%E6%96%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
+        <h2 class="post-title">打印论文注意事项</h2>
     </a>
     <div class="category-and-date">
         
@@ -244,7 +239,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/21
+            2024/11/20
         </span>
         
         
@@ -252,8 +247,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p><a target="_blank" rel="noopener" href="https://download.csdn.net/blog/column/9529187/107760906">第一步：正确配置NAT</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_57168310/article/details/128176238">第二步：设置静态IP</a></p>
-<p>开启了虚拟机网络之后可能会导致正常联网速度变慢，不用的时候最好在适配器中关闭。<br>如果虚拟机还是不能上网：<br>1、先关闭Ubuntu虚拟机。 2、回到主机,打开运行窗口(同时按下 Win + R),输入”services.msc”并运行。 3、找到”VMware DHCP Service”和”VMware NAT Service”</p>
+            <p>打印要用pdf不能用doc<br>封面不能有页眉页脚<br>最后参考文献不能漏出来，不然要单独加一页</p>
 
             
         </div>
@@ -267,25 +261,25 @@
         
         <span class="tag">
             
-            <a href="/tags/Linux/" style="color: #00bcd4">Linux</a>
+            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ffa2c4">毕业设计</a>
         </span>
         
     </div>
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9C%A8Ubuntu%E4%B8%AD%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%EF%BC%8C%E9%85%8D%E7%BD%AENAT/" class="go-post">阅读全文</a>
+    <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%89%93%E5%8D%B0%E8%AE%BA%E6%96%87%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E6%95%B4%E5%90%88%E5%8C%85-%E6%9C%AB%E6%97%A5%E6%97%85%E9%80%94-%E9%A3%8E%E6%9A%B4%E5%B0%86%E8%87%B3/">
-        <h2 class="post-title">我的世界末日生存整合包推荐-末日旅途-风暴将至</h2>
+    <a href="/2024/11/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/">
+        <h2 class="post-title">机场推荐</h2>
     </a>
     <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
+            <a href="/categories/%E5%B7%A5%E5%85%B7/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                游戏
+                工具
             </a>
         </span>
         
@@ -293,7 +287,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/19
+            2024/11/18
         </span>
         
         
@@ -301,9 +295,27 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>官方宣传片：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ym4y167mj/">【MC末日旅途整合包】来经历一场令人绝望的辐射灾变之旅！风暴将至！</a><br>官方整合包：<a target="_blank" rel="noopener" href="https://share.weiyun.com/i0cewgLc">腾讯微云</a><br>风暴将至地图：<a target="_blank" rel="noopener" href="https://afdian.net/a/IronCurtain">爱发电2块付费订阅</a><br>服务端+客户端整合备份：<a target="_blank" rel="noopener" href="https://cowtransfer.com/i/storage">请支持原作者，此处为zzc留档查看</a></p>
-<p>此整合包mod较多，联机时互相发送的数据量大，导致免费SakuraFrp流量消耗量大的同时延迟很高。Tailscale联机效果也很差，稳定性高，但是延迟在500ms～1s之间。<br>ZeroTier好像延迟能小于100ms，过几天有空联机了就试试。</p>
-<p>综合测试结果：SakuraFrp&gt;Tailscale&gt;Zerotier&gt;RadminLan</p>
+            <details><summary>前言</summary><p>
+
+<blockquote>
+<p>一想到好兄弟们在用盗版翻墙软件我就难过，比如下面这个。<br><img src="https://s21.ax1x.com/2024/11/18/pARWXLt.jpg"><br>这东西的存在就和steam对应steam管家一样。<br>他们可能是从广大机场那买了订阅过来，然后封包成APP美名其曰是自己的机场。<br>很有可能是人家低买高卖，骗骗首次翻墙的人。<br><br>机场速度通常情况下：直连&lt;中转（BGP）&lt;专线（IPLC）<br>并且似乎现在国内防火墙的力度需要每天更新一次订阅。<br>一般情况下直连 5r能买到1T不限时流量是正常的<br>中转大约在10r&#x2F;200g左右，若有浮动 一般都是机场质量偏差，或者有概率跑路<br><br>那些APP在做什么：（选择这一步的通常会亏钱，但是能用）<br>1.找了一个Clash,Clash Meta,Sing-box,Nekobox类似的软件<br>2.加入订阅<br>3.修改一下前端，变成某某加速器某某vpn<br><br>正常应该做什么：<br>1.找了一个Clash,Clash Meta,Sing-box,Nekobox类似的软件<br>2.加入订阅<br><br>现在不推荐使用Clash系列的，Clash开发人都跑路了，软件没人维护，但是网络协议日新月异。<br>比如Hysteria协议就不支持。<br><br>电脑端：推荐使用<a target="_blank" rel="noopener" href="https://nekoray.com/">Nekoray</a><br>手机端：推荐使用<a target="_blank" rel="noopener" href="https://getnekobox.com/">Nekobox</a><br>苹果：各大机场首页都有教程，有些会有共享ID，可以用来下载ios专用加速器，比如Shadowrocket<br><br>如果网络特别差，订阅更新不了，可以加入Hysteria2核心（此处自行研究）<br>手机上是Hysteira2插件（全平台通用的）<br>订阅可能需要先挂梯子才能更新（如果没有梯子，请使用<a target="_blank" rel="noopener" href="https://nexconvert.com/">奶昔订阅转换</a>）<br>转换的作用就是帮你拿订阅，顺带提升一下安全等级，然后换一个格式给你可以不用挂梯子就能用的订阅。</p>
+</blockquote>
+</p></details>
+
+<details><summary>直连机场推荐</summary><p>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://hajimi.icu/#/plans">哈基米</a><br>量非常大，6r&#x2F;1T不限时，刷图片可以，刷视频跳着加载大约等7-8秒<br>如果要用来刷视频，需要提前缓存好<br><br><a target="_blank" rel="noopener" href="https://33y.run/#/plans">三三云</a><br>和上家差不多，但是跳着刷视频只需要等3-5秒，稍微好一点点<br><br><a target="_blank" rel="noopener" href="https://性价比机场.com/">性价比机场</a><br>很老牌的机场了，有1r&#x2F;50g包月套餐，跳着刷基本不用等，最多1-2秒<br></p>
+</blockquote>
+</p></details>
+
+<details><summary>中转和专线机场推荐</summary><p>
+
+<blockquote>
+<p>机场的具体好坏，请进入官网，找到他们的机场频道，看群友的聊天记录。<br><a target="_blank" rel="noopener" href="https://vyy.idsduf.com/#/plan">维云云</a><br>按月4r&#x2F;300g<br>按量9r&#x2F;150g<br>tg聊天群人数0.1k<br>使用体验：无<br><br><a target="_blank" rel="noopener" href="https://5.6bcloud.top/">牛逼</a><br>按月7r&#x2F;1t<br>按年22r&#x2F;每月200g<br>按量13r&#x2F;200g<br>tg聊天群人数5k<br>使用体验：节点延迟均50~60ms左右，也有慢的，ins视频跳转无延迟。晚高峰5MB-10MB 跑满百兆<br><br><a target="_blank" rel="noopener" href="http://alice.sale/#/plan">爱丽丝</a><br>按月9r&#x2F;256g<br>tg聊天群人数1k<br>使用体验：无<br><br><a target="_blank" rel="noopener" href="https://www.nihong.org/#/plan">霓虹云</a><br>按月10r&#x2F;250g<br>tg聊天群人数4k<br>使用体验：无<br><br><a target="_blank" rel="noopener" href="https://edu.citbook.me/app/plan">NanoCloud</a><br>按月10r&#x2F;300g<br>tg聊天群人数10k<br>使用体验：试用很好，确切的说是非常好。<br><br><a target="_blank" rel="noopener" href="https://my.vpnpn.com/login">冲上云霄</a><br>按月10r&#x2F;800g（中转节点2x倍率，专线6x）<br>tg聊天群人数1.5k<br>使用体验：试用很好，比nano略差一点<br><br><a target="_blank" rel="noopener" href="https://magicm.link/#/plan">魔法喵</a><br>按月10r&#x2F;768g<br>tg聊天群人数0.1k<br><br><a target="_blank" rel="noopener" href="https://nb.cqjiasu.com/">创奇</a><br>按月12r&#x2F;300g，15r&#x2F;每天55g<br>tg聊天群人数1k<br><br><a target="_blank" rel="noopener" href="https://顶级机场.com/#/plan">顶级机场</a><br>按年15.6r&#x2F;每月200g<br>tg聊天群人数24k</p>
+</blockquote>
+</p></details>
+
 
             
         </div>
@@ -317,25 +329,25 @@
         
         <span class="tag">
             
-            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #03a9f4">我的世界</a>
+            <a href="/tags/%E7%BF%BB%E5%A2%99/" style="color: #00bcd4">翻墙</a>
         </span>
         
     </div>
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E6%95%B4%E5%90%88%E5%8C%85-%E6%9C%AB%E6%97%A5%E6%97%85%E9%80%94-%E9%A3%8E%E6%9A%B4%E5%B0%86%E8%87%B3/" class="go-post">阅读全文</a>
+    <a href="/2024/11/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%9C%BA%E5%9C%BA%E6%8E%A8%E8%8D%90/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85%E5%BC%80%E6%9C%8D%E6%8C%87%E5%AF%BC/">
-        <h2 class="post-title">未转变者开服指导</h2>
+    <a href="/2024/11/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/Everything-%E5%BF%AB%E9%80%9F%E6%9F%A5%E6%89%BEwindows%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/">
+        <h2 class="post-title">Everything-快速查找windows内的文件</h2>
     </a>
     <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E5%B7%A5%E5%85%B7/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                工具
             </a>
         </span>
         
@@ -343,7 +355,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/19
+            2024/11/18
         </span>
         
         
@@ -351,39 +363,30 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>未转变者用的是双UDP隧道穿透，稳定性比TCP高很多，也就是说内网穿透的时候延迟在1s以下对UDP来说就是没延迟。（所以可以用sakuraFrp这种免费延迟高的）<br>主要注意点，假如开服穿透端口为<font color='RED'>x</font>，那么你需要穿透两个端口<font color='RED'>x</font>和<font color='RED'>x+1</font>，并且穿透到对外的端口也要并在一起，<font color='RED'>y</font>和<font color='RED'>y+1</font>。同时<font color='RED'>x</font>和<font color='RED'>y</font>之间没有关系，任意都可以。</p>
+            <p>10s内就能检索完你电脑的全部内容，比自带的快一亿倍！<br><a target="_blank" rel="noopener" href="https://t.me/c/2338356863/39">下载链接</a></p>
 
             
         </div>
     </div>
     <div class="post-tags">
         
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #00a596">内网穿透</a>
-        </span>
         
     </div>
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85%E5%BC%80%E6%9C%8D%E6%8C%87%E5%AF%BC/" class="go-post">阅读全文</a>
+    <a href="/2024/11/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/Everything-%E5%BF%AB%E9%80%9F%E6%9F%A5%E6%89%BEwindows%E5%86%85%E7%9A%84%E6%96%87%E4%BB%B6/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/Linux%E4%B8%ADifconfig%E5%8F%AA%E5%89%A9%E4%B8%8Blo-%E6%96%AD%E7%BD%91%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E/">
-        <h2 class="post-title">Linux中ifconfig只剩下lo/断网了怎么办</h2>
+    <a href="/2024/11/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20241118%E6%9D%82%E8%B0%88/">
+        <h2 class="post-title">20241118杂谈</h2>
     </a>
     <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
+            <a href="/categories/%E6%9D%82%E8%B0%88/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                教程
+                杂谈
             </a>
         </span>
         
@@ -391,7 +394,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/19
+            2024/11/18
         </span>
         
         
@@ -399,25 +402,19 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>手贱不小心把Ubuntu右上角的网络图标关闭了，关了之后不管调NAT还是桥接都上不了网了，看了一眼<font color="RED">ifconfig</font>发现只剩下lo了，原本的<font color="RED">ens33</font>网卡不在了，但是使用<font color="RED">ifconfig -a</font>发现网卡还是在的，那事情就简单了。<br><font color="RED">sudo ifconfig ens33 up</font>启动网卡<br><font color="RED">sudo dhclient ens33</font>手动刷新网卡<br>再ifconfig就会发现有ens33也有ip地址了</p>
+            <p>博客放在虚拟机里面还是麻烦，考虑到vmDHCP服务和NAT服务可能会吃资源所以都需要手动启动。<br>不是不更新博客，是虚拟机启动实在太麻烦（即答<br>tip:复制出来真方便，整个挪出来就能用了</p>
+<p>赛氪的编程比赛变难了，会查。<br>第二课堂学分建议用英语翻译比赛，直接chatgpt就能过。</p>
+<p>稍后会更新机场推荐<br>中转机场标准是10r&#x2F;200g每月，低于此标准可能是跑路机场，但是如果速度达标用用又何妨。<br>这里吐槽一句ccy买了vpn加速软件，那种一眼就是脏乱差的软件，还花了100买了三个月，沟槽的 :)</p>
+<p>推荐一个工具，Everything，10s内就可以检索完电脑，比如你C盘很里面藏了一个doc，用everthing就能马上找出来<br>如果用电脑自带的检索你就等着爆炸把。<br><a target="_blank" rel="noopener" href="https://t.me/c/2338356863/39">下载链接</a></p>
 
             
         </div>
     </div>
     <div class="post-tags">
         
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Linux/" style="color: #00a596">Linux</a>
-        </span>
         
     </div>
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/Linux%E4%B8%ADifconfig%E5%8F%AA%E5%89%A9%E4%B8%8Blo-%E6%96%AD%E7%BD%91%E4%BA%86%E6%80%8E%E4%B9%88%E5%8A%9E/" class="go-post">阅读全文</a>
+    <a href="/2024/11/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20241118%E6%9D%82%E8%B0%88/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -454,7 +451,7 @@
             
             
             <span class="page-omit">...</span>
-            <a class="page-num" href="/page/12">12</a>
+            <a class="page-num" href="/page/13">13</a>
             
         </span>
         
