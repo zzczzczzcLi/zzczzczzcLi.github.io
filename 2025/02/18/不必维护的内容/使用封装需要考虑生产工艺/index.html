@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>服务器在海外，访问慢怎么办？ | zzczzczzc&#39;s home</title>
+        <title>使用封装需要考虑生产工艺 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,14 +157,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>服务器在海外，访问慢怎么办？</h1>
+        <h1>使用封装需要考虑生产工艺</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/7
+            2025/2/18
         </span>
         
         <span class="category">
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ffa2c4">内网穿透</a>
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
             </span>
             
         </span>
@@ -192,11 +192,9 @@
     </div>
     
     <div class="content" v-pre>
-        <p>访问优化评分：0～10 分</p>
-<ol>
-<li>使用<a href="/2023/05/12/frp%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7">OpenFrp</a>的海外CN2节点 <font color='RED'>10分</font><br>神乎其技，快的飞起！<br>注：CN节点速度&gt;CDN代理，CDN代理了之后会变慢，但是不用CDN代理就无法使用https，也无法使用gitalk，所以要配置SSL。<br><a href="/2023/05/14/%E4%B8%8D%E4%BD%BF%E7%94%A8CDN%E4%BB%A3%E7%90%86%EF%BC%8C%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2SSL%E8%AF%81%E4%B9%A6">不使用CDN代理，本地部署SSL证书</a></li>
-<li>使用<a target="_blank" rel="noopener" href="https://cloudflare.com/">CloudFlare</a>的DNS代理功能（即CDN） <font color='RED'>2分</font><br>基本没优化，只是第一次缓存了之后让后面访问变快了。</li>
-</ol>
+        <p>现有的封装或者嘉立创，商城，数据手册，打开，导出的原理图和封装图不一定能够直接使用<br>可能有缺陷或者不匹配生产工艺等原因</p>
+<p><a href="%E3%80%90%E3%80%90PCB%E7%A7%91%E6%99%AE%E3%80%91%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%9E%E6%B5%81%E7%84%8A%E5%92%8C%E6%B3%A2%E5%B3%B0%E7%84%8A%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E3%80%91https://www.bilibili.com/video/BV1nU4y1A7ni?vd_source=5850893744d06dcf637f3766a9d858b1">波峰焊</a>👇<br>如果焊盘过小，有可能导致挂不上锡（最上面的阻焊层）</p>
+<p><a href="%E3%80%90%E4%B8%80%E5%88%86%E9%92%9F%E5%B8%A6%E4%BD%A0%E7%9C%8B%E5%9B%9E%E6%B5%81%E7%84%8A%EF%BC%88%E6%9C%AC%E5%AD%A3%E7%BB%88%EF%BC%89%E3%80%91https://www.bilibili.com/video/BV1RJ411Y7WZ?vd_source=5850893744d06dcf637f3766a9d858b1">回流焊</a>👇<br>先刷锡再融化，两边间距要偏小，刷多了融化可能连锡</p>
 
     </div>
     
