@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+        <title>PCB的网表管理器 | zzczzczzc&#39;s home</title>
+        <meta name="author" content="zzczzczzc" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css" />
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>床</h2>
+                        <img src="/images/1.webp" />
+                        <p>一片伟大的净土</p>
+                                                    灵魂的归处，肉体的坟墓。
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZZCZZCZZC&#39;S HOME</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;相关</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZZCZZCZZC&#39;S HOME</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">相关</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>PCB的网表管理器</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/2/19
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p><img src="https://www.helloimg.com/i/2025/02/19/67b52d5861f6f.png"></p>
+<span id="more"></span>
+<p>右侧的GND和6V都是网络，需要右键，选项，网络设置&#x2F;网表，添加网络<br>然后把这些东西都加到网表里面去（设置他们的属性）<br>网表里面设置网络的宽度会影响走线的宽度（虽然最终是受到规则的影响）<br>正常应该是不修改网表，直接从原理图更新到PCB（设计，updatePCB）<br>所以如果网络设置了0.254mm，但是规则里面线宽是0.4mm，那就是以规则为准</p>
+<p>规则的导出和导入设定👇<br>右键，设计，规则，有个Export导出<br><img src="https://www.helloimg.com/i/2025/02/19/67b533654791c.png"><br>选择需要的规则，或者Ctrl+A全选，然后就可以导出了<br>tip：原理图并没有规则，这东西就是给自己看的，PCB才是拿出去用的，之前问chat还被诈骗了说原理图有规则</p>
+<p>杂👇<br>AD16这软件有点抽象，多边形敷铜叫多边形，字符串叫串<br>设置字体的时候，比划不完整需要改成TrueType，注意层是丝印层Overlay。<br>Silk是丝印的简写，SIlk To Silk就是有些丝印靠太近了（规则设定）这个最终可以规则检查来修改<br>PCB上放置封装的时候，按住Shift会出现绿色对齐线<br><img src="https://www.helloimg.com/i/2025/02/19/67b540346add7.png"><br>禁止布线上的圆孔是固定板子用的孔<br>快捷键VB可以翻转板子看底面，导航栏查看V，翻转B<br>如果要元件放置到底层，需要按L（layer）来改变<br>照着PCB画PCB的时候，可以先看3D的PCB，然后画自己的2D，最终看2D完善网络，如果是更新的原理图应该没这个影响<br>LED用敷铜不用信号线（默认信号线偏小，功率不够）<br>禁止层禁止之后再敷铜，死铜移除，方便铺<br>泪滴在导航栏的工具里面，不需要单个加，可以ALL，加完之后再检查（Tool - Eye，快捷键T，E）<br>批量选择之后按，M（Move）可以选择这些东西往哪里移动，按照Xy偏移量就可以让他们相对不动，整体动<br>禁止布线圆环，T（Tool）V（转换）B（创建圆环板切）打螺丝钉用的位置</p>
+
+    </div>
+    
+    
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 zzczzczzc&#39;s home
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zzczzczzc
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "5093c0f78df8d980d0e8",
+        clientSecret: "3bc33bc8827c07c9e2907362f7e05a5f574db90b",
+        repo: "myblogtalk",
+        owner: "zzczzczzcLi",
+        admin: "zzczzczzcLi".split(","),
+        language: "zh-CN",
+        id: decodeURI(location.pathname),
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
+
+
+
+
+        
+    </body>
+</html>
