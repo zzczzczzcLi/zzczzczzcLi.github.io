@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>元素之诗材质组成 | zzczzczzc&#39;s home</title>
+        <title>对着实际板子画原理图再画PCB | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,22 +157,22 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>元素之诗材质组成</h1>
+        <h1>对着实际板子画原理图再画PCB</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/2/14
+            2025/2/28
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                游戏
+                教程
             </a>
         </span>
         
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97/" style="color: #ffa2c4">元素之诗</a>
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
             </span>
             
         </span>
@@ -192,7 +192,15 @@
     </div>
     
     <div class="content" v-pre>
-        <p>tip：特效与声音无关，声音要在别的地方改<br>风行系列特效<br><em>为不知道，且没空的地方均不是风之箭绞杀特效，rouge_前缀的好像是游侠<br>archer_arrow_rain_down.animation.json，</em>无纹章箭雨风暴<br>archer_arrow_rain_up.animation.json，<em>无纹章箭雨风暴起手<br>archer_arrow_storm.animation.json，<br>archer_backstep_shot.animation.json，风之箭路径<br>archer_centaur.animation.json，人马起手<br>archer_centaur_explode.animation.json，人马落地<br>archer_dragon.animation.json，风龙<br>archer_dragon_single.animation.json，无文章风龙<br>archer_eagle.animation.json，鸟眼<br>archer_fast_arrow.animation.json，</em>疾风箭<br>archer_focus_buff.animation.json，专注buff<br>archer_huge_arrow.animation.json，惩戒落地的大箭<br>archer_jump_shot.animation.json，<br>archer_jump_shotstep.animation.json，<br>archer_snipe_mode.animation.json，聚能射击起手动作和外观（非圆柱体射击）<br>archer_ult_arrow.animation.json，大招射击<br>archer_ult_wing.animation.json，大招的翅膀<br>archer_wind_bow1.animation.json，穿云<br>archer_wind_swirl.animation.json，*穿云落地风旋<br>archer_windarrow.animation.json，<br>archer_windwhirl.animation.json，风龙蓄力</p>
+        <p>如果不知道某根线的作用，就看芯片手册，发现P14连着一个TX口（有些没有开关的万用表要乱转就会开了）<br>发现芯片P14可以复用成uart TXD，串口通信 transmit data口，单片机可以通过TXD往外设发送信息（腾讯元宝可以直接上传pdf解析里面有什么，可以直接问好像）</p>
+<p>01C电阻，01是100</p>
+<p><font color='RED'>电路板上浅色是线路，不是深色</font><br><img src="https://www.helloimg.com/i/2025/02/28/67c129d1e01e0.png"></p>
+<p>正常情况封装编号1是GND</p>
+<span id="more"></span>
+<p>要分模块画，画烂了一次，这次按照PCB分布和接插件来分模块画（👈低级，高级👉能看懂电路板功能，直接分功能模块画也可以）<br>烂👇<br><img src="https://www.helloimg.com/i/2025/02/28/67c1c195580f0.png"><br>根据电路板功能出发，可以像这样圈一下，画好的就标一下丝印👇<br><img src="https://www.helloimg.com/i/2025/03/01/67c2ce0ee54f8.png"></p>
+<p>多用网络标号，接下来就看情况连在一起</p>
+<p>标号要放在线上，不能是元器件自带的线</p>
+<p>直插瓷片电容👇<br><img src="https://www.helloimg.com/i/2025/03/01/67c29739743de.png"></p>
 
     </div>
     
