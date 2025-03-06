@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color: #ff7d73">博客</a>
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color: #03a9f4">博客</a>
             </span>
             
         </span>
@@ -258,7 +258,7 @@ timeout /t 2 /nobreak &gt;nul
 start microsoft-edge:http://localhost:80
 
 
-今日无题（检测是否有今日md，有打开，没有新建再打开，并把昨天的文件移入不必维护文件夹）
+今日无题
 tip：人工智能真是太好用了
 @echo off
 chcp 65001 &gt;nul
@@ -266,19 +266,6 @@ cd /d &quot;D:\hexoblog&quot;
 
 :: 获取当前日期（格式为YYYYMMDD）
 for /f &quot;usebackq delims=&quot; %%a in (`powershell -Command &quot;Get-Date -Format &#39;yyyyMMdd&#39;&quot;`) do set &quot;today=%%a&quot;
-
-:: 获取昨日日期
-for /f &quot;usebackq delims=&quot; %%b in (`powershell -Command &quot;(Get-Date).AddDays(-1).ToString(&#39;yyyyMMdd&#39;)&quot;`) do set &quot;yesterday=%%b&quot;
-
-:: 构造昨日文件路径
-set &quot;oldfile=D:\hexoblog\source\_posts\%yesterday%.md&quot;
-
-:: 移动昨日文件（如果存在）
-if exist &quot;%oldfile%&quot; (
-    echo 正在移动昨日文件到 [不必维护的内容] 目录...
-    powershell -Command &quot;Move-Item -LiteralPath &#39;%oldfile%&#39; -Destination &#39;D:\hexoblog\source\_posts\不必维护的内容\&#39;&quot; &gt;nul
-)
-:: 新增代码结束 ------------------------------------------------------------
 
 :: 构造今日文件路径
 set &quot;filepath=D:\hexoblog\source\_posts\%today%.md&quot;
@@ -292,6 +279,20 @@ if exist &quot;%filepath%&quot; (
     powershell -Command &quot;hexo new %today%&quot;
     start &quot;&quot; powershell -NoProfile -WindowStyle Hidden -Command &quot;Start-Process -FilePath &#39;cursor&#39; -ArgumentList &#39;%filepath%&#39; -WindowStyle Hidden&quot;
 )
+
+今日结束
+@echo off
+chcp 65001 &gt;nul
+cd /d &quot;D:\hexoblog&quot;
+
+:: 获取当前日期（格式为YYYYMMDD）
+for /f &quot;usebackq delims=&quot; %%a in (`powershell -Command &quot;Get-Date -Format &#39;yyyyMMdd&#39;&quot;`) do set &quot;today=%%a&quot;
+
+:: 构造今日文件路径
+set &quot;filepath=D:\hexoblog\source\_posts\%today%.md&quot;
+
+:: 移动今日文件（如果存在）
+powershell -Command &quot;Move-Item -LiteralPath &#39;%filepath%&#39; -Destination &#39;D:\hexoblog\source\_posts\不必维护的内容\&#39;&quot; &gt;nul
 </code></pre>
 
     </div>
