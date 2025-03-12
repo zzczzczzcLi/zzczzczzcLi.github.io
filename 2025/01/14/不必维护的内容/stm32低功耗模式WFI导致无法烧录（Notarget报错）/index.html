@@ -195,6 +195,7 @@
         <p>查明问题：<br>硬件连着好好的，结果烧录显示No target报错。<br>查看半天代码发现是Chatgpt生成的代码中使用了函数导致某些问题。<br>__WFI();  &#x2F;&#x2F; 使用 Wait-For-Interrupt 指令来降低 CPU 的功耗<br>这些函数使用的时候都需要配置（WFI会进入低功耗导致无法烧录，需要提前配置好低功耗模式），否则会导致某些问题（只用底层寄存器写法应该就没问题）<br>此处把WFI改成for循环来等待就可以继续烧录了，不会报错。</p>
 <p>解决方法：<br>把boot0跳线拨到高电位就不会使用flash代码运行，此时再烧录一下把flash代码刷掉即可。<br>（正常情况下烧录只会把代码烧录到flash中，keil5中的download全称是download to flash memory）<br>然后再把跳线拨回去。<br>此处应该都不一样，具体看参考手册，是否是boot1&#x3D;0，boot0&#x3D;1用的是系统存储运行。<br><img src="https://s21.ax1x.com/2025/01/14/pEi0o6g.png"><br>tip：可以用ctrl+f来查找具体的问题，比如此处搜boot即可</p>
 <p>题外话：<br>stm32硬件上的reset按钮相当于重启stm32，所有状态全部从默认开始（不会刷掉flash里面的代码，代码也是从头开始）</p>
+<p>20250307：<br>GPIO_Reset(GPIOC,GPIO_Pin_13)，而不是直接GPIO_Reset(GPIOC,13)<br>形参提示(GPIOx，GPIO_Pin)都需要加上前缀</p>
 
     </div>
     
