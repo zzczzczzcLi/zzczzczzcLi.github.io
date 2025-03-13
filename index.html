@@ -171,6 +171,170 @@
         
 
 <div class="post">
+    <a href="/2025/03/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%85%AC%E5%8F%B8%E7%9A%84%E6%B2%B8%E7%89%A9%E7%83%A7%E5%BD%95%E5%99%A8/">
+        <h2 class="post-title">公司的沸物烧录器</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>流水线烧代码一个一个拿烧太麻烦，让他们一页一页拿上去烧<br>烧的时候需要不停的按start，到后面就能一次烧进去<br>原本以为是杜邦线接触不良，实际上是硬件有点什么毛病。</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%85%AC%E5%8F%B8%E7%9A%84%E6%B2%B8%E7%89%A9%E7%83%A7%E5%BD%95%E5%99%A8/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/03/13/STM32%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%ADEXTI/">
+        <h2 class="post-title">STM32的外部中断EXTI</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>EXTI，External Interrupt，外部中断（同时是一个具体存在的硬件模块）<br>通过芯片的外部引脚，如检测GPIO引脚的电平变化，EXTI会向CPU（中央处理器，MCU是微型控制单元）发送中断<br>跳转到中断服务函数<br>中断模式：触发CPU中断，执行中断服务函数（软件代码处理）<br>事件模式：直接触发其他硬件操作（如唤醒CPU，启动DMA传输）无需CPU干预。<br>支持多路信号，但同一时刻只能选择一个（PA0，PB0,PC0均可映射到EXTI0，但只能同时启用一个）</p>
+<p>应用流程：</p>
+<ol>
+<li>时钟使能</li>
+<li>GPIO配置，并通过AFIO将GPIO映射到EXTI</li>
+<li>EXTI中断配置</li>
+<li>NVIC中断优先级配置</li>
+<li>中断服务函数，清除中断标志</li>
+</ol>
+<p>讲解：</p>
+<ol>
+<li>通过RCC（Reset and Clock Control）时钟模块启动GPIO和AFIO</li>
+<li>配置为输入模式（注意上拉或者下拉，悬空不确定）供EXTI监听端口变化（机械开关（如按键）在按下或释放时，由于金属触点的弹性，会产生多次短暂的电平跳变，硬件并联电容或者软件延时），并映射到EXTI线，AFIO，Alternate Function I&#x2F;O（复用功能I&#x2F;O，管理引脚复用和重映射）</li>
+<li>SET和RESET就是true和false，都是1和0，但是在硬件方面，RESET还能代表复位，SET代表置位</li>
+<li>当 EXTI 检测到触发条件（如上升沿）时，会设置一个中断标志位（例如 EXTI_PR 寄存器的对应位），表示有中断请求未处理。清楚标志只是确认本次中断已处理，不影响后续中断监听。<br>​中断向量表：在 STM32 的启动文件（如 startup_stm32f10x.s）中，定义了所有中断服务函数的入口地址（即中断向量表）。例如：<br>EXTI0_IRQHandler   ; EXTI 线 0 的中断服务函数入口<br>EXTI1_IRQHandler   ; EXTI 线 1 的中断服务函数入口<br>中断向量表存储的是这些函数的入口地址，而不是函数代码本身。中断触发时，CPU 通过向量表找到函数地址并跳转执行。</li>
+</ol>
+<p>代码：</p>
+<p>吴工的中断代码：<br><a target="_blank" rel="noopener" href="https://t.me/c/2338356863/409">timer.c and timer.h</a></p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/13/STM32%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%ADEXTI/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/03/12/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250312/">
+        <h2 class="post-title">20250312</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/12
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>三极管控制的时候为高阻态，噪声有可能偏大，如果有驱动源提供低电平（推挽输出）则无需下拉电阻。<br>无信号是否稳定在0V（可以给外部电磁干扰）</p>
+<p>中断是不需要代码查询是否满足条件，由硬件自动触发</p>
+<p>打搅器，50g，10速度，10速度，补胶速度</p>
+<p>Copilot，通义灵码，JetBrainAI，CLION插件市场</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/12/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250312/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2025/03/11/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E8%AD%A6%E6%83%95%E5%85%B1%E4%BA%AB%E5%8D%95%E8%BD%A6/">
         <h2 class="post-title">警惕共享单车</h2>
     </a>
@@ -255,162 +419,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/08/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250308/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/03/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250307/">
-        <h2 class="post-title">20250307</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/7
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>实际上不需要按-出现下划线，PowerToy是个冗余工具，除非需要同屏，否则输入GP5，就可以补全GPIO_Pin_5<br>CLION超进化了！设置里面有Nova引擎，写GPIO_InitMode,Pin,Speed，会一个一个跳出来（可能还是会有缺陷，GPIO有时候会少个speed，还得练）</p>
-<p>单片机代码，注意一下这个问题，要考虑好每个状态持续多久<br><img src="https://www.helloimg.com/i/2025/03/07/67caa887a0386.png"><br><img src="https://www.helloimg.com/i/2025/03/07/67caa8741044a.png"></p>
-<p>不依赖教程，直接看教程（Stm32）问题，要实现什么功能，元器件有什么用直接百度，实现教程</p>
-<p>GPIO_Pin_12|GPIO_Pin_13;可以一次初始化两个引脚</p>
-<p>上拉输入，即靠近电源（无外部驱动时默认高电平）<br>引脚会处于悬空状态（高阻抗状态），电平可能不确定，容易受到噪声干扰。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00a596">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250307/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/03/06/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250306/">
-        <h2 class="post-title">20250306</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/6
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>Keil5的项目结构不能在组里面接着套组，自己开发的在实际文件夹里面ZZC_里面，项目就ZZC_LED<br>CMAKE里面添加头文件include_directories(ZZC\LED)，如果要自己新建源文件，h头文件（关联另一个类型），先新建<br>然后在if和endif里面定义函数头，在c里面实现，再包含就行，可以定义类型，也可以添加别的头文件（全部写在define里面）两个都不需要主函数<br>Keil里面先添加已有文件，然后右键target，options，C&#x2F;C++，添加路径，路径和CMAKE一样</p>
-<p>启动CLION的函数形参提醒（代码太难写了）按Ctrl+P可以提示当前函数需要写哪些变量</p>
-<p>CLION里面头文件如果有问题，也要include正确的头文件才行</p>
-<p>杂：<br>到站了要提醒王哥，烧烤摊太贵了，不如买炒饭摊</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
             <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
         </span>
         
     </div>
-    <a href="/2025/03/06/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250306/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/03/06/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E8%80%81%E5%8C%96%E6%B5%8B%E8%AF%95/">
-        <h2 class="post-title">老化测试</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/6
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>可能要做接插件和线头，反正做一样就行了。<br>红接红线，黑接黑线，如果没有别的颜色，反正红色不变就行<br>或者黑色不变，接进去的时候，铁夹不能夹到皮（会无效，不会起火等情况）<br>夹到铁之后可以扯两下看看牢不牢固，弯腰接不好接找凳子去接，尖嘴夹子要夹好L和N（实际上交流电没方向，对齐了好看）<br>找专人去设置测试代码就行</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/06/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E8%80%81%E5%8C%96%E6%B5%8B%E8%AF%95/" class="go-post">阅读全文</a>
+    <a href="/2025/03/08/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250308/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -429,7 +442,7 @@
             
             
             <span class="page-omit">...</span>
-            <a class="page-num" href="/page/21">21</a>
+            <a class="page-num" href="/page/22">22</a>
             
         </span>
         
