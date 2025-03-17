@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+        <title>一些电子电路 | zzczzczzc&#39;s home</title>
+        <meta name="author" content="zzczzczzc" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css" />
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>床</h2>
+                        <img src="/images/1.webp" />
+                        <p>一片伟大的净土</p>
+                                                    灵魂的归处，肉体的坟墓。
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZZCZZCZZC&#39;S HOME</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;相关</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZZCZZCZZC&#39;S HOME</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">相关</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>一些电子电路</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/14
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>桥式整流<br>四个二极管将交流电变成直流电（只整一半就是半桥）</p>
+<p>电源滤波器<br>作用：消除噪声，如开关电源，雷电，点击启停等干扰。阻断设备内部产生的电磁干扰反向传导到电网。<br>X电容：象征交叉，表示电容跨接在两个带点线路直接（L和N）<br>Y电容：象征分支，表示电容从带点线路分支到地线<br>差模（X）噪声：LN之间的噪声，沿着电源回路传播，和正常电流方向相反<br>共模（Y）噪声：L和N对地的噪声<br>并一个电阻：用于释放电容存储的能量，没有供电的时候也能形成回路，国际标准（如IEC 60950）要求，断电后1秒内，电容电压需降至60V以下。电阻值需根据电容容量计算，确保放电时间达标。放电时间常数τ&#x3D;R×C。阻值过小会导致不必要的功耗<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Noise_Filter.svg/330px-Noise_Filter.svg.png"></p>
+<p>信号滤波器<br>数字滤波器中主要的噪声源是在数字系统之前的模拟电路引入的电路噪声以及在数字系统输入端的模数转换(A&#x2F;D)过程中产生的量化噪声</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42562514/article/details/97653660">微分和积分电路</a><br>把稳定方波变成尖波（类似心跳）或者锯齿波，三角波这种</p>
+<p>共射极放大电路，分压偏置式共射极放大电路，共集电极放大电路（基本用不上）<br>共射电路是放大电路中应用最广泛的三极管接法，信号由三极管基极和发射极输入，从集电极和发射极输出。因为发射极为共同接地端，故命名共射极放大电路。</p>
+<p>电路反馈框图<br>放大电路的输出一部分或者全部引入到输入，提高电路稳定性</p>
+<span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%B2%E8%81%94%E5%9E%8B%E7%A8%B3%E5%8E%8B%E7%94%B5%E6%BA%90/7903345">串联稳压电源</a><br><img src="https://bkimg.cdn.bcebos.com/pic/9304c88849db9ac1a5c2721e?x-bce-process=image/format,f_auto/watermark,image_d2F0ZXIvYmFpa2UyNzI,g_7,xp_5,yp_5,P_20/resize,m_lfit,limit_1,h_1080"><br>变压，整流，稳压二极管配套达林顿复合管（就是两个三极管组成的一个三极管）用三极管放大小信号来提高稳压精度</p>
+<p>二极管稳压电路（就是使用稳压二极管）</p>
+<p>差分放大电路<br>差分（Difference）的核心思想是 ​通过比较两个或多个对象、信号或数据之间的差异，提取有效信息或消除冗余干扰。<br>算法上，每个数都加1，可以表示成第一位加1，代表从1开始的后面都加上1，节省n复杂度<br>此处差分放大是指差分信号的放大，和差分噪音不同。差分信号通常是系统设计中有意产生的、携带有用信息的电压差值（例如传感器输出、通信数据）。它通常是低频或特定频段的信号，需要被放大或处理。<br><img src="https://bkimg.cdn.bcebos.com/pic/738b4710b912c8fc3ef97d3ef2039245d688213f?x-bce-process=image/format,f_auto/resize,m_lfit,limit_1,h_312"><br>差分放大电路对共模信号起到了很强的抑制作用，理想情况下共模输出为零。</p>
+<p>场效应管放大电路<br>场效应管（英语：field-effect transistor，缩写：FET）为晶体管的一种，是一种通过电场效应控制电流的电子器件。<br>MOS是MOSFET的缩写，MOSFET金属-氧化物半导体场效应晶体管，简称金氧半场效晶体管（Metal-Oxide-Semiconductor Field-Effect Transistor, MOSFET）</p>
+<p>选频(带通放大电路)<br>对某个频率放大，衰弱其他频率</p>
+<p>运算放大电路<br>使用运放，和前面两个放大多了运放功能</p>
+<p>差分输入运算放大电路<br>估计就是多了差分</p>
+<p>电压比较电路<br>电压比较器可以看作是放大倍数接近“无穷大”的运算放大器。</p>
+<p>RC振荡电路<br>LC振荡电路<br>楞次定律，Lenz，L为电感，用于储能，可以阻碍电流流动，稳定后是短路（电容是阻碍电压变化，稳定后是开路）<br>振荡电路用于产生频率信号，或者选频</p>
+<p>石英晶体振荡电路<br>即晶振</p>
+<p>功率放大电路<br>放大电流电压，信号功率等</p>
+<p>滤波器：低通，高通，带通，带阻，全通<br>带通<br>是一种可以通过一定范围内的频率信号，而阻止其他频率信号通过<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Bandwidth_2.svg/450px-Bandwidth_2.svg.png"></p>
+<p>带阻<br>与带通滤波器的概念相对</p>
+<p>全通<br>字面意思</p>
+<p>叠加定理，KCL，戴维南定理，时间常数，傅里叶变换，波特图，微积分，线性代数，概率论，电磁场和电磁波，C和操作系统。<br>（老员工：用不上的）</p>
+<p>电源的基本拓扑<br>拓扑学研究的是空间和图形在连续变形下的不变性质，关注的是对象之间的相对位置和连接关系。<br>电源拓扑​（Power Supply Topology）是指在电力电子系统中，电源电路的结构设计方式，决定了电能如何转换、传递和调节。这里的“拓扑”借用了数学中“连接关系”的概念，但核心含义更偏向电路架构<br>特指电路元件的连接模式，强调能量路径的“变形规则”<br>升压boost，降压buck，升降压Buck-Boost，反激式FlyBack<br>是否需要输入输出电气隔离（如Flyback、LLC）。<br>拓扑的选择直接决定了电源的性能、效率和适用场景。</p>
+<p>EMI，​Electromagnetic Interference，电磁干扰</p>
+<p>相位（Phase）​ 是描述周期性信号（如交流电、声波、光波等）在某一时刻所处位置的关键参数。它本质上反映了信号波形相对于参考点（如时间零点或另一个同类信号）的“时间偏移”或“位置状态”。<br>波形状态：相位值对应波形在周期中的具体位置（如波峰、波谷、上升沿等）。<br>​单相交流电：电压波形随时间按正弦规律变化。<br>​三相交流电：三组电压相位差为120°，保证电力传输的平衡和效率。<br>例如：三相电机利用相位差产生旋转磁场。<br>三相交流电由发电机内部三个空间对称的绕组（线圈）产生：<br>三个绕组在发电机定子上均匀分布，​<strong>相邻绕组之间的空间角度为 120°</strong>​（机械角度）。<br>当转子（磁极）旋转时，磁场依次切割这三个绕组，产生的电动势在时间上自然形成 ​120° 的相位差。<br><img src="https://www.helloimg.com/i/2025/03/15/67d50ac12d8b0.png"></p>
+
+    </div>
+    
+    
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 zzczzczzc&#39;s home
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zzczzczzc
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "5093c0f78df8d980d0e8",
+        clientSecret: "3bc33bc8827c07c9e2907362f7e05a5f574db90b",
+        repo: "myblogtalk",
+        owner: "zzczzczzcLi",
+        admin: "zzczzczzcLi".split(","),
+        language: "zh-CN",
+        id: decodeURI(location.pathname),
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
+
+
+
+
+        
+    </body>
+</html>

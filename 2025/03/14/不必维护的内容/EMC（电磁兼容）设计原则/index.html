@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>20250306 | zzczzczzc&#39;s home</title>
+        <title>EMC（电磁兼容）设计原则 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,14 +157,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>20250306</h1>
+        <h1>EMC（电磁兼容）设计原则</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/3/6
+            2025/3/14
         </span>
         
         <span class="category">
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">嵌入式开发</a>
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00a596">嵌入式开发</a>
             </span>
             
         </span>
@@ -192,10 +192,10 @@
     </div>
     
     <div class="content" v-pre>
-        <p>Keil5的项目结构不能在组里面接着套组，自己开发的在实际文件夹里面ZZC_里面，项目就ZZC_LED<br>CMAKE里面添加头文件include_directories(ZZC\LED)，如果要自己新建源文件，h头文件（关联另一个类型），先新建<br>然后在if和endif里面定义函数头，在c里面实现，再包含就行，可以定义类型，也可以添加别的头文件（全部写在define里面）两个都不需要主函数<br>Keil里面先添加已有文件，然后右键target，options，C&#x2F;C++，添加路径，路径和CMAKE一样</p>
-<p>启动CLION的函数形参提醒（代码太难写了）按Ctrl+P可以提示当前函数需要写哪些变量</p>
-<p>CLION里面头文件如果有问题，也要include正确的头文件才行</p>
-<p>杂：<br>到站了要提醒王哥，烧烤摊太贵了，不如买炒饭摊</p>
+        <p>核心目标：<br>​电磁干扰（EMI）抑制：减少设备对外发射的电磁噪声。<br>​电磁抗扰度（EMS）提升：增强设备抵抗外界电磁干扰的能力。</p>
+<p>接地设计：<br>单点接地 vs 多点接地：低频电路（&lt;1MHz）适用单点接地，高频电路需多点接地。（通过大面积铜箔（地平面）提供低阻抗回路，高频电流通过最近过孔返回，避免长路径累积阻抗。）<br>​最小化地弹噪声：各模块独立接地，避免共用地路径引起的相互干扰，确保参考电位一致性。</p>
+<p>滤波：<br>信号线滤波：高频信号线串联磁珠或RC滤波电路（低通或高通）。RC有个公式能够计算出截止频率<br>​去耦电容：在IC电源引脚就近放置0.1μF陶瓷电容，降低高频噪声。</p>
+<p>其他措施<br>​瞬态抑制：TVS二极管、压敏电阻用于防护ESD和浪涌。<br>​软件抗干扰：CRC校验、看门狗定时器、数据冗余设计。<br>​频谱管理：避免时钟谐波干扰（如选择非整数倍时钟频率）。</p>
 
     </div>
     

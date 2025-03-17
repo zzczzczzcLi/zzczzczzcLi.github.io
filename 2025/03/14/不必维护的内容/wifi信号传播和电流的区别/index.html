@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>STM32的外部中断EXTI | zzczzczzc&#39;s home</title>
+        <title>wifi信号传播和电流的区别 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,14 +157,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>STM32的外部中断EXTI</h1>
+        <h1>wifi信号传播和电流的区别</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/3/13
+            2025/3/14
         </span>
         
         <span class="category">
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">嵌入式开发</a>
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
             </span>
             
         </span>
@@ -192,24 +192,9 @@
     </div>
     
     <div class="content" v-pre>
-        <p>EXTI，External Interrupt，外部中断（同时是一个具体存在的硬件模块）<br>通过芯片的外部引脚，如检测GPIO引脚的电平变化，EXTI会向CPU（中央处理器，MCU是微型控制单元）发送中断<br>跳转到中断服务函数<br>中断模式：触发CPU中断，执行中断服务函数（软件代码处理）<br>事件模式：直接触发其他硬件操作（如唤醒CPU，启动DMA传输）无需CPU干预。<br>支持多路信号，但同一时刻只能选择一个（PA0，PB0,PC0均可映射到EXTI0，但只能同时启用一个）</p>
-<p>应用流程：</p>
-<ol>
-<li>时钟使能</li>
-<li>GPIO配置，并通过AFIO将GPIO映射到EXTI</li>
-<li>EXTI中断配置</li>
-<li>NVIC中断优先级配置</li>
-<li>中断服务函数，清除中断标志</li>
-</ol>
-<p>讲解：</p>
-<ol>
-<li>通过RCC（Reset and Clock Control）时钟模块启动GPIO和AFIO</li>
-<li>配置为输入模式（注意上拉或者下拉，悬空不确定）供EXTI监听端口变化（机械开关（如按键）在按下或释放时，由于金属触点的弹性，会产生多次短暂的电平跳变，硬件并联电容或者软件延时），并映射到EXTI线，AFIO，Alternate Function I&#x2F;O（复用功能I&#x2F;O，管理引脚复用和重映射）</li>
-<li>SET和RESET就是true和false，都是1和0，但是在硬件方面，RESET还能代表复位，SET代表置位</li>
-<li>当 EXTI 检测到触发条件（如上升沿）时，会设置一个中断标志位（例如 EXTI_PR 寄存器的对应位），表示有中断请求未处理。清楚标志只是确认本次中断已处理，不影响后续中断监听。<br>​中断向量表：在 STM32 的启动文件（如 startup_stm32f10x.s）中，定义了所有中断服务函数的入口地址（即中断向量表）。例如：<br>EXTI0_IRQHandler   ; EXTI 线 0 的中断服务函数入口<br>EXTI1_IRQHandler   ; EXTI 线 1 的中断服务函数入口<br>中断向量表存储的是这些函数的入口地址，而不是函数代码本身。中断触发时，CPU 通过向量表找到函数地址并跳转执行。</li>
-</ol>
-<p>代码：</p>
-<p>吴工的中断代码：<br><a target="_blank" rel="noopener" href="https://t.me/c/2338356863/409">timer.c and timer.h</a></p>
+        <p>​电磁波（无线电波）​<br>在空间中以光速传播的交变电磁场（电场E和磁场H互相激发）。<br>典型参数：频率（如FM广播88-108MHz）、极化方向、传播衰减。<br>​电路电流<br>导体中电子的定向运动，本质是电磁波在导线约束下的特殊形态。<br>关键联系：天线将空间电磁波 ↔ ​导线电流双向转换（麦克斯韦方程）。</p>
+<p>电磁波为什么不会把人电死？<br>嗯，用户问为什么电磁波不会把人电死，这其实是一个关于电磁波安全性的问题。首先，我需要理解电磁波的基本性质以及它们与人体相互作用的方式。电磁波包括各种类型，比如无线电波、微波、可见光、X射线等，它们的频率和能量各不相同。高频的电磁波如X射线和伽马射线具有较高的能量，能够电离原子，破坏生物分子结构，可能对人体有害。而低频的电磁波如无线电波和微波，能量较低，通常不会引起电离，但可能会通过加热效应影响人体组织，比如微波炉利用微波加热食物。</p>
+<p>光也是电磁波<br><img src="https://www.helloimg.com/i/2025/03/14/67d3eb7ef3d53.png"></p>
 
     </div>
     
