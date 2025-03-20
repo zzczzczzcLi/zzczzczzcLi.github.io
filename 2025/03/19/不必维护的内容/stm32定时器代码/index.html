@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>keil5和Clion添加头文件 | zzczzczzc&#39;s home</title>
+        <title>stm32定时器代码 | zzczzczzc&#39;s home</title>
         <meta name="author" content="zzczzczzc" />
         <meta name="description" content="" />
         <meta name="keywords" content="" />
@@ -157,14 +157,14 @@
                 <div id="main" v-show="!loading">
                     <div class="article">
     <div>
-        <h1>keil5和Clion添加头文件</h1>
+        <h1>stm32定时器代码</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/3/6
+            2025/3/19
         </span>
         
         <span class="category">
@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00a596">嵌入式开发</a>
             </span>
             
         </span>
@@ -192,10 +192,15 @@
     </div>
     
     <div class="content" v-pre>
-        <p>Keil5的项目结构不能在组里面接着套组，自己开发的在实际文件夹里面ZZC_里面，项目就ZZC_LED<br>CMAKE里面添加头文件include_directories(ZZC\LED)，如果要自己新建源文件，h头文件（关联另一个类型），先新建<br>然后在if和endif里面定义函数头，在c里面实现，再包含就行，可以定义类型，也可以添加别的头文件（全部写在define里面）两个都不需要主函数<br>Keil里面先添加已有文件，然后右键target，options，C&#x2F;C++，添加路径，路径和CMAKE一样</p>
-<p>启动CLION的函数形参提醒（代码太难写了）按Ctrl+P可以提示当前函数需要写哪些变量</p>
-<p>CLION里面头文件如果有问题，也要include正确的头文件才行</p>
-<p>杂：<br>到站了要提醒王哥，烧烤摊太贵了，不如买炒饭摊</p>
+        <p>TIM_TimeBaseStruct.TIM_ClockDivision &#x3D; TIM_CKD_DIV1; &#x2F;&#x2F; 时钟分频，不分频<br>DIV2则为时钟主频除以2</p>
+<p>TIM_TimeBaseStruct.TIM_Prescaler &#x3D; 7199; &#x2F;&#x2F; 预分频器（PSC）<br>设置每秒数几次，有具体算法</p>
+<p>TIM_TimeBaseStruct.TIM_Period &#x3D; 9999; &#x2F;&#x2F; 自动重装载值（ARR）<br>定义了定时器计数器的最大值。当计数器达到这个值时，会触发一次溢出事件（或更新事件），并重新从 0 开始计数。有具体算法</p>
+<p>TIM_TimeBaseStruct.TIM_CounterMode &#x3D; TIM_CounterMode_Up; &#x2F;&#x2F; 向上计数模式<br>向上计数模式：计数器从 0 开始递增，直到达到自动重装载值（ARR），然后重新从 0 开始。</p>
+<p>tip：codebase是指当前项目里面的所有文件（有关联的）</p>
+<p>是否要在中断里面运行代码，看具体需求（满足实时性）<br>如果不急就放主程序，有影响就放中断<br>中断不能放太多，尽量少放（要求速度快就放在中断里面）<br>基本没有那如果多次触发中断 放到主程序里面运行  来不及触发第二次怎么办的情况（老工程师的回答，一般有的话也不是8位机能干的了）</p>
+<p>写函数以面向对象方法来写，比如A3start，而非startA3</p>
+<p>switch 语句：<br>跳跃表（Jump Table）：switch 语句通常用于多个离散的整数值判断。编译器可以生成跳跃表，通过索引直接跳转到相应的代码块，效率较高。<br>适用场景：<br>离散的整数值：当条件是多个离散的整数值时，switch 语句效率更高。<br>大量条件：当条件较多时，switch 语句的效率通常优于 if 语句。<br>常量条件：switch 语句中的条件必须是常量表达式。</p>
+<p>在函数中如果要保持变量不变，需要static，如果没有会随着函数消失而重置</p>
 
     </div>
     

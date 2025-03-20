@@ -171,8 +171,8 @@
         
 
 <div class="post">
-    <a href="/2023/11/15/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/JetBrains-IntelliJ-%E7%B3%BB%E5%88%97%E5%85%A8%E5%AE%B6%E6%A1%B6%E6%BF%80%E6%B4%BB%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AE%B9%E5%A4%87%E4%BB%BD/">
-        <h2 class="post-title">JetBrains-IntelliJ-系列全家桶激活服务器内容备份</h2>
+    <a href="/2024/11/22/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%8D%9A%E5%AE%A2%E5%B7%A5%E5%85%B7/">
+        <h2 class="post-title">博客工具</h2>
     </a>
     <div class="category-and-date">
         
@@ -189,7 +189,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/11/15
+            2024/11/22
         </span>
         
         
@@ -197,20 +197,30 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>之前备份的全倒闭了，重新搞一次。</p>
+            <p>之前deploy的时候每次都要去仓库重新设置域名，以为正常是这样的，实际上只要在source根目录下<br>新建一个文件CNAME，然后把域名放进去就行了。</p>
+<p>以及下面三个好用的脚本</p>
             
         </div>
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color: #ff7d73">博客</a>
+        </span>
         
     </div>
-    <a href="/2023/11/15/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/JetBrains-IntelliJ-%E7%B3%BB%E5%88%97%E5%85%A8%E5%AE%B6%E6%A1%B6%E6%BF%80%E6%B4%BB%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%86%85%E5%AE%B9%E5%A4%87%E4%BB%BD/" class="go-post">阅读全文</a>
+    <a href="/2024/11/22/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%8D%9A%E5%AE%A2%E5%B7%A5%E5%85%B7/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%B0%86%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%B8%A6%E7%AB%AF%E5%8F%A3%E8%A7%A3%E6%9E%90%E5%88%B0%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/">
-        <h2 class="post-title">将域名不带端口解析到我的世界服务器上</h2>
+    <a href="/2024/11/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9F%BA%E4%BA%8Eruoyi%E5%9C%A8html%E4%B8%AD%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8Echart/">
+        <h2 class="post-title">基于ruoyi在html中调用数据使用Echart</h2>
     </a>
     <div class="category-and-date">
         
@@ -227,7 +237,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/21
+            2024/11/21
         </span>
         
         
@@ -235,10 +245,8 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>CNAME：将域名指向另一个域名<br>连接这一个指向内网穿透的服务器上还要带上端口，除非你的端口是25565</p>
-<p>SRV：<a target="_blank" rel="noopener" href="https://www.mcio.cn/274.html">不带端口的解析</a><br>设置SRV解析前先确保你已经正确配置了CNAME</p>
-<p>特殊情况：如果电脑上配置了多个网络配置，比如有虚拟机的或者别的，服务器的配置文件<br>server-ip，后面最好空着，不然有可能连不上服务器（127.0.0.1指向了虚拟机而不是当前想转发的）<br>即，ip能ping通，防火墙也关了，但带上端口就不通了。</p>
-
+            <p>这一步不是很难主要理解一个流程<br>数据从类库的service服务中已经从mysql里面获取了<br>所以我们只需要在control类给前端提供一个接口（接口就是返回一堆数据给前端）<br>所以直接新建一个类，写一个control就可以了</p>
+<p>点击查看详情</p>
             
         </div>
     </div>
@@ -251,21 +259,16 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #03a9f4">内网穿透</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #03a9f4">我的世界</a>
+            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ff7d73">毕业设计</a>
         </span>
         
     </div>
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%B0%86%E5%9F%9F%E5%90%8D%E4%B8%8D%E5%B8%A6%E7%AB%AF%E5%8F%A3%E8%A7%A3%E6%9E%90%E5%88%B0%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" class="go-post">阅读全文</a>
+    <a href="/2024/11/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9F%BA%E4%BA%8Eruoyi%E5%9C%A8html%E4%B8%AD%E8%B0%83%E7%94%A8%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8Echart/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9C%A8Ubuntu%E4%B8%AD%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%EF%BC%8C%E9%85%8D%E7%BD%AENAT/">
-        <h2 class="post-title">在Ubuntu中设置静态IP，配置NAT</h2>
+    <a href="/2024/11/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9F%BA%E4%BA%8Eruoyi%E7%94%9F%E6%88%90%E7%9A%84%E7%BD%91%E9%A1%B5%E6%97%A0%E6%B3%95%E5%9C%A8%E5%89%8D%E7%AB%AF%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE/">
+        <h2 class="post-title">基于ruoyi生成的网页无法在前端修改数据</h2>
     </a>
     <div class="category-and-date">
         
@@ -282,7 +285,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/21
+            2024/11/21
         </span>
         
         
@@ -290,8 +293,14 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p><a target="_blank" rel="noopener" href="https://download.csdn.net/blog/column/9529187/107760906">第一步：正确配置NAT</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_57168310/article/details/128176238">第二步：设置静态IP</a></p>
-<p>开启了虚拟机网络之后可能会导致正常联网速度变慢，不用的时候最好在适配器中关闭。<br>如果虚拟机还是不能上网：<br>1、先关闭Ubuntu虚拟机。 2、回到主机,打开运行窗口(同时按下 Win + R),输入”services.msc”并运行。 3、找到”VMware DHCP Service”和”VMware NAT Service”</p>
+            <p>如果数据已经能显示了，说明已经由mapper和control成功在mysql绑定了数据<br>并且导出数据和删除都是正常的话那么问题大概率就是</p>
+<p>ruoyi代码生成器自动生成的模板似乎只支持varchar等类型的修改，其他类型他默认是不给你修改的。<br>varchar对应会生成th:field控件Thymeleaf模板中的SpringEL表达式，实现了数据显示和数据绑定<br>但是text似乎没有对应的模板，用的是Freemaker语法，它会直接显示数据，而不涉及数据绑定。</p>
+<p>如果我们不希望数据被修改，似乎也可以使用Freemaker语法。</p>
+<pre><code>Freemaker的语法
+&lt;textarea name=&quot;新闻内容&quot; class=&quot;form-control&quot;&gt;[[*&#123;新闻内容&#125;]]&lt;/textarea&gt;
+正确的代码
+&lt;textarea name=&quot;新闻内容&quot; class=&quot;form-control&quot; th:field=&quot;*&#123;新闻内容&#125;&quot;&gt;&lt;/textarea&gt;
+</code></pre>
 
             
         </div>
@@ -305,25 +314,25 @@
         
         <span class="tag">
             
-            <a href="/tags/Linux/" style="color: #ffa2c4">Linux</a>
+            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #03a9f4">毕业设计</a>
         </span>
         
     </div>
-    <a href="/2023/09/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9C%A8Ubuntu%E4%B8%AD%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP%EF%BC%8C%E9%85%8D%E7%BD%AENAT/" class="go-post">阅读全文</a>
+    <a href="/2024/11/21/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9F%BA%E4%BA%8Eruoyi%E7%94%9F%E6%88%90%E7%9A%84%E7%BD%91%E9%A1%B5%E6%97%A0%E6%B3%95%E5%9C%A8%E5%89%8D%E7%AB%AF%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E6%95%B4%E5%90%88%E5%8C%85-%E6%9C%AB%E6%97%A5%E6%97%85%E9%80%94-%E9%A3%8E%E6%9A%B4%E5%B0%86%E8%87%B3/">
-        <h2 class="post-title">我的世界末日生存整合包推荐-末日旅途-风暴将至</h2>
+    <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20241120%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/">
+        <h2 class="post-title">20241120博客更新记录</h2>
     </a>
     <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
+            <a href="/categories/%E6%9D%82%E8%B0%88/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                游戏
+                杂谈
             </a>
         </span>
         
@@ -331,7 +340,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/19
+            2024/11/20
         </span>
         
         
@@ -339,32 +348,20 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>官方宣传片：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ym4y167mj/">【MC末日旅途整合包】来经历一场令人绝望的辐射灾变之旅！风暴将至！</a><br>官方整合包：<a target="_blank" rel="noopener" href="https://share.weiyun.com/i0cewgLc">腾讯微云</a><br>风暴将至地图：<a target="_blank" rel="noopener" href="https://afdian.net/a/IronCurtain">爱发电2块付费订阅</a><br>服务端+客户端整合备份：<a target="_blank" rel="noopener" href="https://cowtransfer.com/i/storage">请支持原作者，此处为zzc留档查看</a></p>
-<p>此整合包mod较多，联机时互相发送的数据量大，导致免费SakuraFrp流量消耗量大的同时延迟很高。Tailscale联机效果也很差，稳定性高，但是延迟在500ms～1s之间。<br>ZeroTier好像延迟能小于100ms，过几天有空联机了就试试。</p>
-<p>综合测试结果：SakuraFrp&gt;Tailscale&gt;Zerotier&gt;RadminLan</p>
-
+            <p>这live2d小人是不是傻逼？ 左下角也会挡住，右下角也会挡住，此处留档。<br>你只需要在类似layout的地方，head中添加下列代码第一个script，body中添加第二个scrpit即可</p>
             
         </div>
     </div>
     <div class="post-tags">
         
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #00bcd4">我的世界</a>
-        </span>
         
     </div>
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%AB%E6%97%A5%E7%94%9F%E5%AD%98%E6%95%B4%E5%90%88%E5%8C%85-%E6%9C%AB%E6%97%A5%E6%97%85%E9%80%94-%E9%A3%8E%E6%9A%B4%E5%B0%86%E8%87%B3/" class="go-post">阅读全文</a>
+    <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20241120%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85%E5%BC%80%E6%9C%8D%E6%8C%87%E5%AF%BC/">
-        <h2 class="post-title">未转变者开服指导</h2>
+    <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9F%BA%E4%BA%8Emysql%E7%94%9F%E6%88%90ruoyi%E7%BD%91%E9%A1%B5%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/">
+        <h2 class="post-title">基于mysql生成ruoyi网页的相关问题</h2>
     </a>
     <div class="category-and-date">
         
@@ -381,7 +378,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/9/19
+            2024/11/20
         </span>
         
         
@@ -389,7 +386,9 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>未转变者用的是双UDP隧道穿透，稳定性比TCP高很多，也就是说内网穿透的时候延迟在1s以下对UDP来说就是没延迟。（所以可以用sakuraFrp这种免费延迟高的）<br>主要注意点，假如开服穿透端口为<font color='RED'>x</font>，那么你需要穿透两个端口<font color='RED'>x</font>和<font color='RED'>x+1</font>，并且穿透到对外的端口也要并在一起，<font color='RED'>y</font>和<font color='RED'>y+1</font>。同时<font color='RED'>x</font>和<font color='RED'>y</font>之间没有关系，任意都可以。</p>
+            <p>1.ruoyi数据从哪来<br>首先ruoyi是没有数据的，数据是根据底层的spring boot Java代码（map和control）从mysql里面处理出来。<br>生成代码给的sql运行之后就会生成网页，但是没有数据是正常的。（因为代码没运行）<br>需要把main放到新模块下，然后把main的template模板挪到admin的模板下（admin是主网页，需要手动挪过去）<br>如果搜索模块少了几个是正常的，在ruoyi自带的模板中，mysql只有varchar能作为搜索类型，所以新闻内容<br>这种较长的格式设置为text，不能被加入搜索是正常的（不是bug）</p>
+<p>2.网页生成了，数据能显示了，有bug也直接去改代码，不需要在用代码生成模块了<br>bug很有可能是java类型，或者spring底层代码导致的错误，也就是原本模块就没考虑到这个问题<br>所以需要我们直接去对代码进行修改<br>比如新闻内容显示很长，这里对control获取的内容进行修改，不对实际获取内容修改，将实际内容改成30个字符就可以解决问题<br>如下所示<br><img src="https://s21.ax1x.com/2024/11/20/pAWBDzV.png"></p>
+<p>3.数据不显示，网页有问题<br>具体代码生成模板<a target="_blank" rel="noopener" href="https://www.cnblogs.com/Ning-Blog/p/15206967.html">点此处查看</a><br>提几个重点，表和表字段均要有注释。<br>需要有主键，没有的话自己生成一个自增主键（这里解决了一个多查询错误的问题，但是又跳了一个新的问题，只能明天再说了）<br>三个pom引用是否写错（主项目引用有version，分模块中没有）<br>引用之后是否刷新了pom文件</p>
 
             
         </div>
@@ -403,11 +402,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ffa2c4">内网穿透</a>
+            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ff7d73">毕业设计</a>
         </span>
         
     </div>
-    <a href="/2023/09/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%9C%AA%E8%BD%AC%E5%8F%98%E8%80%85%E5%BC%80%E6%9C%8D%E6%8C%87%E5%AF%BC/" class="go-post">阅读全文</a>
+    <a href="/2024/11/20/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9F%BA%E4%BA%8Emysql%E7%94%9F%E6%88%90ruoyi%E7%BD%91%E9%A1%B5%E7%9A%84%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -444,7 +443,7 @@
             
             
             <span class="page-omit">...</span>
-            <a class="page-num" href="/page/24">24</a>
+            <a class="page-num" href="/page/26">26</a>
             
         </span>
         

@@ -184,7 +184,7 @@
             
             <span class="tag">
                 
-                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
             </span>
             
         </span>
@@ -212,6 +212,7 @@
 <p>代码：<br>优先级数字越小越高，主能抢断主小的，子优先级和主一样<br>如果抢占优先级和子优先级均相同，则比较 硬件中断的默认IRQ编号（由芯片设计决定），编号 越小 的中断优先级越高。<br>共享通道就是只有一个函数入口<br>EXTI_Line标识具体的外部中断线路（选择硬件线路区域）<br>NVIC标识中断通道，用于NVIC管理和响应中断（选择中断服务函数区域）<br>实际上无法选择，都是芯片定义好了，如stm32f10x.h里面，然后在stm32f10x_it.c编写中断服务函数（而非main.c)<br>怎么询问，多问就会了</p>
 <p>吴工的中断代码：<br><a target="_blank" rel="noopener" href="https://t.me/c/2338356863/409">timer.c and timer.h</a></p>
 <p><font color='RED'>外部中断也要考虑机械颤抖，按钮的灵敏度，按下去亮好几次那种<br>按下去是导通，下降沿，改成上升沿就可以是按钮抬起来亮灯</font></p>
+<p>another：TIM定时器也有中断</p>
 
     </div>
     

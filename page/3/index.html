@@ -171,8 +171,8 @@
         
 
 <div class="post">
-    <a href="/2025/03/14/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%80%E4%BA%9B%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF/">
-        <h2 class="post-title">一些电子电路</h2>
+    <a href="/2025/03/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/stm32%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BB%A3%E7%A0%81/">
+        <h2 class="post-title">stm32定时器代码</h2>
     </a>
     <div class="category-and-date">
         
@@ -189,7 +189,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/3/14
+            2025/3/19
         </span>
         
         
@@ -197,107 +197,16 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>桥式整流<br>四个二极管将交流电变成直流电（只整一半就是半桥）</p>
-<p>电源滤波器<br>作用：消除噪声，如开关电源，雷电，点击启停等干扰。阻断设备内部产生的电磁干扰反向传导到电网。<br>X电容：象征交叉，表示电容跨接在两个带点线路直接（L和N）<br>Y电容：象征分支，表示电容从带点线路分支到地线<br>差模（X）噪声：LN之间的噪声，沿着电源回路传播，和正常电流方向相反<br>共模（Y）噪声：L和N对地的噪声<br>并一个电阻：用于释放电容存储的能量，没有供电的时候也能形成回路，国际标准（如IEC 60950）要求，断电后1秒内，电容电压需降至60V以下。电阻值需根据电容容量计算，确保放电时间达标。放电时间常数τ&#x3D;R×C。阻值过小会导致不必要的功耗<br><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Noise_Filter.svg/330px-Noise_Filter.svg.png"></p>
-<p>信号滤波器<br>数字滤波器中主要的噪声源是在数字系统之前的模拟电路引入的电路噪声以及在数字系统输入端的模数转换(A&#x2F;D)过程中产生的量化噪声</p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42562514/article/details/97653660">微分和积分电路</a><br>把稳定方波变成尖波（类似心跳）或者锯齿波，三角波这种</p>
-<p>共射极放大电路，分压偏置式共射极放大电路，共集电极放大电路（基本用不上）<br>共射电路是放大电路中应用最广泛的三极管接法，信号由三极管基极和发射极输入，从集电极和发射极输出。因为发射极为共同接地端，故命名共射极放大电路。</p>
-<p>电路反馈框图<br>放大电路的输出一部分或者全部引入到输入，提高电路稳定性</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/14/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%80%E4%BA%9B%E7%94%B5%E5%AD%90%E7%94%B5%E8%B7%AF/" class="go-post">阅读全文</a>
-</div>
+            <p>TIM_TimeBaseStruct.TIM_ClockDivision &#x3D; TIM_CKD_DIV1; &#x2F;&#x2F; 时钟分频，不分频<br>DIV2则为时钟主频除以2</p>
+<p>TIM_TimeBaseStruct.TIM_Prescaler &#x3D; 7199; &#x2F;&#x2F; 预分频器（PSC）<br>设置每秒数几次，有具体算法</p>
+<p>TIM_TimeBaseStruct.TIM_Period &#x3D; 9999; &#x2F;&#x2F; 自动重装载值（ARR）<br>定义了定时器计数器的最大值。当计数器达到这个值时，会触发一次溢出事件（或更新事件），并重新从 0 开始计数。有具体算法</p>
+<p>TIM_TimeBaseStruct.TIM_CounterMode &#x3D; TIM_CounterMode_Up; &#x2F;&#x2F; 向上计数模式<br>向上计数模式：计数器从 0 开始递增，直到达到自动重装载值（ARR），然后重新从 0 开始。</p>
+<p>tip：codebase是指当前项目里面的所有文件（有关联的）</p>
+<p>是否要在中断里面运行代码，看具体需求（满足实时性）<br>如果不急就放主程序，有影响就放中断<br>中断不能放太多，尽量少放（要求速度快就放在中断里面）<br>基本没有那如果多次触发中断 放到主程序里面运行  来不及触发第二次怎么办的情况（老工程师的回答，一般有的话也不是8位机能干的了）</p>
+<p>写函数以面向对象方法来写，比如A3start，而非startA3</p>
+<p>switch 语句：<br>跳跃表（Jump Table）：switch 语句通常用于多个离散的整数值判断。编译器可以生成跳跃表，通过索引直接跳转到相应的代码块，效率较高。<br>适用场景：<br>离散的整数值：当条件是多个离散的整数值时，switch 语句效率更高。<br>大量条件：当条件较多时，switch 语句的效率通常优于 if 语句。<br>常量条件：switch 语句中的条件必须是常量表达式。</p>
+<p>在函数中如果要保持变量不变，需要static，如果没有会随着函数消失而重置</p>
 
-<div class="post">
-    <a href="/2025/03/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%85%AC%E5%8F%B8%E7%9A%84%E6%B2%B8%E7%89%A9%E7%83%A7%E5%BD%95%E5%99%A8/">
-        <h2 class="post-title">公司的沸物烧录器</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/13
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>流水线烧代码一个一个拿烧太麻烦，让他们一页一页拿上去烧<br>烧的时候需要不停的按start，到后面就能一次烧进去<br>原本以为是杜邦线接触不良，实际上是硬件有点什么毛病。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%85%AC%E5%8F%B8%E7%9A%84%E6%B2%B8%E7%89%A9%E7%83%A7%E5%BD%95%E5%99%A8/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/03/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/STM32%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%ADEXTI/">
-        <h2 class="post-title">STM32的外部中断EXTI</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/13
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>EXTI，External Interrupt，外部中断（同时是一个具体存在的硬件模块）<br>通过芯片的外部引脚，如检测GPIO引脚的电平变化，EXTI会向CPU（中央处理器，MCU是微型控制单元）发送中断<br>跳转到中断服务函数<br>中断模式：触发CPU中断，执行中断服务函数（软件代码处理）<br>事件模式：直接触发其他硬件操作（如唤醒CPU，启动DMA传输）无需CPU干预。<br>支持多路信号，但同一时刻只能选择一个（PA0，PB0,PC0均可映射到EXTI0，但只能同时启用一个）</p>
             
         </div>
     </div>
@@ -314,12 +223,12 @@
         </span>
         
     </div>
-    <a href="/2025/03/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/STM32%E7%9A%84%E5%A4%96%E9%83%A8%E4%B8%AD%E6%96%ADEXTI/" class="go-post">阅读全文</a>
+    <a href="/2025/03/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/stm32%E5%AE%9A%E6%97%B6%E5%99%A8%E4%BB%A3%E7%A0%81/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2025/03/12/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%89%E6%9E%81%E7%AE%A1%E4%B8%8B%E6%8B%89%E7%94%B5%E9%98%BB/">
-        <h2 class="post-title">三极管下拉电阻</h2>
+    <a href="/2025/03/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%B2%9F%E6%A7%BD%E7%9A%84CLION%E6%A3%80%E6%9F%A5/">
+        <h2 class="post-title">沟槽的CLION检查</h2>
     </a>
     <div class="category-and-date">
         
@@ -336,7 +245,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/3/12
+            2025/3/19
         </span>
         
         
@@ -344,10 +253,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>三极管控制的时候为高阻态，噪声有可能偏大，如果有驱动源提供低电平（推挽输出）则无需下拉电阻。<br>无信号是否稳定在0V（可以给外部电磁干扰）</p>
-<p>中断是不需要代码查询是否满足条件，由硬件自动触发</p>
-<p>打搅器，50g，10速度，10速度，补胶速度</p>
-<p>Copilot，通义灵码，JetBrainAI，CLION插件市场</p>
+            <p>CMAKE里面设置了C99，依然可以在结构体里面定义函数不报错<br>估计是clang-tidy的问题，而不是配置，懒得改了<br>反正别用结构体，编译具体看keil5是否有误</p>
 
             
         </div>
@@ -365,21 +271,21 @@
         </span>
         
     </div>
-    <a href="/2025/03/12/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%89%E6%9E%81%E7%AE%A1%E4%B8%8B%E6%8B%89%E7%94%B5%E9%98%BB/" class="go-post">阅读全文</a>
+    <a href="/2025/03/19/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%B2%9F%E6%A7%BD%E7%9A%84CLION%E6%A3%80%E6%9F%A5/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2025/03/11/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E8%AD%A6%E6%83%95%E5%85%B1%E4%BA%AB%E5%8D%95%E8%BD%A6/">
-        <h2 class="post-title">警惕共享单车</h2>
+    <a href="/2025/03/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%BC%A0%E9%A3%9E%E7%94%B5%E5%AD%90%E5%A5%BD%E5%83%8F%E4%B9%9F%E4%B8%8D%E9%94%99/">
+        <h2 class="post-title">张飞电子好像也不错</h2>
     </a>
     <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/%E6%9D%82%E8%B0%88/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                杂谈
+                教程
             </a>
         </span>
         
@@ -387,7 +293,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/3/11
+            2025/3/18
         </span>
         
         
@@ -395,16 +301,122 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>浪费16r，公司在镇海区，我自己在鄞州区，共享单车直接骑出服务区了<br>浪费了两天的地铁钱，地铁多坐还送电子票，下次注意）</p>
+            <p>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1Ef3pw5k91FwmySTYWpF05g">https://pan.baidu.com/s/1Ef3pw5k91FwmySTYWpF05g</a><br>提取码：laxn<br>张飞硬件1~20部完整版</p>
+<p>王工说还不错<br>20250319:我觉得不行，估计是上面这个版本太老了</p>
 
             
         </div>
     </div>
     <div class="post-tags">
         
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">嵌入式开发</a>
+        </span>
         
     </div>
-    <a href="/2025/03/11/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E8%AD%A6%E6%83%95%E5%85%B1%E4%BA%AB%E5%8D%95%E8%BD%A6/" class="go-post">阅读全文</a>
+    <a href="/2025/03/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%BC%A0%E9%A3%9E%E7%94%B5%E5%AD%90%E5%A5%BD%E5%83%8F%E4%B9%9F%E4%B8%8D%E9%94%99/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/03/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E7%94%B5%E6%BA%90%E7%94%B5%E8%B7%AF/">
+        <h2 class="post-title">电源电路</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/18
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>bilibili常用小家电电路图讲解<br>并联压敏电阻（电压敏感），过压保护<br>串联保险丝，过流保护<br>并联电容降噪，并电阻断电的时候电容放电</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E7%94%B5%E6%BA%90%E7%94%B5%E8%B7%AF/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/03/17/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/C%E8%AF%AD%E8%A8%80%E5%A3%B0%E6%98%8E%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/">
+        <h2 class="post-title">C语言声明全局变量</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/17
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>extern用于声明全局变量（函数不需要）<br>main.h中声明extern int（如果没有uint类型，需要在main.c里面先包含main.h）<br>main.c里面具体实现int<br>要使用一样变量的，在其他.c里面包含main.h</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/17/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/C%E8%AF%AD%E8%A8%80%E5%A3%B0%E6%98%8E%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -438,7 +450,7 @@
             
             
             <span class="page-omit">...</span>
-            <a class="page-num" href="/page/24">24</a>
+            <a class="page-num" href="/page/26">26</a>
             
         </span>
         

@@ -171,8 +171,8 @@
         
 
 <div class="post">
-    <a href="/2025/01/25/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E9%9D%A2%E5%8C%85%E6%9D%BF%E4%BD%BF%E7%94%A8%E5%89%8D%E6%B3%A8%E6%84%8F/">
-        <h2 class="post-title">面包板使用前注意</h2>
+    <a href="/2025/02/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/PCB%E7%9A%84%E5%B8%83%E7%BA%BF%E8%A7%84%E5%88%99/">
+        <h2 class="post-title">PCB的布线规则</h2>
     </a>
     <div class="category-and-date">
         
@@ -189,7 +189,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/1/25
+            2025/2/18
         </span>
         
         
@@ -197,10 +197,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>要先用镊子顶开铁夹子，要接哪些口都要用镊子先捅进去（诗人我吃）</p>
-<p>一些单词：<br>IPU，InputPullUp，输入模式且默认为高电位（上拉电阻），若按钮按下是导通，则接低电位，会导致引脚为低电位，以及IPD类似作用。<br>OD，OpenDrain，开漏<br>PP，PushPull，推挽，Pull-Up，Pull-Down，拉高（电平），拉低（电平），可以选择低电平或者高电平。<br>和上面开漏不同的是，开漏只能漏东西（即低电平），没有高电平，高电平则为高阻抗（断路）</p>
-<p>tip：<br>写代码的时候，如果用了RCC_开头的函数，那么后面的参数也是RCC开头的<br>同理GPIO也是</p>
-<p>接上一次任务，解析会了之后，本次较为简单：<br>能够PC13点灯之后，使用面包板接线，实现点亮发光二极管，流水灯（循环一个一个点亮），蜂鸣器的使用<br>此处循环的时候 1&lt;&lt;i，就是具体pin脚，比如GPIO_Pin_12，就是1&lt;&lt;i，赋值给GPIO结构体的成员PIN就可以了<br>具体看define<br>此处修改引脚的speed，并不会导致蜂鸣器声音变化，引脚speed只决定引脚的驱动能力上限和信号传递速度<br>并不直接影响电流大小。</p>
+            <p>优先布高速信号线和模拟信号线（容易受干扰，且线尽可能短）<br>对着网络标识按Ctrl+点击，可以看具体网络走线<br>按ctrl拉可以修改铜皮（放置）<br>如果全面是同一色的大概率是铺铜（把GND接在一起共地）<br>shift+s可以快速切换是否是单层模式<br>布线结束之后，TOOL，run design rule check，会显示有哪些错误，直接点错误就会给你定位到那边<br>每次操作都和铜有关系的，都要进行一次rulecheck<br>在keepout层画线，放置，禁止布线，走一下禁止线，然后全部圈起来，设计板子形状就完成了<br>同一个信号线的就走一起，如果有些按钮按下去会导致信号波动，需要看手册注意<br>tip：设计里面可以生成库</p>
 
             
         </div>
@@ -214,25 +211,25 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">嵌入式开发</a>
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
         </span>
         
     </div>
-    <a href="/2025/01/25/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E9%9D%A2%E5%8C%85%E6%9D%BF%E4%BD%BF%E7%94%A8%E5%89%8D%E6%B3%A8%E6%84%8F/" class="go-post">阅读全文</a>
+    <a href="/2025/02/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/PCB%E7%9A%84%E5%B8%83%E7%BA%BF%E8%A7%84%E5%88%99/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2025/01/24/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97%E4%BF%9D%E5%AD%98%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-        <h2 class="post-title">元素之诗保存配置与快速进入服务器</h2>
+    <a href="/2025/02/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/PCB%E5%8F%A0%E5%B1%82%E8%AE%BE%E8%AE%A1/">
+        <h2 class="post-title">PCB叠层设计</h2>
     </a>
     <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                游戏
+                教程
             </a>
         </span>
         
@@ -240,7 +237,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/1/24
+            2025/2/18
         </span>
         
         
@@ -248,13 +245,108 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>众所周知MC启动游戏是直接启动java，但是网易mc会先更新客户端<br>实际上是把某些文件夹全部删除了，然后再重新下载一遍，元素之诗材质大概有600MB，网速差的人，启动就会很慢（有位QQ好友就是）<br>并且，他删除的配置，比如材质包，按键设置，全给你删了，启动每次都要改。</p>
-<p>所以如果只玩一个服务器的情况下，可以按下面步骤来进行设置。</p>
-<ol>
-<li>进入游戏（注意下面的操作都不要退出游戏）</li>
-<li>进行你所有的配置：ESC里面的全部设置（游戏内的是否显示伤害数字，以及数字按键1队友发光，F12时装是否显示，这个无法保存）</li>
-<li>返回至大区传送大厅</li>
-<li>添加自定义规则，禁止修改和删除，具体文件在下面（用你的杀毒软件，或者火绒）<br><img src="https://s21.ax1x.com/2025/01/25/pEElDIS.png"><br><img src="https://s21.ax1x.com/2025/01/25/pEElsPg.png"><br>当然版本更新的时候，材质增加了出现问题，那就需要让他更新，把规则先关闭，启动游戏，再按照上面步骤来一遍。</li>
+            <p>导航栏，设计，层叠管理，也可以看层是怎么样的<br>快捷键L可以显示哪些不显示，哪些显示（直接点左下角LS旁边，就可以改，不需要快捷键）</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/02/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/PCB%E5%8F%A0%E5%B1%82%E8%AE%BE%E8%AE%A1/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/02/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/PCB%E8%AE%BE%E8%AE%A1%E8%A7%84%E5%88%99%E5%AE%9A%E4%B9%89/">
+        <h2 class="post-title">PCB设计规则定义</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/2/18
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>设计，rules里面<br>按照加工工艺和其他要求来定义<br>可以对模块，对网络各自定义规则<br>也可以导入规则</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/02/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/PCB%E8%AE%BE%E8%AE%A1%E8%A7%84%E5%88%99%E5%AE%9A%E4%B9%89/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/02/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/PCB%E5%AF%BC%E5%85%A5Sch/">
+        <h2 class="post-title">PCB导入Sch</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/2/18
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <ol>
+<li>点击到要导入的PCB，导航栏设计，Import Changes</li>
+<li>观察一下是否有误，然后左下角执行更改，查看是否更改成功</li>
+<li>保存更改，然后关闭</li>
+<li>红底room一般删掉，除非要很多模块</li>
+<li>查看导入之后是否有错误（绿色叉叉或者其他情况表示有错）<br>tip：原理器件更新之后要保存，很多东西都是</li>
 </ol>
 
             
@@ -269,25 +361,25 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97/" style="color: #03a9f4">元素之诗</a>
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
         </span>
         
     </div>
-    <a href="/2025/01/24/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97%E4%BF%9D%E5%AD%98%E9%85%8D%E7%BD%AE%E4%B8%8E%E5%BF%AB%E9%80%9F%E8%BF%9B%E5%85%A5%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="go-post">阅读全文</a>
+    <a href="/2025/02/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/PCB%E5%AF%BC%E5%85%A5Sch/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2025/01/24/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97%E6%AF%8F%E5%91%A8%E5%A7%94%E6%89%98/">
-        <h2 class="post-title">元素之诗每周委托</h2>
+    <a href="/2025/02/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%8E%9F%E7%90%86%E5%9B%BE%E5%BA%93/">
+        <h2 class="post-title">原理图库</h2>
     </a>
     <div class="category-and-date">
         
         <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                游戏
+                教程
             </a>
         </span>
         
@@ -295,7 +387,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2025/1/24
+            2025/2/18
         </span>
         
         
@@ -303,7 +395,7 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>仅作游戏内具体地点参照</p>
+            <p>正常也有给的库</p>
             
         </div>
     </div>
@@ -316,156 +408,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97/" style="color: #00bcd4">元素之诗</a>
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
         </span>
         
     </div>
-    <a href="/2025/01/24/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97%E6%AF%8F%E5%91%A8%E5%A7%94%E6%89%98/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/01/24/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97%E6%AF%8F%E5%91%A8%E6%B8%85%E5%8D%95/">
-        <h2 class="post-title">元素之诗每周清单</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/1/24
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <span id="more"></span>
-
-<p>每周委托也一并看了，在隔壁</p>
-<details open><summary>杂项</summary><p>
-
-<blockquote>
-<p>工会礼包 - 检查通行证 - 工会讨伐<br>护石刻刀（图鉴守卫者之心，需20炽烈之石，5守护者之心）</p>
-</blockquote>
-</p></details>
-
-<details open><summary>弗朗蒂亚城</summary><p>
-
-<blockquote>
-<p>每周委托 - 纹章钥匙</p>
-</blockquote>
-</p></details>
-
-<details open><summary>斯兰</summary><p>
-
-<blockquote>
-<p>史莱姆兑换 - 熔火兑换 - 温泉箱</p>
-</blockquote>
-</p></details>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97/" style="color: #ff7d73">元素之诗</a>
-        </span>
-        
-    </div>
-    <a href="/2025/01/24/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97%E6%AF%8F%E5%91%A8%E6%B8%85%E5%8D%95/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/01/23/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97%E6%AF%8F%E6%97%A5%E6%B8%85%E5%8D%95/">
-        <h2 class="post-title">元素之诗每日清单</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%B8%B8%E6%88%8F/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                游戏
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/1/23
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <span id="more"></span>
-
-<details open><summary>杂项</summary><p>
-
-<blockquote>
-<p>工会签到 - 工会礼包</p>
-</blockquote>
-</p></details>
-
-<details open><summary>弗朗蒂亚城</summary><p>
-
-<blockquote>
-<p>每日委托 - 重铸石兑换</p>
-</blockquote>
-</p></details>
-
-<details open><summary>斯兰</summary><p>
-
-<blockquote>
-<p>史莱姆（攒36金币）</p>
-</blockquote>
-</p></details>
-
-<details open><summary>矿井</summary><p>
-
-<blockquote>
-<p>狂雷遗迹（每天10把）</p>
-</blockquote>
-</p></details>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97/" style="color: #00a596">元素之诗</a>
-        </span>
-        
-    </div>
-    <a href="/2025/01/23/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%85%83%E7%B4%A0%E4%B9%8B%E8%AF%97%E6%AF%8F%E6%97%A5%E6%B8%85%E5%8D%95/" class="go-post">阅读全文</a>
+    <a href="/2025/02/18/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%8E%9F%E7%90%86%E5%9B%BE%E5%BA%93/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -502,7 +449,7 @@
             
             
             <span class="page-omit">...</span>
-            <a class="page-num" href="/page/24">24</a>
+            <a class="page-num" href="/page/26">26</a>
             
         </span>
         
