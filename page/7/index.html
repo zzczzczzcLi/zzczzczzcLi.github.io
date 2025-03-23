@@ -171,6 +171,163 @@
         
 
 <div class="post">
+    <a href="/2025/03/08/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%AD%E6%96%AD%E5%92%8C%E8%BD%AE%E8%AF%A2%E5%8C%BA%E5%88%AB/">
+        <h2 class="post-title">中断和轮询区别</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/8
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>要学会自己找人去帮忙开机器，哪怕是其他公司的）</p>
+<p>A 和 D 分别代表 ​模拟（Analog）​ 和 ​数字（Digital）​，这是电子信号处理中的通用术语。这种命名方式来源于电子学的基本概念，以下是详细解释：</p>
+<p>外部中断可以节省写代码的时间，不然每个状态都要写上其他并行状态的代码（也不用中断，给每个状态加个标记，主函数里面判断就行，中断是优先度情况）<br>​优先使用中断的场景<br>需要低延迟响应（如旋转编码器、紧急停止按钮）<br>事件触发频率较低但重要的操作（如唤醒信号）<br>系统有多个并行输入源需要独立处理</p>
+<p>​推荐使用轮询的场景<br>状态检查频率较低（如每分钟检测一次温度）<br>逻辑简单且无需实时响应（如模式切换按钮）<br>资源受限，避免中断嵌套带来的复杂性</p>
+<p>中断是基础，用于处理优先级事件（必学）</p>
+<p>公司里面的东西都可以用，学会问和拿</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00a596">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/08/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%AD%E6%96%AD%E5%92%8C%E8%BD%AE%E8%AF%A2%E5%8C%BA%E5%88%AB/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/03/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250307/">
+        <h2 class="post-title">20250307</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/7
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>实际上不需要按-出现下划线，PowerToy是个冗余工具，除非需要同屏，否则输入GP5，就可以补全GPIO_Pin_5<br>CLION超进化了！设置里面有Nova引擎，写GPIO_InitMode,Pin,Speed，会一个一个跳出来（可能还是会有缺陷，GPIO有时候会少个speed，还得练）</p>
+<p>单片机代码，注意一下这个问题，要考虑好每个状态持续多久<br><img src="https://www.helloimg.com/i/2025/03/07/67caa887a0386.png"><br><img src="https://www.helloimg.com/i/2025/03/07/67caa8741044a.png"></p>
+<p>不依赖教程，直接看教程（Stm32）问题，要实现什么功能，元器件有什么用直接百度，实现教程</p>
+<p>GPIO_Pin_12|GPIO_Pin_13;可以一次初始化两个引脚</p>
+<p>上拉输入，即靠近电源（无外部驱动时默认高电平）<br>引脚会处于悬空状态（高阻抗状态），电平可能不确定，容易受到噪声干扰。</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/07/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250307/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/03/06/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/keil5%E5%92%8CClion%E6%B7%BB%E5%8A%A0%E5%A4%B4%E6%96%87%E4%BB%B6%E5%92%8C%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/">
+        <h2 class="post-title">keil5和Clion添加头文件和代码检查</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/6
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>Keil5的项目结构不能在组里面接着套组，自己开发的在实际文件夹里面ZZC_里面，项目就ZZC_LED<br>CMAKE里面添加头文件include_directories(ZZC\LED)，如果要自己新建源文件，h头文件（关联另一个类型），先新建<br>然后在if和endif里面定义函数头，在c里面实现，再包含就行，可以定义类型，也可以添加别的头文件（全部写在define里面）两个都不需要主函数<br>Keil里面先添加已有文件，然后右键target，options，C&#x2F;C++，添加路径，路径和CMAKE一样</p>
+<p>启动CLION的函数形参提醒（代码太难写了）按Ctrl+P可以提示当前函数需要写哪些变量</p>
+<p>CLION里面头文件如果有问题，也要include正确的头文件才行</p>
+<p>CLION里面需要添加excute文件，他才能自动补全和开启代码检查</p>
+<p>杂：<br>到站了要提醒王哥，烧烤摊太贵了，不如买炒饭摊</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/06/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/keil5%E5%92%8CClion%E6%B7%BB%E5%8A%A0%E5%A4%B4%E6%96%87%E4%BB%B6%E5%92%8C%E4%BB%A3%E7%A0%81%E6%A3%80%E6%9F%A5/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2025/03/06/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E8%80%81%E5%8C%96%E6%B5%8B%E8%AF%95/">
         <h2 class="post-title">老化测试</h2>
     </a>
@@ -211,7 +368,7 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
         </span>
         
     </div>
@@ -260,174 +417,11 @@
         
         <span class="tag">
             
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">嵌入式开发</a>
         </span>
         
     </div>
     <a href="/2025/03/05/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E7%84%8A%E6%8E%A5%E5%AF%BC%E7%BA%BF%E5%A4%B9%E5%AD%90/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/03/05/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250305/">
-        <h2 class="post-title">20250305</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/5
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>在二极管正向导通后，突然加反向电流， 理想情况下，二极管应该立刻变为截止状态 但是实际上二极管并不会立即变为截止状态， 而是有一个反向电流，然后这个反向电流经过很小的一段时间后慢慢减小到0，达到截至状态。<br><img src="https://i-blog.csdnimg.cn/blog_migrate/cdcea45480be7619e41b53e21964ca93.jpeg"></p>
-<p>制作接插件，照着样板，找材料（问老员工），然后原模原样做出来，如果有红色用完了，可以用其他一样的白色<br>导线上锡的时候点几下，不能总是在上面刮，不然就黑了，锡太臭了记得用小风扇吸走（同时戴口罩，今天干了一天，全是锡的味道）</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/05/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/20250305/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/03/04/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%BA%8C%E6%9E%81%E7%AE%A1%E9%92%B3%E4%BD%8D%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%8B%89/">
-        <h2 class="post-title">二极管钳位与上下拉</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/4
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>抄了一个板子，然后学习<br>硬件工程师入门教程|电子工程师|零基础|全免费|2024全新课程|中文字幕|B站 点赞 收藏NO.1</p>
-<p>二极管的钳位作用：<br>负载和二极管并联的时候，如果负载电压大于0.7v，二极管就会导通<br>二极管导通理想状态下电阻很小（近似短路）大部分电流会经过二极管<br>使得负载只有0.7v</p>
-<p>​降低输入阻抗：<br>基极-发射极电阻（通常称为下拉电阻）会降低输入端的阻抗。较高的输入阻抗容易耦合外部噪声，而较低的阻抗使干扰信号需要更大的电流才能影响BE结的电压，从而减少噪声的敏感性。</p>
-<p>​​“下拉” vs “上拉”​：<br>​下拉电阻：连接在信号节点与地之间，确保无信号时节点为低电平。<br>​上拉电阻：连接在信号节点与电源（VCC）之间，确保无信号时节点为高电平。<br>两者的名称直接体现了它们将电压“拉向”地或电源的方向。</p>
-<p>但用户的问题在于，既然电阻很高，电流是否真的能通过？这里可能存在对高电阻和电流关系的误解。高电阻意味着在同样的电压下，流过的电流会更小，但在这种情况下，是噪声电流存在的情况下，高阻抗反而导致电压升高。因此，用户可能混淆了电阻对电流的限制作用和噪声电流本身的存在。<br>需要澄清的是，噪声电流是外部干扰源产生的，可能通过电容耦合或电磁感应等方式引入到基极。即使基极的输入阻抗很高，这些外部电流仍然会流动，因为干扰源提供了驱动力。此时，根据欧姆定律，高阻抗会导致这些电流产生较大的电压降，从而影响BE结的状态。<br>用户的问题可能在于，为什么高阻抗时电流还能存在，从而产生高压。需要解释的是，噪声电流是由外部干扰源提供的，而不是由电路本身的电源驱动。因此，即使基极的阻抗很高，只要干扰源能够提供足够的电流，就会在基极产生电压。高阻抗在这里反而是不利的，因为它允许小电流产生大电压。</p>
-<p>直接拖动现有的线路形成回路一般不会导致原有的消失<br>如果使用新导线去连，会阻止回路形成</p>
-<p><font color='RED'>AD16记得时刻保存</font></p>
-<p>同一块区域，某些线段上选择的TAB，TVB不会创造板切（不明原因bug）试试其他线段就可以了</p>
-<p>要画粗线的地方，可以在，设计，规则，Routing，Width里面改一下，不需要一直TVB<br>如果要TVB，在快连到焊盘里面，稍微进去一点就行，然后在里面用圆弧连在一起，直接连在<br>中心不好铺，所以要么用圆弧，要么改width</p>
-<p>Hatch模式铺铜轨迹宽度要大于栅格宽度</p>
-<p>给无源蜂鸣器直流电压不会响，需要外部驱动，无源蜂鸣器内部没有振荡电路<br>所以直接给直流电会响的就是有源蜂鸣器</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #03a9f4">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/04/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%BA%8C%E6%9E%81%E7%AE%A1%E9%92%B3%E4%BD%8D%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%8B%89/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/03/03/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">
-        <h2 class="post-title">一些记录</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/3
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>AC&#x2F;DC PWM 功率开关​ 是一种用于电源管理的技术或器件，主要用于将交流电（AC）转换为直流电（DC），并通过 ​脉宽调制（PWM, Pulse Width Modulation）​​ 技术来控制输出电压或电流。<br>如果输入的是直流，那就是转换电压的作用</p>
-<p>功率开关+EE13电源变压器可能是实现电气隔离<br>核心原理是 ​通过磁场的电磁感应传递能量，而非直接电连接。<br>电源变压器使得AC👉AC，升压或者降压</p>
-<p>EE13出来的接一个肖特基二极管实现整流成直流供电</p>
-<p>MOC3021​ 是一种 ​光耦隔离器（Optocoupler）​，主要用于实现 ​电气隔离​ 和 ​信号传输。以下是它在电路中的具体作用：</p>
-<ol>
-<li>​电气隔离<br>MOC3021 的输入端（LED）和输出端（光敏晶体管）之间通过光信号传递信息，无直接电气连接。<br>这种隔离可以防止高压电路（如主电源部分）对低压控制电路（如微控制器或逻辑电路）的干扰，提高系统的安全性和稳定性。</li>
-<li>​信号传输<br>当输入端（LED）接收到电信号时，它会发光，输出端（光敏晶体管）接收到光信号后转换为电信号。<br>这种光信号传递方式确保了信号的可靠传输，同时避免了电气噪声的干扰。</li>
-</ol>
-<p>PC817C光耦，隔离和保护功能较强，MOC3021更偏向于控制</p>
-<p>元器件位置和电路板对不上的时候（抄板，直接抄原理图，功能分块），记得使用mirror</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/03/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -464,7 +458,7 @@
             
             
             <span class="page-omit">...</span>
-            <a class="page-num" href="/page/26">26</a>
+            <a class="page-num" href="/page/27">27</a>
             
         </span>
         
