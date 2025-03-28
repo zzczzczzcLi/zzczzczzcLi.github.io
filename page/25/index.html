@@ -171,25 +171,16 @@
         
 
 <div class="post">
-    <a href="/2023/05/12/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/frp%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7/">
-        <h2 class="post-title">frp穿透工具</h2>
+    <a href="/2023/12/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/">
+        <h2 class="post-title">实验二-文件和目录操作命令</h2>
     </a>
     <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E5%B7%A5%E5%85%B7/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                工具
-            </a>
-        </span>
         
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/12
+            2023/12/13
         </span>
         
         
@@ -197,46 +188,70 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>MCBBS上会有很多内网穿透商人，下面所给的实在不行就去百度或者MCBBS上软件工具栏去找。<br>也可以问问聪明的ChatGPT。</p>
+            <pre><code class="DOCX文档，奶牛快传口令：pnbicz">实验目的：
+1、掌握LINUX下文件和目录的操作命令，如pwd、cd、ls、touch、mkdir、rmdir、cp、mv、rm、wc，cut等。
+
+实验内容：
+1、使用命令切换到/etc目录，并显示当前工作目录路径。
+cd /etc
+pwd
+
+2、使用命令显示/root目录下所有文件目录的详细信息，包括隐藏文件。
+ls -alh
+
+3、使用命令创建空文件/root/ab。
+mkdir /root/ab
+
+4、统计文件/root/anaconda-ks.cfg的行数、字符数和单词数。
+wc /root/anaconda-ks.cfg
+统计行数：wc -l /root/anaconda-ks.cfg
+统计单词数：wc -w /root/anaconda-ks.cfg
+统计字符数：wc -c /root/anaconda-ks.cfg (按道理来说应该是-m）
+
+5、在home目录下创建目录mydir，并把/root 下的文件anaconda-ks.cfg拷贝到mydir目录下
+mkdir /home/mydir
+cp /root/anaconda-ks.cfg  /home/mydir/
+
+6.把题5拷贝文件anaconda-ks.cfg改名为aa.txt
+mv /home/mydir/anaconda-ks.cfg  aa.txt
+
+7.使用cut命令截取/etc/passwd第一列信息（用户名）
+cut -d: -f1 /etc/passwd
+
+8.使用管道|实现/etc/总共有多少个文件
+ls -alh /etc | wc -l
+
+9.查找/etc下所有的文件小于3000字节的.conf文件
+find /etc -name &quot;*.conf&quot; -size -3000c
+
+10.查找/etc/passwd 下所有不包含root的行
+grep -v &quot;root&quot; /etc/passwd
+
+
+
+</code></pre>
+
             
         </div>
     </div>
     <div class="post-tags">
         
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F/" style="color: #ff7d73">内网穿透</a>
-        </span>
         
     </div>
-    <a href="/2023/05/12/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/frp%E7%A9%BF%E9%80%8F%E5%B7%A5%E5%85%B7/" class="go-post">阅读全文</a>
+    <a href="/2023/12/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E6%96%87%E4%BB%B6%E5%92%8C%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/05/10/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9C%A8Linux%E4%B8%8A%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E5%99%A8/">
-        <h2 class="post-title">在Linux上搭建我的世界服务器</h2>
+    <a href="/2023/12/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%9E%E9%AA%8C%E5%85%AB-Shell%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+        <h2 class="post-title">实验八-Shell程序设计</h2>
     </a>
     <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
         
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/10
+            2023/12/13
         </span>
         
         
@@ -244,59 +259,112 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <blockquote>
-<p>常用命令<br>screen -S “Mine”：新建一个名为”Mine”的屏幕，并且进入。（相当于新开一个线程）<br>screen -r：进入屏幕。<br>ctrl a+d：退出屏幕，如果屏幕在运行会保持后台运行。<br>ctrl c&#x2F;stop：关闭服务器。<br>sh startmcs.sh：通过sh脚本启动服务器。</p>
-</blockquote>
-<p>搭建我的世界服务器只需要两样东西：</p>
-<ol>
-<li>服务器核心</li>
-<li>Java开发环境（注意jdk和jre的区别，我们只要jdk）</li>
-</ol>
-<p>首先我们获取Java开发环境，1.12.2版本只能用Java9及以下，这里我选择经典的Java8。</p>
+            <pre><code class="DOCX文档，奶牛快传口令：7a2ykb">
+let为定义变量
+脚本写好之后需要chmod 777 脚本文件，来赋予运行权限
+同时执行的时候需要加上地址，比如脚本文件a.sh
+执行为./a.sh
+
+实验目的：
+1、掌握shell中的变量定义和引用。
+2、掌握Shell中的算术运算符、文件运算符。
+3、掌握shell中的控制语句。
+4、掌握shell中的预定义变量和环境变量
+5、掌握shell程序的两种执行方式
+
+实验内容：
+1.统计/etc下文件和目录的数目。
+#! /bin/bash
+
+count1=$(find /etc -type f | wc -l)
+count2=$(find /etc -type d | wc -l)
+
+echo &quot;f:$count1&quot;
+echo &quot;d:$count2&quot;
+
+2.在用户目录下创建20个目录，目录名由用户指定部分+【1-20】组成
+
+#! /bin/bash
+
+read -p &quot;Input:&quot; my_name
+for((i=1;i&lt;=20;i++))
+do
+        mkdir -p &quot;$HOME/$&#123;my_name&#125;$&#123;i&#125;&quot;
+        echo &quot;$HOME/$&#123;my_name&#125;$&#123;i&#125; is created&quot;
+done
+
+3.输出九九乘法表
+#!/bin/bash
+
+for ((i=1;i&lt;=9;i++))
+do
+    for ((j=1;j&lt;=i;j++))
+    do
+        let c=i*j
+        echo -ne &quot;$&#123;i&#125;X$&#123;j&#125;=$c\t&quot;
+    done
+    echo
+done
+
+
+4.输出200以内能被7整除的所有数，并求其和
+#! /bin/bash
+
+let sum=0
+for ((i=1; i&lt;=200; i++))
+do
+        let c=i%7
+        if [ $&#123;c&#125; -eq 0 ]; then
+                echo -ne &quot;$&#123;i&#125; &quot;
+                let sum=sum+i
+        fi
+done
+echo &quot;sum=$&#123;sum&#125;&quot;
+
+5.从键盘输入3个数，求最大值
+#!/bin/bash
+
+read -p &quot;Input 3 numbers:&quot; a b c
+let &quot;tmp = (a &gt; b) ? a : b&quot;
+let &quot;max = (tmp &gt; c) ? tmp : c&quot;
+echo &quot;max=$&#123;max&#125;&quot;
+
+6.检测当前用户是否为超级用户，若是输出“root user”，否则输出“Normal User”
+#! /bin/bash
+
+if [ $UID -eq 0 ]; then
+        echo &quot;root user&quot;
+        else echo &quot;Normal user&quot;
+fi
+
+7.编写脚本测试当前机房整个网段172.17.69.0/24中，那些机器处于开机状态，那些处于关机状态
+
+来回ping ：（
+
+
+</code></pre>
+
             
         </div>
     </div>
     <div class="post-tags">
         
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Linux/" style="color: #03a9f4">Linux</a>
-        </span>
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C/" style="color: #ff7d73">我的世界</a>
-        </span>
         
     </div>
-    <a href="/2023/05/10/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%9C%A8Linux%E4%B8%8A%E6%90%AD%E5%BB%BA%E6%88%91%E7%9A%84%E4%B8%96%E7%95%8C%E6%9C%8D%E5%8A%A1%E5%99%A8/" class="go-post">阅读全文</a>
+    <a href="/2023/12/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%9E%E9%AA%8C%E5%85%AB-Shell%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/05/09/%E5%BC%83%E5%9D%91/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A52-1/">
-        <h2 class="post-title">校园末日2-1</h2>
+    <a href="/2023/12/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%9E%E9%AA%8C%E5%8D%81-DHCP%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/">
+        <h2 class="post-title">实验十-DHCP服务器配置</h2>
     </a>
     <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%B0%8F%E8%AF%B4/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                交互式小说
-            </a>
-        </span>
         
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/9
+            2023/12/13
         </span>
         
         
@@ -304,7 +372,9 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>目睹了一切的严煜博早知末日真的降临了，不仅是这四个人，严煜博远远的看见了城区四处可见的滚滚浓烟。<br>秩序早已崩坏。</p>
+            <pre><code class="DOCX文档，奶牛快传口令：pf9wcj">下载后查看
+</code></pre>
+
             
         </div>
     </div>
@@ -312,12 +382,12 @@
         
         
     </div>
-    <a href="/2023/05/09/%E5%BC%83%E5%9D%91/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A52-1/" class="go-post">阅读全文</a>
+    <a href="/2023/12/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%9E%E9%AA%8C%E5%8D%81-DHCP%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/05/09/%E5%BC%83%E5%9D%91/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A51-2/">
-        <h2 class="post-title">校园末日1-2</h2>
+    <a href="/2023/12/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%9E%E9%AA%8C%E5%9B%9B-Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">
+        <h2 class="post-title">实验四-Linux用户管理</h2>
     </a>
     <div class="category-and-date">
         
@@ -325,7 +395,7 @@
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/9
+            2023/12/13
         </span>
         
         
@@ -333,7 +403,53 @@
     <div class="description">
         <div class="content" v-pre>
             
-            
+            <pre><code class="DOCX文档，奶牛快传口令：pbkfrt">实验目的：
+1、掌握字符界面下用户账户的设置，包括命令useradd、usermod、userdel。
+2、掌握字符界面下组群账户的设置，包括命令groupadd、groupmod、groupdel。
+3、掌握文件权限等。
+4、掌握文件系统挂载,mount、umount命令使用
+
+实验内容：
+1、使用命令创建用户账户zhangsan，并设置口令为123456。
+Useradd zhangsan
+Passwd zhangsan
+
+2、使用命令修改用户账户zhangsan的UID为700。
+usermod -u 700 zhangsan
+
+3、使用命令创建组群group1，并在创建时设置其GID为800。
+groupadd -g 800 group1
+
+4、使用命令修改组群group1的新组群名称为shangha。
+groupmod -n shangha group1
+
+5、使用挂载命令，访问光盘
+6、使用挂载命令，访问U盘
+
+7.以zhangsan用户创建文件aa.txt。
+touch aa.txt
+su zhangsan
+
+8.创建用户usr1,usr2,其中usr1和zhangsan隶属于同一组shangha
+usermod zhangsan -G shangha 
+useradd -G shangha usr1
+useradd usr2
+
+9.分别以usr1,usr2用户访问aa.txt。
+[usr1@localhost home]$ cat zhangsan/aa.txt
+cat: zhangsan/aa.txt: 权限不够
+[usr2@localhost home]$ cat zhangsan/aa.txt
+cat: zhangsan/aa.txt: 权限不够
+
+10.利用chmod修改文件aa.txt的访问权限，再以usr2访问该文件
+chmod 777 aa.txt 
+[zhangsan@localhost ~]$ chmod 777 aa.txt
+
+
+
+
+</code></pre>
+
             
         </div>
     </div>
@@ -341,29 +457,20 @@
         
         
     </div>
-    <a href="/2023/05/09/%E5%BC%83%E5%9D%91/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A51-2/" class="go-post">阅读全文</a>
+    <a href="/2023/12/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%9E%E9%AA%8C%E5%9B%9B-Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" class="go-post">阅读全文</a>
 </div>
 
 <div class="post">
-    <a href="/2023/05/09/%E5%BC%83%E5%9D%91/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A51-1/">
-        <h2 class="post-title">校园末日1-1</h2>
+    <a href="/2023/12/11/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/2023ICPC%E6%9D%AD%E5%B7%9E%E7%AB%99%E9%93%9C%E7%89%8C%E9%A2%98/">
+        <h2 class="post-title">2023ICPC杭州站铜牌题</h2>
     </a>
     <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E4%BA%A4%E4%BA%92%E5%BC%8F%E5%B0%8F%E8%AF%B4/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                交互式小说
-            </a>
-        </span>
         
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2023/5/9
+            2023/12/11
         </span>
         
         
@@ -371,7 +478,81 @@
     <div class="description">
         <div class="content" v-pre>
             
-            <p>不知道发生了什么事的严煜博突然开始原地做一些不可描述的事情。<br>上完厕所回来的金威希看到….?两眼一黑不知道说什么些什么好。</p>
+            <p>1月14号之后将本篇内容更新到CSDN中，如果我看到了。<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_17807067/article/details/134909554">https://blog.csdn.net/qq_17807067/article/details/134909554</a></p>
+<p>补题链接（英文题面）：<a target="_blank" rel="noopener" href="https://codeforces.com/contestInvitation/f9525e4ae38eefdd9062ae5f43d8c9fdee80ad6e">https://codeforces.com/contestInvitation/f9525e4ae38eefdd9062ae5f43d8c9fdee80ad6e</a></p>
+<pre><code class="C++">简单题：M，J
+
+J. Mysterious Tree
+
+题面大意：给你一棵树，这棵树只能是一个链或者是菊花，没有别的情况，菊花就是有一个点和其他点都有边，
+其他点和其他点直接都没边。判断这棵树是链还是环，询问次数为 n/2向上取整+3
+
+此题是交互题所以不可以使用cin.tie，define endl &#39;\n&#39;，具体来说是使用cin.tie就不可以使用&#39;\n&#39;换行
+原因：https://icpc.xidian.wiki/cce/cin-tie0
+
+基本上是cfl单杀的一道题，询问1-2,3-4,5-6,最多询问n/2次就能找到菊花中心，如果没找到这样的边，说明
+是链（奇数和偶数分开，需要特判两次，没找到一定是链），比赛的时候WA两次找出来的两个血汗特判。
+一开始cfl给了思路之后我和z01去做题了，个人原因没听清思路WA两次，应该是谁给思路谁来写题，加上
+中间一个敲代码的，保证给思路的要在线。
+
+这种特判要从代码角度去考虑是否完备，顺着代码去考虑某一行是否有问题，思路上很难看出来。
+
+找到这条边之后再去询问3次一定就能问出是链还是菊花，次数刚好。
+
+-------------------------------------------------------------------------------------
+
+M. V-Diagram
+
+题目大意：给你一个序列，必然是一个先降后增的序列（V图），找出一个平均值最大的连续子V图。
+
+这道题差不多是三个人一起想出来的，最后根据z01和cfl的思路点出如果某一边被选了，那么必然被全选，
+结束战斗。
+
+最终结果只能是V的左侧被全选 或者 V的右侧被全选 或者 全部选上，只有三种情况。
+因为平均值特性 3 3,选上平均值不变，如果递增 3 4 5 6，选上平均值必然增大，所以全选。
+
+造数据测试后，1发过，最稳的一题。
+
+-------------------------------------------------------------------------------------
+
+铜牌题：D，G
+
+D. Operator Precedence
+
+题目大意：(a1×a2)+(a3×a4)+···+(a2n−1×a2n)=a1×(a2+a3)×(a4+a5)×···×(a2n−2+a2n−1)×a2n
+
+满足上述式子，其中条件是等式值不为0,ai的取值也不为0
+
+比较可惜的是正式赛的时候没有做出来，赛后z01 3小时把这道题AC了
+
+正式赛找了3个小时规律没找出来，尝试化简式子也都失败了。
+打表代码写的有问题，某些n的取值找出来的不是第一个合法构造，导致规律找不出来。
+同时样例也具有误导性质，前面给的是平方的规律，后面是没规律。
+只能说这种Special Judge的样例看看就行，还是以自行思考为主。
+
+尝试解式子的时候因为直接设了a1和a2n为1（根据样例设的）所以左右式项数还是不统一，没法做。
+正确的是设a1或者a2n其中一个为1，因为右式是乘法，所以我们希望它不要乘的太大，另括号中的加法
+均为2,-1,2,-1的构造，直接求和为1抵消。然后代入左式解出a2n的合法取值。
+
+-------------------------------------------------------------------------------------
+
+G. Snake Move
+
+题目大意：给你一条蛇，可以WSAD走，也可以特殊操作执行自己缩短一个长度（不能把蛇头缩了）。
+问蛇到矩阵中的所有点最快只要几次操作。
+
+有思路但是题目读不太懂，这个最小操作是蛇一次就要移动完还是每次出发到达那个点的最小操作。
+如果是每次出发就可以采用bfs遍历一次所有点来求出答案，对于某个被蛇身挡住的点，标记一下被
+蛇身挡住的长度来当作答案，下次bfs答案来和他比较应该就可以了。（读不懂操作数也可以把bfs
+代码敲出来看看和样例比较一下）
+
+但是题目中最终输出的答案是连乘后对2^64取模，直接给long long爆了，不知道怎么解决所以最终还是
+没敲代码。
+
+
+
+</code></pre>
+
             
         </div>
     </div>
@@ -379,7 +560,7 @@
         
         
     </div>
-    <a href="/2023/05/09/%E5%BC%83%E5%9D%91/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A5/%E6%A0%A1%E5%9B%AD%E6%9C%AB%E6%97%A51-1/" class="go-post">阅读全文</a>
+    <a href="/2023/12/11/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/2023ICPC%E6%9D%AD%E5%B7%9E%E7%AB%99%E9%93%9C%E7%89%8C%E9%A2%98/" class="go-post">阅读全文</a>
 </div>
 
 
@@ -414,6 +595,9 @@
             
             <a class="page-num" href="/page/27">27</a>
             
+            
+            <span class="page-omit">...</span>
+            <a class="page-num" href="/page/33">33</a>
             
         </span>
         

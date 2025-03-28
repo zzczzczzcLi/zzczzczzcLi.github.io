@@ -171,6 +171,217 @@
         
 
 <div class="post">
+    <a href="/2025/03/04/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%BA%8C%E6%9E%81%E7%AE%A1%E9%92%B3%E4%BD%8D%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%8B%89/">
+        <h2 class="post-title">二极管钳位与上下拉</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/4
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>抄了一个板子，然后学习<br>硬件工程师入门教程|电子工程师|零基础|全免费|2024全新课程|中文字幕|B站 点赞 收藏NO.1</p>
+<p>二极管的钳位作用：<br>负载和二极管并联的时候，如果负载电压大于0.7v，二极管就会导通<br>二极管导通理想状态下电阻很小（近似短路）大部分电流会经过二极管<br>使得负载只有0.7v</p>
+<p>​降低输入阻抗：<br>基极-发射极电阻（通常称为下拉电阻）会降低输入端的阻抗。较高的输入阻抗容易耦合外部噪声，而较低的阻抗使干扰信号需要更大的电流才能影响BE结的电压，从而减少噪声的敏感性。</p>
+<p>​​“下拉” vs “上拉”​：<br>​下拉电阻：连接在信号节点与地之间，确保无信号时节点为低电平。<br>​上拉电阻：连接在信号节点与电源（VCC）之间，确保无信号时节点为高电平。<br>两者的名称直接体现了它们将电压“拉向”地或电源的方向。</p>
+<p>但用户的问题在于，既然电阻很高，电流是否真的能通过？这里可能存在对高电阻和电流关系的误解。高电阻意味着在同样的电压下，流过的电流会更小，但在这种情况下，是噪声电流存在的情况下，高阻抗反而导致电压升高。因此，用户可能混淆了电阻对电流的限制作用和噪声电流本身的存在。<br>需要澄清的是，噪声电流是外部干扰源产生的，可能通过电容耦合或电磁感应等方式引入到基极。即使基极的输入阻抗很高，这些外部电流仍然会流动，因为干扰源提供了驱动力。此时，根据欧姆定律，高阻抗会导致这些电流产生较大的电压降，从而影响BE结的状态。<br>用户的问题可能在于，为什么高阻抗时电流还能存在，从而产生高压。需要解释的是，噪声电流是由外部干扰源提供的，而不是由电路本身的电源驱动。因此，即使基极的阻抗很高，只要干扰源能够提供足够的电流，就会在基极产生电压。高阻抗在这里反而是不利的，因为它允许小电流产生大电压。</p>
+<p>直接拖动现有的线路形成回路一般不会导致原有的消失<br>如果使用新导线去连，会阻止回路形成</p>
+<p><font color='RED'>AD16记得时刻保存</font></p>
+<p>同一块区域，某些线段上选择的TAB，TVB不会创造板切（不明原因bug）试试其他线段就可以了</p>
+<p>要画粗线的地方，可以在，设计，规则，Routing，Width里面改一下，不需要一直TVB<br>如果要TVB，在快连到焊盘里面，稍微进去一点就行，然后在里面用圆弧连在一起，直接连在<br>中心不好铺，所以要么用圆弧，要么改width</p>
+<p>Hatch模式铺铜轨迹宽度要大于栅格宽度</p>
+<p>给无源蜂鸣器直流电压不会响，需要外部驱动，无源蜂鸣器内部没有振荡电路<br>所以直接给直流电会响的就是有源蜂鸣器</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00a596">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/04/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%BA%8C%E6%9E%81%E7%AE%A1%E9%92%B3%E4%BD%8D%E4%B8%8E%E4%B8%8A%E4%B8%8B%E6%8B%89/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/03/03/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">
+        <h2 class="post-title">一些记录</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>AC&#x2F;DC PWM 功率开关​ 是一种用于电源管理的技术或器件，主要用于将交流电（AC）转换为直流电（DC），并通过 ​脉宽调制（PWM, Pulse Width Modulation）​​ 技术来控制输出电压或电流。<br>如果输入的是直流，那就是转换电压的作用</p>
+<p>功率开关+EE13电源变压器可能是实现电气隔离<br>核心原理是 ​通过磁场的电磁感应传递能量，而非直接电连接。<br>电源变压器使得AC👉AC，升压或者降压</p>
+<p>EE13出来的接一个肖特基二极管实现整流成直流供电</p>
+<p>MOC3021​ 是一种 ​光耦隔离器（Optocoupler）​，主要用于实现 ​电气隔离​ 和 ​信号传输。以下是它在电路中的具体作用：</p>
+<ol>
+<li>​电气隔离<br>MOC3021 的输入端（LED）和输出端（光敏晶体管）之间通过光信号传递信息，无直接电气连接。<br>这种隔离可以防止高压电路（如主电源部分）对低压控制电路（如微控制器或逻辑电路）的干扰，提高系统的安全性和稳定性。</li>
+<li>​信号传输<br>当输入端（LED）接收到电信号时，它会发光，输出端（光敏晶体管）接收到光信号后转换为电信号。<br>这种光信号传递方式确保了信号的可靠传输，同时避免了电气噪声的干扰。</li>
+</ol>
+<p>PC817C光耦，隔离和保护功能较强，MOC3021更偏向于控制</p>
+<p>元器件位置和电路板对不上的时候（抄板，直接抄原理图，功能分块），记得使用mirror</p>
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ffa2c4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/03/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/03/03/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%B7%BB%E5%8A%A0%E7%8E%B0%E6%9C%89%E7%9A%84sch%E5%8E%9F%E7%90%86%E5%9B%BE%E6%88%96pcb%E8%AE%BE%E8%AE%A1%E5%9B%BE%E5%88%B0%E5%8E%9F%E7%90%86%E5%9B%BE%E5%BA%93%E5%92%8Cpcb%E5%BA%93/">
+        <h2 class="post-title">添加现有的sch原理图或pcb设计图到原理图库和pcb库</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/3
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>下载sch,pcb<br>sch:<br>设计，生成sch库<br>然后复制到自己的sch库里面</p>
+<p>pcb:<br>直接复制到自己的pcb库里面</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/03/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%B7%BB%E5%8A%A0%E7%8E%B0%E6%9C%89%E7%9A%84sch%E5%8E%9F%E7%90%86%E5%9B%BE%E6%88%96pcb%E8%AE%BE%E8%AE%A1%E5%9B%BE%E5%88%B0%E5%8E%9F%E7%90%86%E5%9B%BE%E5%BA%93%E5%92%8Cpcb%E5%BA%93/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
+    <a href="/2025/03/02/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E8%AE%BE%E7%BD%AE%E7%82%B9%E5%87%BB%E8%AE%B0%E5%BD%95%E5%AD%98%E5%82%A8%E5%88%B0Mysql/">
+        <h2 class="post-title">设置点击记录存储到Mysql</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/3/2
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <p>在admin中找一个html自行修改点击传递参数给后端，在system中新建一个controll类<br>如NewsClickController，（前端是AJAX传递到后端，后端通过jdbcTemplate传递到Mysql）<br>询问chat的时候只需要说 只使用control，不用service和map（也可以直接用上面的括号来问）<br>库什么类型也要全流程提供给chat</p>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        <span class="icon">
+            <i class="fa-solid fa-tags fa-fw"></i>
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ff7d73">毕业设计</a>
+        </span>
+        
+    </div>
+    <a href="/2025/03/02/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E8%AE%BE%E7%BD%AE%E7%82%B9%E5%87%BB%E8%AE%B0%E5%BD%95%E5%AD%98%E5%82%A8%E5%88%B0Mysql/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2025/03/02/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E7%BD%91%E9%A1%B5/">
         <h2 class="post-title">添加新的网页</h2>
     </a>
@@ -218,200 +429,6 @@
     <a href="/2025/03/02/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%9A%84%E7%BD%91%E9%A1%B5/" class="go-post">阅读全文</a>
 </div>
 
-<div class="post">
-    <a href="/2025/03/02/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE%E9%9B%86/">
-        <h2 class="post-title">更新数据集</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>已有网页管理的情况下，能正常显示。</p>
-<ol>
-<li>修改navicat里面的mysql，把新数据导入进去（可以先把之前的全部删了）</li>
-<li>启动ruoyi，菜单管理，把老的菜单删了</li>
-<li>代码生成，同步表结构（表只有varchar提供搜索功能）</li>
-<li>生成代码，把main放到对应项目里面，然后把main的template放到admin里面的template里面</li>
-<li>把sql文件放到对应表里面运行<br>启动</li>
-</ol>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #00bcd4">毕业设计</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/02/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE%E9%9B%86/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/03/02/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%8D%E5%B0%8F%E5%BF%83%E5%88%A0%E9%99%A4%E4%BA%86-m2%E7%9A%84maven%E4%BB%93%E5%BA%93/">
-        <h2 class="post-title">不小心删除了.m2的maven仓库</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/2
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>打开java一看头文件都不能解析了，看了一下项目结构，是maven库都没了<br>让腾讯元宝生成一下两行代码解决maven安装（如果maven没了），然后右键项目的主pom加载一下。</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" style="color: #ffa2c4">毕业设计</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/02/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%B8%8D%E5%B0%8F%E5%BF%83%E5%88%A0%E9%99%A4%E4%BA%86-m2%E7%9A%84maven%E4%BB%93%E5%BA%93/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/03/01/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%BB%8A%E6%97%A5%E4%BB%BD%E5%85%83%E5%99%A8%E4%BB%B6/">
-        <h2 class="post-title">今日份元器件</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>很大的铁塔，一片一片的，和电脑的一样是散热片，嵌在他上面的通常是(双向)晶闸管triac（作用就是开关），适用于交流电路<br>双向晶闸管导通之后不需要持续给信号，撤掉也能保持导通<br>单向晶闸管适用于直流</p>
-<p>电路板端子插片，一般用来接供电（如交流220v）</p>
-<p>NTC，热敏电阻(NTC热敏电阻的英文全拼是 ​Negative Temperature Coefficient Thermistor。其中，NTC代表Negative Temperature Coefficient，表示负温度系数，即电阻值随温度升高而降低的特性。Thermistor是热敏电阻的英文名称，由thermal​（热）和resistor​（电阻）组合而成。)</p>
-<p>方形黄色的电容，安规电容（大电流危险的地方用这个，这种电容经过严格的安全认证）</p>
-<p>绿色插片电容是，涤纶电容</p>
-<p>交流电保险丝Fuse，圆柱形，中间下陷，标了耐压</p>
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/01/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E4%BB%8A%E6%97%A5%E4%BB%BD%E5%85%83%E5%99%A8%E4%BB%B6/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2025/03/01/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%89%E8%A3%85%E6%B5%8B%E8%AF%95%E6%9E%B6/">
-        <h2 class="post-title">安装测试架</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2025/3/1
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>本质是方便板子不用来回焊导线，针给要测的传输信号（如果有单片机），如果没有单片机就直接用针给电位<br>给针提前焊上锡，导线也是，做好之后把导线捆在一起贴好，电压表往右打是正，所以右边的接头是正极<br>要扎针的地方，焊盘要平<br>杂项有点多，多练就行</p>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #ff7d73">嵌入式开发</a>
-        </span>
-        
-    </div>
-    <a href="/2025/03/01/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%89%E8%A3%85%E6%B5%8B%E8%AF%95%E6%9E%B6/" class="go-post">阅读全文</a>
-</div>
-
 
         <div class="page-current">
     <div class="prev">
@@ -446,7 +463,7 @@
             
             
             <span class="page-omit">...</span>
-            <a class="page-num" href="/page/27">27</a>
+            <a class="page-num" href="/page/33">33</a>
             
         </span>
         
