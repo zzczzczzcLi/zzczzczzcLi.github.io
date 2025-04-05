@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+        <title>综合事项懒得整理 | zzczzczzc&#39;s home</title>
+        <meta name="author" content="zzczzczzc" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <link rel="icon" href="/images/favicon.png" />
+        <script src="https://cdn.staticfile.org/vue/3.2.47/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/6.3.0/css/all.min.css" />
+<link rel="stylesheet" href="/css/fonts.min.css" />
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://cdn.staticfile.org/highlight.js/11.7.0/highlight.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://cdn.staticfile.org/highlight.js/11.7.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.js"></script>
+<script src="https://cdn.staticfile.org/KaTeX/0.16.4/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/KaTeX/0.16.4/katex.min.css" />
+<script src="/js/lib/math.js"></script>
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+<script src="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js"></script>
+<link rel="stylesheet" href="https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css" />
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+    <meta name="generator" content="Hexo 6.3.0"></head>
+    <body>
+        <div id="layout">
+            <transition name="fade">
+                <div id="loading" v-show="loading">
+                    <div id="loading-circle">
+                        <h2>床</h2>
+                        <img src="/images/1.webp" />
+                        <p>一片伟大的净土</p>
+                                                    灵魂的归处，肉体的坟墓。
+                    </div>
+                </div>
+            </transition>
+            <nav id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <div id="desktop-menu">
+        <a class="title" href="/">
+            <span>ZZCZZCZZC&#39;S HOME</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;首页</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;相关</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;文章</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;分类</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;标签</span>
+        </a>
+        
+    </div>
+    <div id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;ZZCZZCZZC&#39;S HOME</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">首页</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">相关</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">文章</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">分类</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">标签</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </div>
+</nav>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+            <transition name="into">
+                <div id="main" v-show="!loading">
+                    <div class="article">
+    <div>
+        <h1>综合事项懒得整理</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2025/4/5
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E6%95%99%E7%A8%8B/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                教程
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/" style="color: #00bcd4">嵌入式开发</a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <p>4）CLION在if endif里面没有代码补全的时候是 宏定义没有给他启用（写了也没用），需要ctrlb去宏定义设置，而不是强制代码补全（并且会自动折叠起来</p>
+<p>烧代码的口和按键复用，测试的时候接着data口或者clock口就会导致按键没反应<br>（可能是VSS和VSS，VSS共地电位不稳定然后触发了芯片自带的复位或者其他问题，总之先正常供电，再考虑代码问题（如果代码很简单没问题））</p>
+<p>IO_OUT不能检测按钮按下导致IO是否接地，一定是输入</p>
+<p>c语言不能for int i，要放在for外面</p>
+<p>写出部分功能，就可以让chat来完善</p>
+<p>keil不支持大小写区分（看编译设置？）</p>
+<p>烧录口供电，可能会导致复位（用typec供电就没问题，看vcc和vss导致复位的问题（并非看门狗的问题），问一下吴工，或者自己看电路）<br>查明了不是延时的问题并且关闭了看门狗，结果还是因为时间导致会复位，可能就是硬件线路的问题<br>地线接到data线上能用的原因？</p>
+<p>芯片自爆了（使用快充头+USB线+插座给芯片供电，但是板子上没有电源转换模块导致自爆了），需要用USB线接电脑给USB口供电（需要计算好电压电流再供电）。</p>
+<p>WDG（Watchdog Timer）被称为“看门狗”是因为它的功能和行为类似于一只忠诚的看门狗，时刻监视着系统的运行状态，并在检测到异常时采取措施，确保系统的稳定性和可靠性。WDG是“Watchdog”的缩写，代表看门狗定时器。在实际应用中，WDG可以用于各种需要高可靠性和安全性的场景，发挥了重要作用。</p>
+<p>定义：独立看门狗是一种基于独立时钟源的看门狗定时器，其时钟源通常是一个低速内部RC振荡器，与系统时钟无关。<br>特点：由于使用独立的时钟源，即使系统时钟出现故障或被恶意修改，独立看门狗仍然能够正常工作，提供更高的可靠性。<br>在正常情况下，系统需要在计数结束前定期发送“喂狗”信号（即重置定时器），表明系统一切正常。如果系统出现故障或死锁，无法按时发送“喂狗”信号，计数结束后将触发复位操作。</p>
+<p>计数过程：窗口看门狗在设定的时间间隔内持续计数，直到计数结束。<br>重置定时器：在正常情况下，系统需要在计数结束前定期发送“喂狗”信号（即重置定时器），并且该信号必须发生在特定的时间窗口内。如果系统出现故障或死锁，无法按时发送“喂狗”信号，或者发送的信号不在时间窗口内，计数结束后将触发复位操作。</p>
+<p>FLASH闪存是一种基于电荷存储技术的非易失性存储器<br>FLASH：是一种非易失性存储技术（断电后数据不丢失），基于浮栅晶体管实现数据存储，分为 NOR Flash（适合代码存储）和 NAND Flash（适合大容量数据存储）。<br>SSD：是一种存储设备，核心存储介质是 NAND Flash 芯片，通过控制器管理数据读写、擦除和均衡损耗。</p>
+<p>提出辞职要提前一个月，芯片会给自带的电路模块demo，可以搭建试试</p>
+<p>可以多用宏定义if和endif这种固定宏启用的时候，才使用某些函数和功能，也可以其他的分用.c和.h，比如uart.c</p>
+<p>或者群聊搜<br>元素之诗代挂一般只多1～2块，到时候问带车的（今天亏10块！20250404</p>
+<p>20250405new:<br>组台式机比笔记本更划算（王浩然推荐）</p>
+
+    </div>
+    
+    
+    
+    <div id="comment">
+        <div id="gitalk-container"></div>
+    </div>
+    
+    
+    
+    
+    
+</div>
+
+                    <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2025 zzczzczzc&#39;s home
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;zzczzczzc
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/argvchs/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+                </div>
+            </transition>
+            
+            <transition name="fade">
+                <div id="preview" ref="preview" v-show="previewShow">
+                    <img id="preview-content" ref="previewContent" />
+                </div>
+            </transition>
+            
+        </div>
+        <script src="/js/main.js"></script>
+        
+        
+
+<script>
+    const gitalk = new Gitalk({
+        clientID: "5093c0f78df8d980d0e8",
+        clientSecret: "3bc33bc8827c07c9e2907362f7e05a5f574db90b",
+        repo: "myblogtalk",
+        owner: "zzczzczzcLi",
+        admin: "zzczzczzcLi".split(","),
+        language: "zh-CN",
+        id: decodeURI(location.pathname),
+        
+    })
+    gitalk.render("gitalk-container");
+</script>
+
+
+
+
+        
+    </body>
+</html>
