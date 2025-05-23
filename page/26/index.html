@@ -171,6 +171,81 @@
         
 
 <div class="post">
+    <a href="/2023/12/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%9E%E9%AA%8C%E5%9B%9B-Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/">
+        <h2 class="post-title">实验四-Linux用户管理</h2>
+    </a>
+    <div class="category-and-date">
+        
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/13
+        </span>
+        
+        
+    </div>
+    <div class="description">
+        <div class="content" v-pre>
+            
+            <pre><code class="DOCX文档，奶牛快传口令：pbkfrt">实验目的：
+1、掌握字符界面下用户账户的设置，包括命令useradd、usermod、userdel。
+2、掌握字符界面下组群账户的设置，包括命令groupadd、groupmod、groupdel。
+3、掌握文件权限等。
+4、掌握文件系统挂载,mount、umount命令使用
+
+实验内容：
+1、使用命令创建用户账户zhangsan，并设置口令为123456。
+Useradd zhangsan
+Passwd zhangsan
+
+2、使用命令修改用户账户zhangsan的UID为700。
+usermod -u 700 zhangsan
+
+3、使用命令创建组群group1，并在创建时设置其GID为800。
+groupadd -g 800 group1
+
+4、使用命令修改组群group1的新组群名称为shangha。
+groupmod -n shangha group1
+
+5、使用挂载命令，访问光盘
+6、使用挂载命令，访问U盘
+
+7.以zhangsan用户创建文件aa.txt。
+touch aa.txt
+su zhangsan
+
+8.创建用户usr1,usr2,其中usr1和zhangsan隶属于同一组shangha
+usermod zhangsan -G shangha 
+useradd -G shangha usr1
+useradd usr2
+
+9.分别以usr1,usr2用户访问aa.txt。
+[usr1@localhost home]$ cat zhangsan/aa.txt
+cat: zhangsan/aa.txt: 权限不够
+[usr2@localhost home]$ cat zhangsan/aa.txt
+cat: zhangsan/aa.txt: 权限不够
+
+10.利用chmod修改文件aa.txt的访问权限，再以usr2访问该文件
+chmod 777 aa.txt 
+[zhangsan@localhost ~]$ chmod 777 aa.txt
+
+
+
+
+</code></pre>
+
+            
+        </div>
+    </div>
+    <div class="post-tags">
+        
+        
+    </div>
+    <a href="/2023/12/13/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E5%AE%9E%E9%AA%8C%E5%9B%9B-Linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86/" class="go-post">阅读全文</a>
+</div>
+
+<div class="post">
     <a href="/2023/12/11/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/2023ICPC%E6%9D%AD%E5%B7%9E%E7%AB%99%E9%93%9C%E7%89%8C%E9%A2%98/">
         <h2 class="post-title">2023ICPC杭州站铜牌题</h2>
     </a>
@@ -562,159 +637,11 @@ G. Snake Move
         
         <span class="tag">
             
-            <a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" style="color: #00bcd4">算法设计与分析</a>
+            <a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" style="color: #00a596">算法设计与分析</a>
         </span>
         
     </div>
     <a href="/2023/09/27/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90-%E6%B1%89%E8%AF%BA%E5%A1%94/" class="go-post">阅读全文</a>
-</div>
-
-<div class="post">
-    <a href="/2023/09/25/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/Web%E5%BC%80%E5%8F%91%E7%AC%AC5%E7%AB%A0-%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8/">
-        <h2 class="post-title">Web开发第5章-设计一个计算器</h2>
-    </a>
-    <div class="category-and-date">
-        
-        <span class="category">
-            <a href="/categories/%E6%95%99%E7%A8%8B/">
-                <span class="icon">
-                    <i class="fa-solid fa-bookmark fa-fw"></i>
-                </span>
-                教程
-            </a>
-        </span>
-        
-        <span class="date">
-            <span class="icon">
-                <i class="fa-solid fa-calendar fa-fw"></i>
-            </span>
-            2023/9/25
-        </span>
-        
-        
-    </div>
-    <div class="description">
-        <div class="content" v-pre>
-            
-            <p>主要用到一行两列和两行一列类似的属性,最后一节课还提到了form表单，用于input。</p>
-<p>源码右下角可以拉开查看</p>
-<textarea>
-源码
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <div style="text-align: center;">
-        <table border="1" width="200">
-            <tr style="border: 0px;">
-                <th colspan="4">···</th>
-            </tr>
-            <tr style="border:0px;height: 20px;">
-                <td colspan="4"></td>
-            </tr>
-            <tr style>
-                <td width="50">AC</td>
-                <td width="50">+/-</td>
-                <td width="50">%</td>
-                <td width="50">÷</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-                <td>×</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>+</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td></td>
-                <td>.</td>
-                <td>=</td>
-            </tr>
-        </table>
-        </div>
-    </body>
-</html>
-</textarea>
-<p>实现效果<br><!DOCTYPE html></p>
-<html>
-    <head>
-        <meta charset="utf-8">
-    </head>
-    <body>
-        <div style="text-align: center;">
-        <table border="1" width="200">
-            <tr style="border: 0px;">
-                <th colspan="4">···</th>
-            </tr>
-            <tr style="border:0px;height: 20px;">
-                <td colspan="4"></td>
-            </tr>
-            <tr style>
-                <td width="50">AC</td>
-                <td width="50">+/-</td>
-                <td width="50">%</td>
-                <td width="50">÷</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-                <td>×</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td>5</td>
-                <td>6</td>
-                <td>-</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>+</td>
-            </tr>
-            <tr>
-                <td>0</td>
-                <td></td>
-                <td>.</td>
-                <td>=</td>
-            </tr>
-        </table>
-        </div>
-    </body>
-</html>
-
-            
-        </div>
-    </div>
-    <div class="post-tags">
-        
-        <span class="icon">
-            <i class="fa-solid fa-tags fa-fw"></i>
-        </span>
-        
-        
-        <span class="tag">
-            
-            <a href="/tags/Web/" style="color: #00bcd4">Web</a>
-        </span>
-        
-    </div>
-    <a href="/2023/09/25/%E4%B8%8D%E5%BF%85%E7%BB%B4%E6%8A%A4%E7%9A%84%E5%86%85%E5%AE%B9/Web%E5%BC%80%E5%8F%91%E7%AC%AC5%E7%AB%A0-%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E8%AE%A1%E7%AE%97%E5%99%A8/" class="go-post">阅读全文</a>
 </div>
 
 
