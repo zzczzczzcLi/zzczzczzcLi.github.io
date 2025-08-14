@@ -2,159 +2,60 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>视频播放</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background: #000; 
-            height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            overflow: hidden;
-        }
-        #videoContainer {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background: #000;
-        }
+        body { background: #000; height: 100vh; display: flex; align-items: center; justify-content: center; }
         video { 
             width: 100%; 
-            height: 100%; 
+            height: 100vh; 
             object-fit: contain;
             background: #000;
-            display: block;
-            /* 强制软件渲染 */
-            -webkit-transform: translate3d(0,0,0);
-            transform: translate3d(0,0,0);
-            /* 禁用硬件加速 */
-            -webkit-transform-style: flat;
-            transform-style: flat;
         }
         .play-btn {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: rgba(255,255,255,0.9);
-            color: #000;
-            border: none;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            border: 2px solid white;
             border-radius: 50px;
             padding: 15px 30px;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 16px;
             cursor: pointer;
-            z-index: 100;
-        }
-        .status {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            color: white;
-            font-size: 14px;
-            z-index: 200;
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div id="videoContainer">
-        <div class="status" id="status">加载中...</div>
-        <video id="video" 
-               preload="auto"
-               controls 
-               playsinline 
-               webkit-playsinline
-               muted
-               x5-video-player-type="h5"
-               x5-video-player-fullscreen="true"
-               x5-video-orientation="portraint">
-        </video>
-        <button class="play-btn" id="playBtn">▶ 播放视频</button>
-    </div>
+    <video id="video" 
+           src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1755148401454_qdqqd_cvsijo.mp4"
+           controls 
+           playsinline 
+           webkit-playsinline
+           x5-video-player-type="h5"
+           x5-video-player-fullscreen="true">
+    </video>
+    <button class="play-btn" id="playBtn">点击播放</button>
     
     <script>
         const video = document.getElementById('video');
         const playBtn = document.getElementById('playBtn');
-        const status = document.getElementById('status');
         
-        const videoUrl = "https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1755148401454_qdqqd_cvsijo.mp4";
-        
-        // 延迟设置视频源，避免加载问题
-        setTimeout(() => {
-            video.src = videoUrl;
-        }, 100);
-        
-        // 多种播放尝试
-        function tryPlay() {
-            status.textContent = "尝试播放...";
-            
-            // 方法1: 直接播放
-            video.play().then(() => {
-                playBtn.style.display = 'none';
-                status.textContent = "播放中";
-            }).catch(() => {
-                // 方法2: 强制加载后播放
-                video.load();
-                setTimeout(() => {
-                    video.play().catch(() => {
-                        status.textContent = "需要手动播放";
-                        playBtn.style.display = 'block';
-                    });
-                }, 500);
-            });
-        }
-        
-        // 视频加载事件
-        video.addEventListener('loadstart', () => status.textContent = "开始加载...");
-        video.addEventListener('loadeddata', () => {
-            status.textContent = "数据已加载";
-            // 强制刷新视频渲染
-            video.style.display = 'none';
-            setTimeout(() => {
-                video.style.display = 'block';
-            }, 50);
-        });
-        video.addEventListener('canplay', () => {
-            status.textContent = "可以播放";
-            tryPlay();
-        });
-        video.addEventListener('play', () => {
-            playBtn.style.display = 'none';
-            status.style.display = 'none';
-        });
-        video.addEventListener('error', (e) => {
-            status.textContent = "加载失败，请点击播放";
+        // 检测是否需要手动播放
+        video.play().catch(() => {
             playBtn.style.display = 'block';
-            console.log("视频错误:", e);
         });
         
         // 手动播放按钮
         playBtn.onclick = () => {
-            // 重新加载视频
-            video.load();
-            setTimeout(() => {
-                video.play().then(() => {
-                    playBtn.style.display = 'none';
-                    status.style.display = 'none';
-                });
-            }, 300);
+            video.play();
+            playBtn.style.display = 'none';
         };
         
-        // 页面可见性变化时重新加载（解决后台切换问题）
-        document.addEventListener('visibilitychange', () => {
-            if (!document.hidden && video.paused) {
-                video.load();
-            }
-        });
-        
-        // 触摸事件强制激活视频
-        document.addEventListener('touchstart', function() {
-            if (video.paused) {
-                video.play().catch(() => {});
-            }
-        }, { once: true });
+        // 视频开始播放后隐藏按钮
+        video.onplay = () => {
+            playBtn.style.display = 'none';
+        };
     </script>
 </body>
 </html>
