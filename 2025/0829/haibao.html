@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,17 +12,29 @@
             height: 100vh; 
             object-fit: contain;
             background: #000;
+            transition: opacity 0.5s ease;
         }
     </style>
 </head>
 <body>
     <img id="image" 
-         src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1756454603763_qdqqd_8t2vt0.png"
+         src="https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1756456466400_qdqqd_mjqn6r.png"
          alt="显示图片">
     
-    
     <script>
-        // 页面已加载，图片会自动显示
+        const img = document.getElementById('image');
+        const hdSrc = 'https://s3plus.meituan.net/opapisdk/op_ticket_885190757_1756454603763_qdqqd_8t2vt0.png';
+        
+        // 预加载高清图片
+        const hdImg = new Image();
+        hdImg.onload = () => {
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = hdSrc;
+                img.style.opacity = '1';
+            }, 250);
+        };
+        hdImg.src = hdSrc;
     </script>
 </body>
 </html>
